@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulasi 3D Proses Frais (Vertical Milling) – Milling Introduction</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js r128 CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Google Fonts Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    body {
+      overflow: hidden;
+      background-color: #0d1117;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #e2e8f0;
+      width: 100vw;
+      height: 100vh;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+    canvas:active {
+      cursor: grabbing;
+    }
+    .font-mono-tech {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+    }
+    /* Custom subtle glass effect for non-intrusive HUD */
+    .hud-glass {
+      background: rgba(13, 18, 26, 0.80);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .op-btn {
+      transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .op-btn.active {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      border-color: #38bdf8;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.35);
+    }
+  </style>
+</head>
+<body class="relative w-full h-full overflow-hidden">
+
+  <!-- TOP-LEFT COMPACT TELEMETRY BADGE -->
+  <div class="fixed top-3.5 left-3.5 z-20 hud-glass rounded-xl px-3.5 py-2.5 pointer-events-none max-w-xs sm:max-w-md">
+    <div class="flex items-center gap-2 mb-1">
+      <span id="status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-mono-tech text-[11px] uppercase tracking-wider text-slate-400">CNC Vertical Mill Telemetry</span>
+    </div>
+    <div class="font-mono-tech text-xs leading-relaxed text-slate-300 space-y-0.5">
+      <div>OPERASI : <span id="hud-op" class="text-sky-400 font-semibold">FACE MILLING (PERATAAN)</span></div>
+      <div>
+        SPINDEL : <span id="hud-rpm" class="text-amber-400 font-semibold">1200 RPM</span>
+        <span class="text-slate-600 mx-1">|</span>
+        FEED : <span id="hud-feed" class="text-emerald-400 font-semibold">180 mm/min</span>
+      </div>
+      <div>
+        PAHAT   : <span id="hud-tool" class="text-slate-200">Face Mill Ø56 mm (8 Insert)</span>
+        <span class="text-slate-600 mx-1">|</span>
+        DOC : <span id="hud-doc" class="text-rose-400 font-semibold">2.0 mm</span>
+      </div>
+      <div class="pt-0.5 border-t border-white/10 text-[11px] flex items-center justify-between gap-3">
+        <span>POSISI : <span id="hud-pos" class="text-sky-300 font-semibold">X: +0.0  Y: +0.0  Z: +0.0</span></span>
+        <span id="hud-cut-state" class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 text-[10px]">MENYAYAT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP-RIGHT MINIMAL HINT -->
+  <div class="hidden md:flex fixed top-3.5 right-3.5 z-20 hud-glass rounded-lg px-3 py-1.5 text-[11px] text-slate-400 items-center gap-2 pointer-events-none">
+    <span>Geser: Putar Kamera</span>
+    <span class="text-slate-600">•</span>
+    <span>Scroll: Zoom</span>
+  </div>
+
+  <!-- BOTTOM FLOATING PILL BAR (NON-INTRUSIVE CONTROLS) -->
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-20 hud-glass rounded-2xl px-2.5 py-2 flex flex-wrap items-center justify-center gap-1.5 w-[95vw] sm:w-auto max-w-4xl">
+    <!-- 5 Milling Operations -->
+    <button id="mode-face" onclick="selectOperation('face')" class="op-btn active px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10">
+      1. Face Milling
+    </button>
+    <button id="mode-slot" onclick="selectOperation('slot')" class="op-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10">
+      2. Slot Milling
+    </button>
+    <button id="mode-step" onclick="selectOperation('step')" class="op-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10">
+      3. Step Milling
+    </button>
+    <button id="mode-pocket" onclick="selectOperation('pocket')" class="op-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10">
+      4. Pocket Milling
+    </button>
+    <button id="mode-drill" onclick="selectOperation('drill')" class="op-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10">
+      5. Drilling
+    </button>
+
+    <div class="hidden sm:block w-px h-5 bg-white/15 mx-1"></div>
+
+    <!-- Action Controls -->
+    <button id="btn-pause" onclick="togglePause()" class="op-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-300 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30">
+      Jeda
+    </button>
+    <button onclick="resetWorkpieceAndRestart()" class="op-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-200 bg-white/5 hover:bg-white/15 border border-white/10">
+      Ulangi Benda Kerja
+    </button>
+    <button onclick="resetLockedCamera()" class="op-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-sky-300 bg-sky-500/10 hover:bg-sky-500/20 border border-sky-400/25">
+      Kunci Kamera
+    </button>
+  </div>
+
+  <!-- 3D VIEWPORT CONTAINER -->
+  <div id="viewport" class="w-full h-full"></div>
+
+  <script>
+    // ============================================================================
+    // 1. INISIALISASI SCENE, KAMERA STABIL, & RENDERER
+    // ============================================================================
+    const viewport = document.getElementById('viewport');
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0d1117);
+    scene.fog = new THREE.FogExp2(0x0d1117, 0.025);
+
+    const camera = new THREE.PerspectiveCamera(
+      36,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      100
+    );
+
+    // Locked default camera perspective focused on the cutting zone
+    const LOCKED_CAM_POS = new THREE.Vector3(6.5, 5.0, 7.0);
+    const LOCKED_CAM_TARGET = new THREE.Vector3(0, 0.5, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.08;
+    viewport.appendChild(renderer.domElement);
+
+    // ============================================================================
+    // 2. KONTROL KAMERA INTERAKTIF (MOUSE & TOUCH) DENGAN KUNCI KAMERA STABIL
+    // ============================================================================
+    const camSpherical = new THREE.Spherical();
+    const targetSpherical = new THREE.Spherical();
+    const camTarget = LOCKED_CAM_TARGET.clone();
+
+    function syncSphericalFromVector(vec) {
+      const offset = vec.clone().sub(camTarget);
+      camSpherical.setFromVector3(offset);
+      targetSpherical.copy(camSpherical);
+    }
+    syncSphericalFromVector(LOCKED_CAM_POS);
+
+    let isDragging = false;
+    let prevPointer = { x: 0, y: 0 };
+
+    renderer.domElement.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      isDragging = true;
+      prevPointer.x = e.clientX;
+      prevPointer.y = e.clientY;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - prevPointer.x;
+      const dy = e.clientY - prevPointer.y;
+      prevPointer.x = e.clientX;
+      prevPointer.y = e.clientY;
+
+      targetSpherical.theta -= dx * 0.0065;
+      targetSpherical.phi = Math.max(0.2, Math.min(Math.PI / 2 - 0.04, targetSpherical.phi - dy * 0.0065));
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    renderer.domElement.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      targetSpherical.radius = Math.max(4.0, Math.min(16.5, targetSpherical.radius + e.deltaY * 0.005));
+    }, { passive: false });
+
+    // Touch support for mobile/tablet
+    renderer.domElement.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        prevPointer.x = e.touches[0].clientX;
+        prevPointer.y = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging || e.touches.length !== 1) return;
+      const dx = e.touches[0].clientX - prevPointer.x;
+      const dy = e.touches[0].clientY - prevPointer.y;
+      prevPointer.x = e.clientX;
+      prevPointer.y = e.clientY;
+
+      targetSpherical.theta -= dx * 0.0065;
+      targetSpherical.phi = Math.max(0.2, Math.min(Math.PI / 2 - 0.04, targetSpherical.phi - dy * 0.0065));
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    function resetLockedCamera() {
+      const offset = LOCKED_CAM_POS.clone().sub(LOCKED_CAM_TARGET);
+      targetSpherical.setFromVector3(offset);
+    }
+
+    function updateCameraSmooth() {
+      camSpherical.theta += (targetSpherical.theta - camSpherical.theta) * 0.14;
+      camSpherical.phi += (targetSpherical.phi - camSpherical.phi) * 0.14;
+      camSpherical.radius += (targetSpherical.radius - camSpherical.radius) * 0.14;
+
+      const offset = new THREE.Vector3().setFromSpherical(camSpherical);
+      camera.position.copy(camTarget).add(offset);
+      camera.lookAt(camTarget);
+    }
+
+    // ============================================================================
+    // 3. PENCAHAYAAN BENGKEL PEMESINAN (INDUSTRIAL LIGHTING)
+    // ============================================================================
+    const ambientLight = new THREE.AmbientLight(0xdbeafe, 0.58);
+    scene.add(ambientLight);
+
+    const mainLight = new THREE.DirectionalLight(0xffffff, 1.15);
+    mainLight.position.set(7, 13, 8);
+    mainLight.castShadow = true;
+    mainLight.shadow.mapSize.width = 2048;
+    mainLight.shadow.mapSize.height = 2048;
+    mainLight.shadow.camera.near = 1;
+    mainLight.shadow.camera.far = 28;
+    const d = 6.5;
+    mainLight.shadow.camera.left = -d;
+    mainLight.shadow.camera.right = d;
+    mainLight.shadow.camera.top = d;
+    mainLight.shadow.camera.bottom = -d;
+    mainLight.shadow.bias = -0.0005;
+    scene.add(mainLight);
+
+    const fillLight = new THREE.DirectionalLight(0x38bdf8, 0.42);
+    fillLight.position.set(-8, 6, -6);
+    scene.add(fillLight);
+
+    const rimLight = new THREE.DirectionalLight(0xfde68a, 0.28);
+    rimLight.position.set(0, 4, -9);
+    scene.add(rimLight);
+
+    // Subtle reference workshop grid underneath the machine table
+    const floorGrid = new THREE.GridHelper(24, 24, 0x1e293b, 0x151c28);
+    floorGrid.position.y = -1.75;
+    scene.add(floorGrid);
+
+    // ============================================================================
+    // 4. MATERIAL LOGAM REALISTIS
+    // ============================================================================
+    const matTableCast = new THREE.MeshStandardMaterial({
+      color: 0x2d3540,
+      metalness: 0.65,
+      roughness: 0.42
+    });
+    const matTSlotDark = new THREE.MeshStandardMaterial({
+      color: 0x14181f,
+      metalness: 0.5,
+      roughness: 0.7
+    });
+    const matVisePaint = new THREE.MeshStandardMaterial({
+      color: 0x1e3a5f,
+      metalness: 0.38,
+      roughness: 0.48
+    });
+    const matHardenedJaw = new THREE.MeshStandardMaterial({
+      color: 0x64748b,
+      metalness: 0.82,
+      roughness: 0.25
+    });
+    const matChromeSteel = new THREE.MeshStandardMaterial({
+      color: 0xcbd5e1,
+      metalness: 0.9,
+      roughness: 0.16
+    });
+    const matToolHolder = new THREE.MeshStandardMaterial({
+      color: 0x334155,
+      metalness: 0.85,
+      roughness: 0.24
+    });
+    const matCarbideGold = new THREE.MeshStandardMaterial({
+      color: 0xf59e0b,
+      metalness: 0.55,
+      roughness: 0.22,
+      emissive: 0x451a03,
+      emissiveIntensity: 0.25
+    });
+    const matDrillHSS = new THREE.MeshStandardMaterial({
+      color: 0x94a3b8,
+      metalness: 0.88,
+      roughness: 0.2
+    });
+
+    // ============================================================================
+    // 5. GRUP MEJA FRAIS & RAGUM MESIN (BERGERAK MELAKUKAN FEEDING X & Y)
+    // ============================================================================
+    const tableGroup = new THREE.Group();
+    scene.add(tableGroup);
+
+    // Dasar Meja Frais
+    const tableSubBase = new THREE.Mesh(new THREE.BoxGeometry(11.6, 0.48, 6.4), matTableCast);
+    tableSubBase.position.y = -1.16;
+    tableSubBase.receiveShadow = true;
+    tableGroup.add(tableSubBase);
+
+    // Celah Hitam T-Slot
+    const tSlotCore = new THREE.Mesh(new THREE.BoxGeometry(11.4, 0.16, 6.0), matTSlotDark);
+    tSlotCore.position.y = -0.86;
+    tableGroup.add(tSlotCore);
+
+    // Bilah Permukaan Meja Frais (Membentuk 4 Jalur Alur T-Slot)
+    const stripZPositions = [-2.4, -1.2, 0.0, 1.2, 2.4];
+    stripZPositions.forEach((zPos) => {
+      const strip = new THREE.Mesh(new THREE.BoxGeometry(11.6, 0.16, 0.86), matTableCast);
+      strip.position.set(0, -0.82, zPos);
+      strip.receiveShadow = true;
+      strip.castShadow = true;
+      tableGroup.add(strip);
+    });
+
+    // Ragum Mesin Presisi (Machine Vise)
+    const viseBodyBase = new THREE.Mesh(new THREE.BoxGeometry(5.6, 0.34, 5.0), matVisePaint);
+    viseBodyBase.position.y = -0.57;
+    viseBodyBase.castShadow = true;
+    viseBodyBase.receiveShadow = true;
+    tableGroup.add(viseBodyBase);
+
+    // Rel Samping Ragum
+    [-2.55, 2.55].forEach((xSide) => {
+      const rail = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.24, 4.6), matHardenedJaw);
+      rail.position.set(xSide, -0.35, 0);
+      tableGroup.add(rail);
+    });
+
+    // Rahang Tetap (Belakang) + Pelat Rahang Baja Keras
+    const fixedJawBlock = new THREE.Mesh(new THREE.BoxGeometry(5.0, 0.96, 0.58), matVisePaint);
+    fixedJawBlock.position.set(0, 0.06, -2.02);
+    fixedJawBlock.castShadow = true;
+    tableGroup.add(fixedJawBlock);
+
+    const fixedJawPlate = new THREE.Mesh(new THREE.BoxGeometry(4.8, 0.82, 0.16), matHardenedJaw);
+    fixedJawPlate.position.set(0, 0.06, -1.64);
+    tableGroup.add(fixedJawPlate);
+
+    // Rahang Geser (Depan) + Pelat Rahang Baja Keras
+    const movableJawBlock = new THREE.Mesh(new THREE.BoxGeometry(5.0, 0.96, 0.68), matVisePaint);
+    movableJawBlock.position.set(0, 0.06, 2.07);
+    movableJawBlock.castShadow = true;
+    tableGroup.add(movableJawBlock);
+
+    const movableJawPlate = new THREE.Mesh(new THREE.BoxGeometry(4.8, 0.82, 0.16), matHardenedJaw);
+    movableJawPlate.position.set(0, 0.06, 1.64);
+    tableGroup.add(movableJawPlate);
+
+    // Poros Ulir Pengencang Ragum (Leadscrew)
+    const leadScrew = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 1.45, 20), matChromeSteel);
+    leadScrew.rotation.x = Math.PI / 2;
+    leadScrew.position.set(0, -0.02, 2.85);
+    tableGroup.add(leadScrew);
+
+    const screwHexNut = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 0.25, 6), matHardenedJaw);
+    screwHexNut.rotation.x = Math.PI / 2;
+    screwHexNut.position.set(0, -0.02, 3.55);
+    tableGroup.add(screwHexNut);
+
+    // Paralel Penyangga Benda Kerja di Bawah Ragum
+    [-1.2, 1.2].forEach((zPar) => {
+      const parallelBar = new THREE.Mesh(new THREE.BoxGeometry(4.6, 0.38, 0.18), matHardenedJaw);
+      parallelBar.position.set(0, -0.21, zPar);
+      tableGroup.add(parallelBar);
+    });
+
+    // ============================================================================
+    // 6. BENDA KERJA DINAMIS BERKERAPATAN TINGGI (REAL-TIME VERTEX DEFORMATION)
+    // ============================================================================
+    const WP_LEN = 4.6;    // Panjang X
+    const WP_HEIGHT = 1.4; // Tinggi Y
+    const WP_WIDTH = 3.1;  // Lebar Z
+    const SEG_X = 132;     // Resolusi Grid X
+    const SEG_Z = 90;      // Resolusi Grid Z
+
+    const wpGeo = new THREE.BoxGeometry(WP_LEN, WP_HEIGHT, WP_WIDTH, SEG_X, 1, SEG_Z);
+    const posAttr = wpGeo.attributes.position;
+    const vertexCount = posAttr.count;
+
+    // Simpan koordinat awal Y dan warna per-vertex
+    const initialY = new Float32Array(vertexCount);
+    const vertexColors = new Float32Array(vertexCount * 3);
+
+    const colorRawSteel = new THREE.Color(0x4b5563);       // Baja kasar sebelum difrais
+    const colorMachinedFloor = new THREE.Color(0xdbeafe);  // Baja mengkilap hasil pemotongan
+    const colorMachinedSwirl = new THREE.Color(0xbfdbfe);  // Variasi guratan melingkar pisau frais
+
+    for (let i = 0; i < vertexCount; i++) {
+      initialY[i] = posAttr.getY(i);
+      vertexColors[i * 3] = colorRawSteel.r;
+      vertexColors[i * 3 + 1] = colorRawSteel.g;
+      vertexColors[i * 3 + 2] = colorRawSteel.b;
+    }
+    wpGeo.setAttribute('color', new THREE.BufferAttribute(vertexColors, 3));
+
+    const wpMaterial = new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      metalness: 0.74,
+      roughness: 0.26
+    });
+
+    const workpieceMesh = new THREE.Mesh(wpGeo, wpMaterial);
+    workpieceMesh.position.y = 0.30; // Permukaan atas tepat berada di Y = +1.00
+    workpieceMesh.castShadow = true;
+    workpieceMesh.receiveShadow = true;
+    tableGroup.add(workpieceMesh);
+
+    const TOP_SURFACE_WORLD_Y = 1.00; // 0.30 + (1.40 / 2)
+
+    function resetWorkpieceMesh() {
+      const colAttr = wpGeo.attributes.color;
+      for (let i = 0; i < vertexCount; i++) {
+        posAttr.setY(i, initialY[i]);
+        colAttr.setXYZ(i, colorRawSteel.r, colorRawSteel.g, colorRawSteel.b);
+      }
+      posAttr.needsUpdate = true;
+      colAttr.needsUpdate = true;
+      wpGeo.computeVertexNormals();
+    }
+
+    // ============================================================================
+    // 7. SPINDEL VERTIKAL & 3 PAHAT POTONG PROSEDURAL (FACE MILL, END MILL, DRILL)
+    // ============================================================================
+    const spindleGroup = new THREE.Group();
+    scene.add(spindleGroup);
+
+    // Kepala Quill / Rumah Spindel Atas
+    const quillCylinder = new THREE.Mesh(new THREE.CylinderGeometry(0.96, 0.88, 2.4, 32), matVisePaint);
+    quillCylinder.position.y = 3.35;
+    spindleGroup.add(quillCylinder);
+
+    // Cincin Hidung Spindel & Pemegang Pahat (ISO / BT40 Taper Arbor)
+    const spindleNose = new THREE.Mesh(new THREE.CylinderGeometry(0.74, 0.62, 0.55, 32), matChromeSteel);
+    spindleNose.position.y = 1.92;
+    spindleGroup.add(spindleNose);
+
+    const colletChuck = new THREE.Mesh(new THREE.CylinderGeometry(0.58, 0.46, 0.65, 32), matToolHolder);
+    colletChuck.position.y = 1.35;
+    spindleGroup.add(colletChuck);
+
+    // --- PAHAT 1: FACE MILL CUTTER (Diameter Besar + 8 Insert Karbida Kuning) ---
+    const faceMillTool = new THREE.Group();
+    const fmBody = new THREE.Mesh(new THREE.CylinderGeometry(0.92, 1.10, 0.54, 28), matToolHolder);
+    fmBody.position.y = 0.84;
+    fmBody.castShadow = true;
+    faceMillTool.add(fmBody);
+
+    const fmCenterRing = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.06, 20), matChromeSteel);
+    fmCenterRing.position.y = 0.56;
+    faceMillTool.add(fmCenterRing);
+
+    const INSERT_COUNT = 8;
+    for (let i = 0; i < INSERT_COUNT; i++) {
+      const angle = (i / INSERT_COUNT) * Math.PI * 2;
+      const insertGroup = new THREE.Group();
+      insertGroup.position.set(Math.cos(angle) * 1.07, 0.66, Math.sin(angle) * 1.07);
+      insertGroup.rotation.y = -angle + 0.22;
+
+      const carbideTip = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.22, 0.11), matCarbideGold);
+      insertGroup.add(carbideTip);
+
+      // Kantong tatal (gullet) di depan setiap insert
+      const gullet = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.30, 0.16), matTSlotDark);
+      gullet.position.set(-0.08, 0.08, 0.12);
+      insertGroup.add(gullet);
+
+      faceMillTool.add(insertGroup);
+    }
+    spindleGroup.add(faceMillTool);
+
+    // --- PAHAT 2: END MILL CUTTER (Silindris Beralur Heliks 4 Flute) ---
+    const endMillTool = new THREE.Group();
+    const emShank = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.72, 24), matChromeSteel);
+    emShank.position.y = 0.86;
+    endMillTool.add(emShank);
+
+    // Susun segmen heliks bertingkat agar tampak seperti alur spiral End Mill asli
+    const HELIX_SLICES = 7;
+    for (let s = 0; s < HELIX_SLICES; s++) {
+      const sliceY = 0.08 + s * 0.07;
+      const twistAngle = s * 0.24;
+      for (let f = 0; f < 2; f++) {
+        const blade = new THREE.Mesh(new THREE.BoxGeometry(0.84, 0.075, 0.24), matToolHolder);
+        blade.position.y = sliceY;
+        blade.rotation.y = twistAngle + f * (Math.PI / 2);
+        endMillTool.add(blade);
+
+        const edgeStrip = new THREE.Mesh(new THREE.BoxGeometry(0.86, 0.072, 0.07), matCarbideGold);
+        edgeStrip.position.y = sliceY;
+        edgeStrip.rotation.y = twistAngle + f * (Math.PI / 2);
+        endMillTool.add(edgeStrip);
+      }
+    }
+    endMillTool.visible = false;
+    spindleGroup.add(endMillTool);
+
+    // --- PAHAT 3: TWIST DRILL BIT (Mata Bor Spiral dengan Ujung Konis 118°) ---
+    const drillTool = new THREE.Group();
+    const drillShank = new THREE.Mesh(new THREE.CylinderGeometry(0.34, 0.34, 0.55, 24), matChromeSteel);
+    drillShank.position.y = 0.92;
+    drillTool.add(drillShank);
+
+    // Alur spiral mata bor
+    for (let s = 0; s < 8; s++) {
+      const sliceY = 0.22 + s * 0.06;
+      const fluteBar = new THREE.Mesh(new THREE.BoxGeometry(0.66, 0.065, 0.22), matDrillHSS);
+      fluteBar.position.y = sliceY;
+      fluteBar.rotation.y = s * 0.35;
+      drillTool.add(fluteBar);
+    }
+
+    // Ujung Kerucut Mata Bor (Point Angle)
+    const drillCone = new THREE.Mesh(new THREE.ConeGeometry(0.34, 0.22, 24), matCarbideGold);
+    drillCone.rotation.x = Math.PI; // Ujung lancip menghadap ke bawah (Y = 0.0)
+    drillCone.position.y = 0.11;
+    drillTool.add(drillCone);
+
+    drillTool.visible = false;
+    spindleGroup.add(drillTool);
+
+    // Cincin indikator halus zona potong aktif di permukaan benda kerja
+    const cutRingGeo = new THREE.RingGeometry(0.98, 1.03, 40);
+    cutRingGeo.rotateX(-Math.PI / 2);
+    const cutRingMat = new THREE.MeshBasicMaterial({
+      color: 0x38bdf8,
+      side: THREE.DoubleSide,
+      transparent: true,
+      opacity: 0.0
+    });
+    const activeCutRing = new THREE.Mesh(cutRingGeo, cutRingMat);
+    activeCutRing.position.y = TOP_SURFACE_WORLD_Y + 0.006;
+    scene.add(activeCutRing);
+
+    // ============================================================================
+    // 8. SISTEM PARTIKEL TATAL LOGAM (REALISTIC METALLIC CHIP EJECTION)
+    // ============================================================================
+    const MAX_CHIPS = 90;
+    const chipMeshes = [];
+    const chipData = [];
+
+    const chipSingleGeo = new THREE.BoxGeometry(0.08, 0.03, 0.05);
+    const chipSingleMat = new THREE.MeshStandardMaterial({
+      color: 0xfbbf24,
+      metalness: 0.85,
+      roughness: 0.25,
+      emissive: 0xd97706,
+      emissiveIntensity: 0.35
+    });
+
+    const chipContainer = new THREE.Group();
+    scene.add(chipContainer);
+
+    for (let i = 0; i < MAX_CHIPS; i++) {
+      const mesh = new THREE.Mesh(chipSingleGeo, chipSingleMat);
+      mesh.visible = false;
+      chipContainer.add(mesh);
+      chipMeshes.push(mesh);
+      chipData.push({
+        active: false,
+        vel: new THREE.Vector3(),
+        rotVel: new THREE.Vector3(),
+        life: 0
+      });
+    }
+
+    let nextChipIdx = 0;
+    function spawnChips(cutterTipY, radius, count) {
+      for (let c = 0; c < count; c++) {
+        const idx = nextChipIdx;
+        nextChipIdx = (nextChipIdx + 1) % MAX_CHIPS;
+
+        const mesh = chipMeshes[idx];
+        const data = chipData[idx];
+        const angle = Math.random() * Math.PI * 2;
+        const spawnR = radius * (0.65 + Math.random() * 0.35);
+
+        mesh.position.set(
+          Math.cos(angle) * spawnR,
+          cutterTipY + 0.06 + Math.random() * 0.06,
+          Math.sin(angle) * spawnR
+        );
+        mesh.rotation.set(Math.random() * 3, Math.random() * 3, Math.random() * 3);
+        mesh.visible = true;
+
+        // Lontarkan tatal secara tangensial sesuai putaran pisau frais
+        const tangentX = -Math.sin(angle);
+        const tangentZ = Math.cos(angle);
+        const speed = 2.2 + Math.random() * 2.8;
+
+        data.vel.set(
+          (tangentX + (Math.random() - 0.5) * 0.7) * speed,
+          1.4 + Math.random() * 2.4,
+          (tangentZ + (Math.random() - 0.5) * 0.7) * speed
+        );
+        data.rotVel.set(
+          (Math.random() - 0.5) * 18,
+          (Math.random() - 0.5) * 18,
+          (Math.random() - 0.5) * 18
+        );
+        data.active = true;
+        data.life = 0.85 + Math.random() * 0.45;
+      }
+    }
+
+    function updateChips(dt) {
+      for (let i = 0; i < MAX_CHIPS; i++) {
+        const data = chipData[i];
+        if (!data.active) continue;
+
+        const mesh = chipMeshes[i];
+        data.life -= dt;
+        if (data.life <= 0 || mesh.position.y < -1.5) {
+          data.active = false;
+          mesh.visible = false;
+          continue;
+        }
+
+        data.vel.y -= 11.5 * dt; // Gravitasi
+        mesh.position.addScaledVector(data.vel, dt);
+        mesh.rotation.x += data.rotVel.x * dt;
+        mesh.rotation.y += data.rotVel.y * dt;
+        mesh.rotation.z += data.rotVel.z * dt;
+
+        // Pantulan ringan di permukaan atas benda kerja / ragum
+        if (mesh.position.y < TOP_SURFACE_WORLD_Y && mesh.position.y > TOP_SURFACE_WORLD_Y - 0.15) {
+          if (Math.abs(mesh.position.x) < 2.2 && Math.abs(mesh.position.z) < 1.5 && data.vel.y < 0) {
+            data.vel.y *= -0.35;
+          }
+        }
+      }
+    }
+
+    // ============================================================================
+    // 9. KONFIGURASI 5 OPERASI PROSES FRAIS (PROGRAM CNC / LINTASAN MEJA & SPINDEL)
+    // ============================================================================
+    // Catatan Kinematika:
+    // tx, tz = posisi meja frais di dunia Three.js (berlawanan arah dengan posisi relatif pahat di atas benda kerja)
+    // sy = tinggi dunia ujung mata potong pahat (Permukaan atas benda kerja = +1.00)
+    const OPERATIONS = {
+      face: {
+        title: 'FACE MILLING (PERATAAN)',
+        rpmText: '1200 RPM',
+        feedText: '180 mm/min',
+        toolText: 'Face Mill Ø56 mm (8 Insert)',
+        docText: '2.0 mm',
+        toolType: 'facemill',
+        radius: 1.12,
+        tipOffset: 0.55,
+        spinSpeed: 18.0,
+        waypoints: [
+          { tx: 3.55, tz: -0.62, sy: 1.38, speed: 3.2 },
+          { tx: 3.55, tz: -0.62, sy: 0.80, speed: 1.4 },  // Turun ke DOC = 0.20 (2.0 mm)
+          { tx: -3.55, tz: -0.62, sy: 0.80, speed: 1.15 }, // Sapuan perataan sisi 1
+          { tx: -3.55, tz: 0.62, sy: 0.80, speed: 1.6 },   // Geser stepover Y
+          { tx: 3.55, tz: 0.62, sy: 0.80, speed: 1.15 },  // Sapuan perataan sisi 2
+          { tx: 3.55, tz: 0.62, sy: 1.42, speed: 2.6 }    // Angkat pahat bebas
+        ]
+      },
+      slot: {
+        title: 'SLOT MILLING (FRAIS ALUR TENGAH)',
+        rpmText: '1850 RPM',
+        feedText: '140 mm/min',
+        toolText: 'End Mill Ø22 mm (4 Flute)',
+        docText: '3.2 / 6.0 mm',
+        toolType: 'endmill',
+        radius: 0.44,
+        tipOffset: 0.04,
+        spinSpeed: 24.0,
+        waypoints: [
+          { tx: 2.85, tz: 0.0, sy: 1.35, speed: 3.2 },
+          { tx: 2.85, tz: 0.0, sy: 0.68, speed: 1.2 },   // Pass 1 kedalaman 3.2 mm
+          { tx: -2.85, tz: 0.0, sy: 0.68, speed: 1.05 }, // Pemakanan alur lurus
+          { tx: -2.85, tz: 0.0, sy: 0.40, speed: 1.0 },  // Pass 2 kedalaman 6.0 mm
+          { tx: 2.85, tz: 0.0, sy: 0.40, speed: 1.05 },  // Pemakanan balik alur dalam
+          { tx: 2.85, tz: 0.0, sy: 1.40, speed: 2.6 }
+        ]
+      },
+      step: {
+        title: 'STEP MILLING (FRAIS BERTINGKAT)',
+        rpmText: '1650 RPM',
+        feedText: '155 mm/min',
+        toolText: 'End Mill Ø22 mm (4 Flute)',
+        docText: '3.5 / 6.5 mm',
+        toolType: 'endmill',
+        radius: 0.44,
+        tipOffset: 0.04,
+        spinSpeed: 22.0,
+        waypoints: [
+          // Tingkat 1 (Lebar bahu samping)
+          { tx: 2.85, tz: 1.22, sy: 1.35, speed: 3.2 },
+          { tx: 2.85, tz: 1.22, sy: 0.65, speed: 1.3 },
+          { tx: -2.85, tz: 1.22, sy: 0.65, speed: 1.15 },
+          { tx: -2.85, tz: 0.85, sy: 0.65, speed: 1.5 },
+          { tx: 2.85, tz: 0.85, sy: 0.65, speed: 1.15 },
+          // Tingkat 2 (Undakan lebih dalam di tepi luar)
+          { tx: 2.85, tz: 1.26, sy: 0.35, speed: 1.2 },
+          { tx: -2.85, tz: 1.26, sy: 0.35, speed: 1.10 },
+          { tx: -2.85, tz: 1.26, sy: 1.42, speed: 2.6 }
+        ]
+      },
+      pocket: {
+        title: 'POCKET MILLING (KANTONG DALAM)',
+        rpmText: '2100 RPM',
+        feedText: '150 mm/min',
+        toolText: 'End Mill Ø22 mm (4 Flute)',
+        docText: '4.5 mm',
+        toolType: 'endmill',
+        radius: 0.44,
+        tipOffset: 0.04,
+        spinSpeed: 26.0,
+        waypoints: [
+          { tx: 0.0, tz: 0.0, sy: 1.35, speed: 3.0 },
+          // Helical / Plunge entry di tengah kantong
+          { tx: 0.0, tz: 0.0, sy: 0.55, speed: 0.75 },
+          // Jalur spiral keluar 1 (Inti dalam)
+          { tx: -0.55, tz: 0.0, sy: 0.55, speed: 1.0 },
+          { tx: -0.55, tz: -0.35, sy: 0.55, speed: 1.0 },
+          { tx: 0.55, tz: -0.35, sy: 0.55, speed: 1.0 },
+          { tx: 0.55, tz: 0.35, sy: 0.55, speed: 1.0 },
+          { tx: -0.55, tz: 0.35, sy: 0.55, speed: 1.0 },
+          { tx: -0.55, tz: 0.0, sy: 0.55, speed: 1.0 },
+          // Jalur spiral keluar 2 (Dinding luar kantong persegi panjang)
+          { tx: -1.15, tz: -0.68, sy: 0.55, speed: 0.95 },
+          { tx: 1.15, tz: -0.68, sy: 0.55, speed: 1.05 },
+          { tx: 1.15, tz: 0.68, sy: 0.55, speed: 1.05 },
+          { tx: -1.15, tz: 0.68, sy: 0.55, speed: 1.05 },
+          { tx: -1.15, tz: -0.68, sy: 0.55, speed: 1.05 },
+          // Tarik pahat ke atas
+          { tx: -1.15, tz: -0.68, sy: 1.42, speed: 2.6 }
+        ]
+      },
+      drill: {
+        title: 'DRILLING (PENGEBORAN 6 LUBANG)',
+        rpmText: '1450 RPM',
+        feedText: '95 mm/min',
+        toolText: 'Twist Drill Ø17 mm (118°)',
+        docText: '7.5 mm',
+        toolType: 'drill',
+        radius: 0.34,
+        tipOffset: 0.0,
+        spinSpeed: 21.0,
+        waypoints: [
+          // Lubang 1 (Kiri Depan)
+          { tx: 1.45, tz: -0.75, sy: 1.32, speed: 3.4 },
+          { tx: 1.45, tz: -0.75, sy: 0.25, speed: 0.85 },
+          { tx: 1.45, tz: -0.75, sy: 1.30, speed: 2.6 },
+          // Lubang 2 (Tengah Depan)
+          { tx: 0.0, tz: -0.75, sy: 1.30, speed: 3.2 },
+          { tx: 0.0, tz: -0.75, sy: 0.25, speed: 0.85 },
+          { tx: 0.0, tz: -0.75, sy: 1.30, speed: 2.6 },
+          // Lubang 3 (Kanan Depan)
+          { tx: -1.45, tz: -0.75, sy: 1.30, speed: 3.2 },
+          { tx: -1.45, tz: -0.75, sy: 0.25, speed: 0.85 },
+          { tx: -1.45, tz: -0.75, sy: 1.30, speed: 2.6 },
+          // Lubang 4 (Kanan Belakang)
+          { tx: -1.45, tz: 0.75, sy: 1.30, speed: 3.2 },
+          { tx: -1.45, tz: 0.75, sy: 0.25, speed: 0.85 },
+          { tx: -1.45, tz: 0.75, sy: 1.30, speed: 2.6 },
+          // Lubang 5 (Tengah Belakang)
+          { tx: 0.0, tz: 0.75, sy: 1.30, speed: 3.2 },
+          { tx: 0.0, tz: 0.75, sy: 0.25, speed: 0.85 },
+          { tx: 0.0, tz: 0.75, sy: 1.30, speed: 2.6 },
+          // Lubang 6 (Kiri Belakang)
+          { tx: 1.45, tz: 0.75, sy: 1.30, speed: 3.2 },
+          { tx: 1.45, tz: 0.75, sy: 0.25, speed: 0.85 },
+          { tx: 1.45, tz: 0.75, sy: 1.42, speed: 2.6 }
+        ]
+      }
+    };
+
+    // ============================================================================
+    // 10. STATE SIMULASI, PEMILIHAN OPERASI, & PEMOTONGAN MATERIAL REAL-TIME
+    // ============================================================================
+    let currentOpKey = 'face';
+    let isPaused = false;
+    let wpStepIndex = 0;
+    let machineState = { tx: 3.55, tz: -0.62, sy: 1.38 };
+    let pauseDelayTimer = 0;
+
+    function selectOperation(opKey) {
+      currentOpKey = opKey;
+
+      // Update UI button active styling
+      ['face', 'slot', 'step', 'pocket', 'drill'].forEach((k) => {
+        const btn = document.getElementById('mode-' + k);
+        if (k === opKey) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+
+      const cfg = OPERATIONS[opKey];
+      document.getElementById('hud-op').textContent = cfg.title;
+      document.getElementById('hud-rpm').textContent = cfg.rpmText;
+      document.getElementById('hud-feed').textContent = cfg.feedText;
+      document.getElementById('hud-tool').textContent = cfg.toolText;
+      document.getElementById('hud-doc').textContent = cfg.docText;
+
+      // Tampilkan pahat yang sesuai
+      faceMillTool.visible = cfg.toolType === 'facemill';
+      endMillTool.visible = cfg.toolType === 'endmill';
+      drillTool.visible = cfg.toolType === 'drill';
+
+      // Sesuaikan ukuran cincin indikator dengan radius pahat
+      activeCutRing.scale.set(cfg.radius, 1, cfg.radius);
+
+      resetWorkpieceAndRestart();
+    }
+
+    function resetWorkpieceAndRestart() {
+      resetWorkpieceMesh();
+      const cfg = OPERATIONS[currentOpKey];
+      const firstWp = cfg.waypoints[0];
+      machineState.tx = firstWp.tx;
+      machineState.tz = firstWp.tz;
+      machineState.sy = firstWp.sy;
+      wpStepIndex = 1;
+      pauseDelayTimer = 0;
+      applyMachineKinematics();
+    }
+
+    function togglePause() {
+      isPaused = !isPaused;
+      const btn = document.getElementById('btn-pause');
+      const dot = document.getElementById('status-dot');
+      if (isPaused) {
+        btn.textContent = 'Lanjut';
+        btn.className = 'op-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-amber-300 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40';
+        dot.className = 'w-2 h-2 rounded-full bg-amber-400';
+      } else {
+        btn.textContent = 'Jeda';
+        btn.className = 'op-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-300 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30';
+        dot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+      }
+    }
+
+    function applyMachineKinematics() {
+      const cfg = OPERATIONS[currentOpKey];
+      // Meja dan ragum bergerak pada sumbu X dan Z
+      tableGroup.position.set(machineState.tx, 0, machineState.tz);
+      // Spindel bergerak vertikal (sumbu Z mesin frais)
+      spindleGroup.position.y = machineState.sy - cfg.tipOffset;
+
+      // Update pembacaan koordinat CNC (dalam satuan milimeter simulasi)
+      const xMM = (-machineState.tx * 10).toFixed(1);
+      const yMM = (machineState.tz * 10).toFixed(1);
+      const zMM = ((machineState.sy - TOP_SURFACE_WORLD_Y) * 10).toFixed(1);
+      document.getElementById('hud-pos').textContent =
+        `X: ${xMM >= 0 ? '+' + xMM : xMM}  Y: ${yMM >= 0 ? '+' + yMM : yMM}  Z: ${zMM >= 0 ? '+' + zMM : zMM}`;
+    }
+
+    // Fungsi pemotongan benda kerja berbasis deformasi vertex real-time
+    function executeMaterialRemoval(spindleAngle) {
+      const cfg = OPERATIONS[currentOpKey];
+      const cutterTipWorldY = machineState.sy;
+      const stateBadge = document.getElementById('hud-cut-state');
+
+      if (cutterTipWorldY >= TOP_SURFACE_WORLD_Y) {
+        activeCutRing.material.opacity = 0.0;
+        stateBadge.textContent = 'RAPID / TRAVEL';
+        stateBadge.className = 'px-1.5 py-0.2 rounded bg-slate-700/60 text-slate-300 text-[10px]';
+        return;
+      }
+
+      const radius = cfg.radius;
+      const rSq = radius * radius;
+      const baseCutLocalY = cutterTipWorldY - workpieceMesh.position.y;
+      const colAttr = wpGeo.attributes.color;
+      let verticesModified = 0;
+
+      for (let i = 0; i < vertexCount; i++) {
+        // Hanya deformasi vertex permukaan atas benda kerja
+        if (initialY[i] < 0) continue;
+
+        const vx = posAttr.getX(i);
+        const vz = posAttr.getZ(i);
+
+        // Jarak horizontal vertex ke sumbu putar pahat (0, 0)
+        const worldX = machineState.tx + vx;
+        const worldZ = machineState.tz + vz;
+        const distSq = worldX * worldX + worldZ * worldZ;
+
+        if (distSq <= rSq) {
+          const vy = posAttr.getY(i);
+          const dist = Math.sqrt(distSq);
+
+          // Hitung profil ujung pahat (kerucut 118° untuk mata bor, rata untuk Face/End Mill)
+          let profileCutY = baseCutLocalY;
+          if (cfg.toolType === 'drill') {
+            profileCutY = baseCutLocalY + (dist / radius) * 0.20;
+          } else {
+            // Sedikit chamfer 2% di bibir luar agar dinding hasil frais tampak halus dan rapi
+            const edgeRatio = dist / radius;
+            if (edgeRatio > 0.94) {
+              profileCutY += ((edgeRatio - 0.94) / 0.06) * 0.03;
+            }
+          }
+
+          if (vy > profileCutY) {
+            posAttr.setY(i, profileCutY);
+
+            // Beri variasi warna metalik mengkilap + pola guratan melingkar pisau frais
+            const swirlFactor = 0.5 + 0.5 * Math.sin(dist * 28.0 + spindleAngle * 2.0);
+            const rCol = colorMachinedFloor.r * (0.93 + 0.07 * swirlFactor);
+            const gCol = colorMachinedFloor.g * (0.93 + 0.07 * swirlFactor);
+            const bCol = colorMachinedFloor.b;
+            colAttr.setXYZ(i, rCol, gCol, bCol);
+
+            verticesModified++;
+          }
+        }
+      }
+
+      if (verticesModified > 0) {
+        posAttr.needsUpdate = true;
+        colAttr.needsUpdate = true;
+        wpGeo.computeVertexNormals();
+
+        // Semburkan partikel tatal logam (chips) saat material terkikis
+        const chipBurst = Math.min(4, Math.ceil(verticesModified / 5));
+        spawnChips(cutterTipWorldY, radius, chipBurst);
+
+        activeCutRing.position.y = Math.max(cutterTipWorldY, 0.35) + 0.01;
+        activeCutRing.material.opacity = 0.55;
+        stateBadge.textContent = 'MENYAYAT LOGAM';
+        stateBadge.className = 'px-1.5 py-0.2 rounded bg-amber-500/25 text-amber-300 text-[10px] font-semibold';
+      } else {
+        activeCutRing.material.opacity = 0.2;
+        stateBadge.textContent = 'PEMAKANAN AKTIF';
+        stateBadge.className = 'px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 text-[10px]';
+      }
+    }
+
+    // ============================================================================
+    // 11. LOOP ANIMASI UTAMA (WINDOW.ONLOAD)
+    // ============================================================================
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const dt = Math.min(clock.getDelta(), 0.05);
+
+      if (!isPaused) {
+        const cfg = OPERATIONS[currentOpKey];
+        // Putar spindel searah jarum jam
+        spindleGroup.rotation.y -= cfg.spinSpeed * dt;
+        // Putar sedikit ulir ragum secara halus? Tidak, ragum sudah mengunci benda kerja dengan kuat.
+
+        const wps = cfg.waypoints;
+        if (wpStepIndex < wps.length) {
+          const target = wps[wpStepIndex];
+          const dx = target.tx - machineState.tx;
+          const dz = target.tz - machineState.tz;
+          const dy = target.sy - machineState.sy;
+          const dist = Math.hypot(dx, dz, dy);
+
+          const stepDist = target.speed * dt;
+          if (dist <= stepDist) {
+            machineState.tx = target.tx;
+            machineState.tz = target.tz;
+            machineState.sy = target.sy;
+            wpStepIndex++;
+          } else {
+            machineState.tx += (dx / dist) * stepDist;
+            machineState.tz += (dz / dist) * stepDist;
+            machineState.sy += (dy / dist) * stepDist;
+          }
+
+          applyMachineKinematics();
+          executeMaterialRemoval(spindleGroup.rotation.y);
+        } else {
+          // Setelah selesai 1 siklus penuh, jeda sejenak 1.8 detik lalu ulangi otomatis agar animasi terus berjalan hidup
+          activeCutRing.material.opacity = 0.0;
+          const stateBadge = document.getElementById('hud-cut-state');
+          stateBadge.textContent = 'SIKLUS SELESAI';
+          stateBadge.className = 'px-1.5 py-0.2 rounded bg-emerald-500/25 text-emerald-300 text-[10px] font-semibold';
+
+          pauseDelayTimer += dt;
+          if (pauseDelayTimer > 1.8) {
+            resetWorkpieceAndRestart();
+          }
+        }
+      }
+
+      updateChips(dt);
+      updateCameraSmooth();
+      renderer.render(scene, camera);
+    }
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    window.onload = function () {
+      selectOperation('face');
+      animate();
+    };
+  </script>
+</body>
+</html>
