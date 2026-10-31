@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MILLING INTRODUCTION — Media Pembelajaran Interaktif Praktik Frais Dasar | Politeknik ATMI Surakarta</title>
+<meta name="description" content="Media pembelajaran interaktif Praktik Frais Dasar — Politeknik ATMI Surakarta. Dasar milling, mesin frais, cutting condition, cutting tools, aksesori, praktik, work preparation, alat ukur, K3 & 5R, target, dan evaluasi."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%23ffb224' stroke-width='6' stroke-dasharray='9 5'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%23ffb224' stroke-width='5'/%3E%3C/svg%3E"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#edf0f4;--bg-soft:#e5e9ef;--surface:#fff;--card:#fff;--card-2:#f6f8fa;
+--border:#d4dbe4;--border-strong:#b6c2cf;--text:#17222e;--text-2:#3c4c5d;--muted:#64748b;
+--accent:#c06f00;--accent-2:#e08a00;--on-accent:#fff;--accent-soft:rgba(192,111,0,.10);
+--steel:#2d6c8c;--steel-soft:rgba(45,108,140,.10);--ok:#178a4c;--ok-soft:rgba(23,138,76,.12);
+--danger:#bf372a;--danger-soft:rgba(191,55,42,.10);--warn:#a16207;--warn-soft:rgba(161,98,7,.12);
+--glass:rgba(255,255,255,.82);--shadow:0 6px 22px rgba(23,36,49,.10);--shadow-lg:0 14px 40px rgba(23,36,49,.16);
+--grid:rgba(45,108,140,.09);--grid-2:rgba(45,108,140,.16);
+--disp:'Space Grotesk',sans-serif;--body:'IBM Plex Sans',sans-serif;--mono:'IBM Plex Mono',monospace}
+[data-theme="dark"]{
+--bg:#0e141c;--bg-soft:#121a24;--surface:#17202c;--card:#1a2431;--card-2:#141d28;
+--border:#2a3a4d;--border-strong:#3d5165;--text:#e9eef5;--text-2:#c3cedb;--muted:#8399ad;
+--accent:#ffb224;--accent-2:#ffc85c;--on-accent:#141b24;--accent-soft:rgba(255,178,36,.12);
+--steel:#6db3d4;--steel-soft:rgba(109,179,212,.12);--ok:#3ecf7a;--ok-soft:rgba(62,207,122,.13);
+--danger:#ff6d5f;--danger-soft:rgba(255,109,95,.13);--warn:#fbbf24;--warn-soft:rgba(251,191,36,.13);
+--glass:rgba(16,22,30,.82);--shadow:0 8px 26px rgba(0,0,0,.35);--shadow-lg:0 18px 50px rgba(0,0,0,.45);
+--grid:rgba(109,179,212,.06);--grid-2:rgba(109,179,212,.12)}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px),linear-gradient(var(--grid-2) 1px,transparent 1px),linear-gradient(90deg,var(--grid-2) 1px,transparent 1px);background-size:16px 16px,16px 16px,96px 96px,96px 96px}
+::selection{background:var(--accent);color:var(--on-accent)}
+img{max-width:100%;display:block}
+a{color:var(--steel);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1560px,100% - clamp(24px,4vw,72px));margin-inline:auto}
+h1,h2,h3,h4,h5{font-family:var(--disp);line-height:1.2;letter-spacing:-.01em}
+mark{background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:0 2px}
+
+#siteHeader{position:sticky;top:0;z-index:120;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px clamp(16px,3vw,36px)}
+.brand{display:flex;align-items:center;gap:14px;min-width:0;color:inherit}.brand:hover{text-decoration:none}
+.logo-wrap{width:52px;height:52px;flex:none;display:grid;place-items:center;color:var(--accent)}
+.logo-wrap img{width:100%;height:100%;object-fit:contain}
+.logo-wrap.small{width:42px;height:42px;color:var(--accent)}
+.lfb-t{font-family:var(--disp);font-weight:700;font-size:12px;fill:currentColor}.lfb-s{font-family:var(--mono);font-size:6.5px;fill:var(--muted)}
+.brand-text{display:flex;flex-direction:column;min-width:0}
+.b-inst{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted)}
+.b-title{font-family:var(--disp);font-weight:700;font-size:clamp(16px,2vw,21px);color:var(--text);white-space:nowrap}
+.b-sub{font-size:11.5px;color:var(--steel);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-actions{display:flex;gap:8px;flex:none}
+.ibtn{width:40px;height:40px;border-radius:9px;border:1px solid var(--border);background:var(--card);color:var(--text-2);display:grid;place-items:center;cursor:pointer;transition:.2s}
+.ibtn svg{width:19px;height:19px}.ibtn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.ic-sun{display:none}[data-theme="dark"] .ic-sun{display:block}[data-theme="dark"] .ic-moon{display:none}
+.menu-btn{display:none}
+
+.mainnav{position:relative;display:flex;align-items:stretch;border-top:1px solid var(--border)}
+.nav-scroll{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 12px;flex:1;scroll-behavior:smooth}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav-link{position:relative;flex:none;font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:12px 14px 14px;cursor:pointer;background:none;border:none;transition:color .2s;white-space:nowrap}
+.nav-link:hover{color:var(--text)}.nav-link.active{color:var(--accent)}
+.nav-link.active::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--accent);border-radius:2px}
+.nav-link .dot{position:absolute;top:9px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--ok);opacity:0;transition:.2s}
+.nav-link.done .dot{opacity:1}
+.nav-arrow{flex:none;width:34px;border:none;background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.nav-arrow:hover{color:var(--accent);background:var(--accent-soft)}.nav-arrow svg{width:18px;height:18px}
+.nav-progress{position:absolute;left:0;right:0;bottom:0;height:3px}
+.nav-progress-fill{height:100%;width:0;background:var(--accent);transition:width .5s;border-radius:0 2px 2px 0}
+.mobile-menu{display:none;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);max-height:70vh;overflow-y:auto;padding:12px clamp(16px,4vw,32px) 20px}
+.mobile-menu.open{display:flex}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px}
+.mm-link{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-2);padding:10px 12px;border-radius:9px;border:1px solid transparent;cursor:pointer;background:none;text-align:left}
+.mm-link:hover{border-color:var(--border);background:var(--card)}
+.mm-link.active{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.mm-link .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);margin-left:auto;flex:none;opacity:0}
+.mm-link.done .dot{opacity:1}
+.mm-prog{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;align-items:center;gap:12px}
+.mm-prog .bar{flex:1;height:6px;border-radius:99px;background:var(--border);overflow:hidden}
+.mm-prog .bar>i{display:block;height:100%;background:var(--accent)}
+
+#app{min-height:60vh}
+.page{padding:clamp(28px,4vw,52px) 0 clamp(48px,6vw,84px)}
+.page-head{border:1px solid var(--border);background:var(--card);border-radius:14px;padding:clamp(20px,3vw,34px);position:relative;overflow:hidden;margin-bottom:clamp(24px,3vw,40px)}
+.page-head::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;opacity:.7}
+.ph-inner{position:relative;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end;justify-content:space-between}
+.ph-meta{display:flex;flex-direction:column;gap:8px;min-width:min(100%,520px)}
+.ph-num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--accent);display:flex;align-items:center;gap:12px}
+.ph-num::after{content:"";width:44px;height:1px;background:var(--accent);opacity:.5}
+.page-head h1{font-size:clamp(26px,4vw,44px);font-weight:700}
+.page-head .desc{color:var(--muted);max-width:760px;font-size:15px}
+.ph-actions{display:flex;gap:10px;flex-wrap:wrap;position:relative}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:11px 20px;border-radius:9px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);cursor:pointer;transition:.2s;text-decoration:none}
+.btn:hover{text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn svg{width:16px;height:16px}
+.btn.ghost{background:transparent;color:var(--text-2);border-color:var(--border-strong)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn.ghost.on{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.btn.ghost.onb{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.sec-head{margin:clamp(30px,4vw,54px) 0 clamp(16px,2vw,24px)}
+.sec-head .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent)}
+.sec-head h2{font-size:clamp(20px,2.6vw,30px);margin:6px 0 4px}
+.sec-head p{color:var(--muted);font-size:14.5px;max-width:820px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:20px;position:relative;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;gap:10px}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow)}
+.card h4{font-size:16px}.card p{font-size:14px;color:var(--text-2)}
+.corner::before,.corner::after{content:"";position:absolute;width:14px;height:14px;opacity:.75;transition:.25s;pointer-events:none}
+.corner::before{top:7px;left:7px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
+.corner::after{bottom:7px;right:7px;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
+.corner:hover::before{top:4px;left:4px}.corner:hover::after{bottom:4px;right:4px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);background:var(--steel-soft);border:1px solid var(--border);border-radius:99px;padding:3px 10px;width:fit-content}
+.badge.warn{color:var(--warn);background:var(--warn-soft)}.badge.ok{color:var(--ok);background:var(--ok-soft)}
+.num-tag{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.panel h4{font-size:16px}.panel p{font-size:14.5px;color:var(--text-2)}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px}
+.note{border-left:3px solid var(--steel);background:var(--steel-soft);border-radius:0 10px 10px 0;padding:14px 18px;font-size:14px;color:var(--text-2)}
+.note b{color:var(--text)}.note.warn{border-color:var(--warn);background:var(--warn-soft)}
+.note.danger{border-color:var(--danger);background:var(--danger-soft)}.note.ok{border-color:var(--ok);background:var(--ok-soft)}
+.quote{border-left:3px solid var(--accent);padding:6px 0 6px 16px;color:var(--text);font-size:15px}
+ul.clean,ol.clean{padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--text-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12px;background:var(--card-2);border:1px solid var(--border);border-radius:7px;padding:5px 10px;color:var(--text-2)}
+
+.formula{font-family:var(--mono);font-size:15px;background:var(--card-2);border:1px dashed var(--border-strong);border-left:3px solid var(--steel);border-radius:0 11px 11px 0;padding:16px 20px;overflow-x:auto;color:var(--text)}
+.formula .lbl{font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px}
+.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .35em;line-height:1.3}
+.frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 .4em}
+.frac>span:last-child{padding:0 .4em}.sym{color:var(--accent);font-weight:600}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+table.tb{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:13px;min-width:560px}
+.tb th{font-family:var(--disp);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);background:var(--card-2);padding:12px 16px;border-bottom:1px solid var(--border)}
+.tb td{padding:11px 16px;border-bottom:1px solid var(--border);color:var(--text-2)}
+.tb tbody tr:last-child td{border-bottom:none}
+.tb tbody tr{transition:background .15s}.tb tbody tr:hover{background:var(--accent-soft)}
+.tb td.strong,.tb td b{color:var(--text)}.tb .num{text-align:right;color:var(--text)}
+
+.hero{position:relative;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--bg-soft);background-image:radial-gradient(900px 420px at 78% 0%,var(--accent-soft),transparent 62%),linear-gradient(160deg,var(--bg-soft),var(--bg))}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid-2) 1px,transparent 1px),linear-gradient(90deg,var(--grid-2) 1px,transparent 1px);background-size:28px 28px}
+.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,3vw,48px);padding:clamp(26px,4vw,56px);align-items:center}
+.hero .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--accent)}
+.hero h1{font-size:clamp(38px,6vw,74px);font-weight:700;letter-spacing:-.02em;margin:12px 0 8px}
+.hero h1 span{color:var(--accent)}
+.hero .sub{font-family:var(--disp);font-size:clamp(16px,2vw,22px);color:var(--text-2);margin-bottom:14px}
+.hero .desc{color:var(--muted);font-size:14.5px;max-width:560px;margin-bottom:24px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-prog{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.hero-prog .bar{width:170px;height:7px;border-radius:99px;background:var(--border);overflow:hidden}
+.hero-prog .bar>i{display:block;height:100%;background:var(--accent);transition:width .5s}
+.hero-machine{background:var(--card);border:1px solid var(--border);border-radius:15px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow)}
+.hero-machine svg{width:100%;height:auto;color:var(--steel)}
+.hm-ctrl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px dashed var(--border-strong);padding-top:14px}
+.hm-ctrl label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hm-rpm{font-family:var(--mono);font-weight:600;font-size:19px;color:var(--accent);min-width:112px}
+.hm-rpm small{font-size:11px;color:var(--muted);font-weight:400}
+input[type=range]{-webkit-appearance:none;appearance:none;width:min(200px,100%);height:5px;border-radius:99px;background:var(--border-strong);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--accent);border:3px solid var(--card);box-shadow:var(--shadow);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--card);cursor:pointer}
+.bp{stroke:currentColor;fill:none;stroke-width:2;stroke-linejoin:round}
+.bp-f{stroke:currentColor;fill:var(--card);stroke-width:2}
+.bp-w{stroke:currentColor;fill:var(--card-2);stroke-width:2}
+.helix line{stroke:var(--accent);stroke-width:2.4;stroke-linecap:round}
+@keyframes helixMove{to{transform:translateX(22px)}}
+.helix{animation:helixMove var(--spinDur,.5s) linear infinite}
+@keyframes tableMove{0%{transform:translateX(-140px)}100%{transform:translateX(46px)}}
+.tableGroup{animation:tableMove 8s ease-in-out infinite alternate}
+.machine-paused .tableGroup,.machine-paused .helix{animation-play-state:paused}
+.callout{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;fill:var(--muted)}
+.callout-l{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3;fill:none}
+.chipf{stroke:var(--accent);stroke-width:2;stroke-linecap:round}
+@keyframes chipBlink{0%,100%{opacity:.15}50%{opacity:1}}
+.chip-fly{animation:chipBlink 1.1s ease-in-out infinite}
+.ar{stroke:var(--accent);stroke-width:2;fill:none;stroke-linecap:round}.arh{fill:var(--accent)}
+.feed-lbl{font-family:var(--mono);font-size:10px;fill:var(--accent)}
+.dim-lbl{font-family:var(--mono);font-size:10px;fill:var(--muted)}.dim-l{stroke:var(--muted);stroke-width:1;fill:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px;margin-top:clamp(24px,3vw,40px)}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;flex-direction:column;gap:2px}
+.stat b{font-family:var(--disp);font-size:clamp(24px,3vw,34px);color:var(--accent);line-height:1.1}
+.stat span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.mod-card{cursor:pointer}.mod-card .top{display:flex;justify-content:space-between;align-items:baseline}
+.mod-card h4{font-size:17px;margin-top:2px}
+.mod-card .go{margin-top:auto;display:flex;align-items:center;gap:6px;font-family:var(--disp);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--steel)}
+.mod-card .go svg{width:15px;height:15px;transition:transform .2s}
+.mod-card:hover .go svg{transform:translateX(4px)}
+.quick{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(20px,3vw,30px)}
+.quick a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:11px;padding:13px 18px;font-family:var(--disp);font-weight:600;font-size:13px;color:var(--text-2);transition:.2s}
+.quick a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);text-decoration:none;box-shadow:var(--shadow)}
+.quick a svg{width:17px;height:17px;color:var(--accent)}
+.band{border-block:1px solid var(--border);padding:clamp(26px,4vw,46px) 0;margin-top:clamp(28px,4vw,48px)}
+.band.hatch{background-image:repeating-linear-gradient(-45deg,var(--grid) 0 2px,transparent 2px 14px)}
+.band.dots{background-image:radial-gradient(var(--grid-2) 1.2px,transparent 1.2px);background-size:20px 20px}
+.band.hazard{background-image:repeating-linear-gradient(-45deg,var(--warn-soft) 0 16px,transparent 16px 32px)}
+.diag-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.diag{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;margin:0}
+.diag svg{width:100%;height:auto}
+.diag figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.diag .dw{stroke:var(--steel);fill:var(--card-2);stroke-width:2}
+.diag .dc{stroke:var(--accent);fill:var(--accent-soft);stroke-width:2}
+.diag .dash{stroke:var(--muted);stroke-width:1.4;stroke-dasharray:5 4}
+.tool-svg{width:100%;max-width:190px;height:auto;margin:0 auto;color:var(--steel)}
+.tool-svg .s{stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.tool-svg .f{stroke:currentColor;fill:var(--accent-soft);stroke-width:2.6;stroke-linejoin:round}
+.tool-svg .h{stroke:var(--accent);stroke-width:2;stroke-linecap:round}
+.tool-card{cursor:pointer;text-align:left}
+.tool-fig{background:var(--card-2);border:1px solid var(--border);border-radius:10px;padding:10px 14px 4px;margin-bottom:4px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.filters button{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:7px 14px;border-radius:99px;border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer;transition:.2s}
+.filters button:hover{border-color:var(--accent);color:var(--accent)}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.tl{position:relative;display:flex;flex-direction:column;gap:14px}
+.tl::before{content:"";position:absolute;left:23px;top:14px;bottom:14px;width:2px;background:var(--border-strong)}
+.tl-item{position:relative}
+.tl-num{position:absolute;left:0;top:10px;width:46px;height:46px;border-radius:50%;background:var(--card);border:2px solid var(--border-strong);display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:15px;color:var(--muted);z-index:1;transition:.25s}
+.tl-item.open .tl-num{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
+.tl-card{margin-left:64px;background:var(--card);border:1px solid var(--border);border-radius:12px;cursor:pointer;overflow:hidden;transition:border-color .25s}
+.tl-card:hover{border-color:var(--accent)}
+.tl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px}
+.tl-head h4{font-size:15.5px}.tl-head .num-tag{flex:none}
+.tl-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s ease}
+.tl-item.open .tl-body{grid-template-rows:1fr}
+.r5-card.open .tl-body{grid-template-rows:1fr}
+.tl-body>div{overflow:hidden}
+.tl-body-in{padding:0 18px 16px;display:flex;flex-direction:column;gap:10px;border-top:1px dashed var(--border);margin:0 0 12px;padding-top:14px}
+.tl-body-in .res{color:var(--accent);font-weight:600;font-size:14.5px}
+
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px}
+.calc label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.calc input[type=number]{font-family:var(--mono);font-size:16px;padding:11px 13px;border-radius:9px;border:1px solid var(--border-strong);background:var(--card-2);color:var(--text);outline:none;transition:.2s;width:100%}
+.calc input[type=number]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.calc-res{display:flex;align-items:baseline;gap:10px;margin-top:18px}
+.calc-val{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4vw,44px);color:var(--accent);line-height:1}
+.calc-unit{font-family:var(--mono);font-size:14px;color:var(--muted)}
+.calc-detail{margin-top:12px;font-family:var(--mono);font-size:13px;color:var(--text-2);background:var(--card-2);border:1px dashed var(--border-strong);border-radius:9px;padding:12px 15px;overflow-x:auto}
+.k3-banner{position:relative;border:1px solid var(--warn);border-radius:14px;overflow:hidden;background:var(--card)}
+.k3-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:10px;background:repeating-linear-gradient(-45deg,var(--warn) 0 14px,transparent 14px 28px)}
+.k3-banner-in{padding:34px clamp(20px,3vw,38px) 26px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.k3-banner h3{font-size:clamp(19px,2.4vw,26px);color:var(--warn)}
+.rule-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:14px}
+.rule-card{display:flex;gap:14px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:11px;padding:16px}
+.rule-card .no{font-family:var(--mono);font-weight:600;color:var(--warn);font-size:14px;flex:none;padding-top:2px}
+.rule-card p{font-size:14px;color:var(--text-2)}
+.k3-ack{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:clamp(18px,2.5vw,30px)}
+.k3-ack .left{display:flex;flex-direction:column;gap:6px;max-width:600px}
+.k3-ack h4{font-size:18px}.k3-ack p{color:var(--muted);font-size:14px}
+.k3-ack .status{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.k3-ack .status.on{color:var(--ok)}
+.r5-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:14px}
+.r5-card{cursor:pointer;text-align:center;align-items:center;user-select:none}
+.r5-card .big{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--accent)}
+.r5-card p{font-size:13px}
+.komp-list{display:flex;flex-direction:column;gap:9px}
+.komp-row{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(90px,220px) 92px;gap:14px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;transition:.2s}
+.komp-row:hover{border-color:var(--warn)}
+.komp-row .no{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.komp-row .txt{font-size:14px;color:var(--text-2)}
+.komp-bar{height:8px;border-radius:99px;background:var(--border);overflow:hidden}
+.komp-bar>i{display:block;height:100%;background:var(--warn);border-radius:99px}
+.komp-row .jam{font-family:var(--mono);font-weight:600;color:var(--warn);text-align:right;font-size:14px;white-space:nowrap}
+.practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px}
+.practice-card{cursor:pointer}
+.practice-card .p-head{display:flex;justify-content:space-between;align-items:center}
+.practice-card h4{font-size:19px;margin-top:6px}
+.practice-card ul{padding-left:18px;font-size:14px;color:var(--text-2);display:flex;flex-direction:column;gap:5px}
+.practice-card .open-hint{margin-top:auto;display:flex;align-items:center;gap:7px;font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+
+.rule-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:20px;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:clamp(16px,2vw,24px);transition:.2s}
+.rule-row:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.rule-row .idx{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3vw,36px);color:var(--accent);line-height:1}
+.rule-row .idx small{display:block;font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.14em;color:var(--muted);margin-top:5px}
+.rule-row h4{font-size:17px;margin-bottom:6px}
+.rule-row .body{font-size:14.5px;color:var(--text-2);display:flex;flex-direction:column;gap:8px}
+.rule-row .body b{color:var(--text)}
+.omnia{gap:14px;display:flex;flex-direction:column}
+.mode-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.mode-tabs button{font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:10px 20px;border-radius:99px;border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer;transition:.2s}
+.mode-tabs button.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:18px}
+.target-card{gap:14px}
+.tp-head{display:flex;align-items:center;gap:16px}.tp-head h4{font-size:19px}
+.ring{flex:none;width:64px;height:64px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .bgc{fill:none;stroke:var(--border);stroke-width:6}
+.ring .fgc{fill:none;stroke:var(--accent);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .5s}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;color:var(--text)}
+.tcheck{display:flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--border);border-radius:9px;font-size:13.5px;color:var(--text-2);cursor:pointer;transition:.15s;background:var(--card-2)}
+.tcheck:hover{border-color:var(--accent)}
+.tcheck input{accent-color:var(--accent);width:16px;height:16px;flex:none;cursor:pointer}
+.tcheck input:checked + span{color:var(--muted);text-decoration:line-through}
+.tcheck-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:8px}
+.tp-sched{border-top:1px dashed var(--border);padding-top:12px;display:flex;flex-direction:column;gap:7px}
+.tp-sched .wk{display:flex;gap:12px;font-size:13px}
+.tp-sched .wk b{font-family:var(--mono);color:var(--steel);min-width:82px;font-size:12px}
+.tp-sched .wk span{color:var(--text-2)}
+.quiz-box{max-width:820px;margin-inline:auto;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:clamp(20px,3vw,36px)}
+.quiz-top{display:flex;align-items:center;gap:16px;font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:16px}
+.quiz-bar{flex:1;height:6px;border-radius:99px;background:var(--border);overflow:hidden}
+.quiz-bar>i{display:block;height:100%;background:var(--accent);transition:width .4s}
+.quiz-q{font-size:clamp(17px,2vw,21px);margin-bottom:18px}
+.quiz-opts{display:flex;flex-direction:column;gap:10px}
+.quiz-opt{display:flex;align-items:center;gap:13px;text-align:left;padding:13px 16px;border-radius:10px;border:1px solid var(--border);background:var(--card-2);font-family:var(--body);font-size:14.5px;color:var(--text-2);cursor:pointer;transition:.18s}
+.quiz-opt:hover:not(:disabled){border-color:var(--accent);transform:translateX(3px)}
+.quiz-opt:disabled{cursor:default}
+.qo-letter{flex:none;width:28px;height:28px;border-radius:7px;border:1px solid var(--border-strong);display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--muted)}
+.quiz-opts.answered .quiz-opt[data-correct="1"]{border-color:var(--ok);background:var(--ok-soft);color:var(--text)}
+.quiz-opts.answered .quiz-opt[data-correct="1"] .qo-letter{border-color:var(--ok);color:var(--ok)}
+.quiz-opts.answered .quiz-opt[data-picked="1"][data-correct="0"]{border-color:var(--danger);background:var(--danger-soft)}
+.quiz-opts.answered .quiz-opt[data-picked="1"][data-correct="0"] .qo-letter{border-color:var(--danger);color:var(--danger)}
+.quiz-why{margin-top:14px;font-size:13.5px;color:var(--text-2);background:var(--steel-soft);border-left:3px solid var(--steel);border-radius:0 9px 9px 0;padding:12px 16px}
+.quiz-foot{margin-top:18px;display:flex;justify-content:flex-end}
+.quiz-start{text-align:center;padding:clamp(8px,2vw,20px)}
+.quiz-start h3{font-size:clamp(22px,3vw,32px);margin-bottom:10px}
+.quiz-start p{color:var(--muted);max-width:560px;margin:0 auto 22px;font-size:14.5px}
+.quiz-score{display:flex;justify-content:center;margin-bottom:18px}
+.quiz-score .ring{width:110px;height:110px}.quiz-score .ring b{font-size:22px}
+.qreview{display:flex;flex-direction:column;gap:8px;text-align:left;margin:18px 0}
+.qreview div{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--text-2);padding:9px 13px;border-radius:9px;border:1px solid var(--border)}
+.qreview .ok-ic{color:var(--ok);flex:none}.qreview .no-ic{color:var(--danger);flex:none}
+.search-overlay{position:fixed;inset:0;z-index:300;background:rgba(8,12,18,.55);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:clamp(14px,6vh,80px) 16px}
+.search-overlay.open{display:flex}
+.search-panel{width:min(760px,100%);background:var(--surface);border:1px solid var(--border-strong);border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden;animation:popIn .22s ease}
+@keyframes popIn{from{opacity:0;transform:translateY(-12px) scale(.98)}to{opacity:1;transform:none}}
+.search-box{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--border)}
+.search-box svg{width:20px;height:20px;color:var(--accent);flex:none}
+.search-box input{flex:1;border:none;outline:none;background:transparent;font-family:var(--body);font-size:16.5px;color:var(--text)}
+.search-box kbd{font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--border-strong);border-radius:6px;padding:3px 7px}
+.search-results{max-height:min(56vh,480px);overflow-y:auto;padding:8px}
+.sr-empty{padding:26px 20px;text-align:center;color:var(--muted);font-size:14px}
+.sr-hint{padding:10px 14px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
+.sr-hint button{font-family:var(--mono);font-size:12px;padding:5px 12px;border-radius:99px;border:1px solid var(--border);background:var(--card);color:var(--text-2);cursor:pointer}
+.sr-hint button:hover{border-color:var(--accent);color:var(--accent)}
+.sr-item{display:flex;flex-direction:column;gap:3px;width:100%;text-align:left;padding:12px 14px;border-radius:10px;border:1px solid transparent;background:none;cursor:pointer;transition:.15s}
+.sr-item:hover{background:var(--accent-soft);border-color:var(--border)}
+.sr-item .t{font-family:var(--disp);font-weight:600;font-size:14.5px;color:var(--text);display:flex;gap:10px;align-items:baseline}
+.sr-item .t .pg{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);flex:none}
+.sr-item .x{font-size:12.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+#modalRoot{position:fixed;inset:0;z-index:260;display:none}
+#modalRoot.open{display:block}
+.modal-backdrop{position:absolute;inset:0;background:rgba(8,12,18,.58);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:18px;animation:fade .2s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal-panel{position:relative;width:min(680px,100%);max-height:86vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-strong);border-radius:16px;box-shadow:var(--shadow-lg);padding:clamp(22px,3vw,34px);animation:popIn .25s ease}
+.modal-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:9px;border:1px solid var(--border);background:var(--card);color:var(--muted);display:grid;place-items:center;cursor:pointer;transition:.2s}
+.modal-x:hover{color:var(--danger);border-color:var(--danger)}.modal-x svg{width:17px;height:17px}
+.modal-panel h3{font-size:22px;margin:8px 0 4px}
+.modal-panel .m-desc{color:var(--muted);font-size:14px;margin-bottom:16px}
+.modal-panel h5{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:18px 0 8px}
+#toastRoot{position:fixed;bottom:20px;right:20px;z-index:320;display:flex;flex-direction:column;gap:9px}
+.toast{display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--border-strong);border-left:3px solid var(--accent);border-radius:11px;box-shadow:var(--shadow-lg);padding:13px 18px;font-size:13.5px;color:var(--text);animation:toastIn .3s ease;max-width:340px}
+.toast.ok{border-left-color:var(--ok)}.toast svg{width:17px;height:17px;color:var(--ok);flex:none}
+@keyframes toastIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.toast.out{animation:toastOut .3s ease forwards}
+@keyframes toastOut{to{opacity:0;transform:translateX(24px)}}
+@keyframes flashK{0%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:0 0 0 3px transparent}}
+.flash{animation:flashK 1.8s ease}
+.instructors{border-top:1px solid var(--border);background:var(--bg-soft);padding:clamp(40px,6vw,72px) 0}
+.instr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),340px));gap:20px;justify-content:center}
+.instr-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:clamp(22px,3vw,32px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.25s;position:relative}
+.instr-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--shadow-lg)}
+.instr-photo{width:150px;height:150px;border-radius:50%;overflow:hidden;border:3px solid var(--border-strong);position:relative;display:grid;place-items:center;transition:.25s}
+.instr-card:hover .instr-photo{border-color:var(--accent)}
+.instr-photo img{width:100%;height:100%;object-fit:cover}
+.instr-mono{display:none;width:100%;height:100%;border-radius:50%;background:var(--card-2);border:1px dashed var(--border-strong);flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--steel)}
+.instr-photo.noimg .instr-mono{display:flex}
+.instr-mono b{font-family:var(--disp);font-size:38px;font-weight:700;color:var(--accent)}
+.instr-mono i{font-family:var(--mono);font-style:normal;font-size:8.5px;letter-spacing:.18em;color:var(--muted)}
+.instr-card h3{font-size:20px;margin-top:6px}
+.instr-card p{color:var(--muted);font-size:13.5px}
+.instr-badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);background:var(--steel-soft);border:1px solid var(--border);border-radius:99px;padding:4px 12px;margin-top:4px}
+#siteFooter{border-top:1px solid var(--border);background:var(--surface)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px);padding:clamp(32px,4vw,56px) 0}
+.foot-brand{display:flex;gap:16px;align-items:flex-start}
+.foot-brand strong{font-family:var(--disp);font-size:16px;display:block}
+.foot-brand span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+.foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.foot-col a{display:block;font-size:13.5px;color:var(--text-2);padding:4px 0}
+.foot-col a:hover{color:var(--accent);text-decoration:none}
+.foot-base{border-top:1px solid var(--border);padding:16px clamp(16px,3vw,36px);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-family:var(--mono);font-size:11.5px;color:var(--muted);width:min(1560px,100% - clamp(24px,4vw,72px));margin-inline:auto}
+.bm-empty{text-align:center;padding:clamp(30px,5vw,60px);color:var(--muted)}
+.bm-empty svg{width:52px;height:52px;color:var(--border-strong);margin:0 auto 14px}
+.links a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-family:var(--mono);background:var(--card);border:1px solid var(--border);border-radius:9px;padding:9px 14px;color:var(--text-2);transition:.2s}
+.links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.links a svg{width:15px;height:15px}
+@media(max-width:1080px){.foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:920px){.menu-btn{display:grid}.mainnav{display:none}.hero-in{grid-template-columns:1fr}.b-sub{display:none}}
+@media(max-width:640px){
+.brandbar{padding:9px 14px}.b-title{font-size:15px}.logo-wrap{width:44px;height:44px}
+.ph-actions{width:100%}.ph-actions .btn{flex:1;justify-content:center}
+.komp-row{grid-template-columns:30px minmax(0,1fr) 80px;row-gap:8px}
+.komp-row .komp-bar{grid-column:2/3}
+.tl::before{left:19px}.tl-num{width:38px;height:38px;font-size:13px}.tl-card{margin-left:52px}
+.foot-grid{grid-template-columns:1fr}.foot-base{flex-direction:column;gap:4px}
+#toastRoot{left:14px;right:14px}.toast{max-width:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="brandbar">
+    <a class="brand" href="#/home">
+      <span class="logo-wrap">
+        <img src="assets/images/Logo_ATMI.png" alt="Logo Politeknik ATMI Surakarta" onerror="this.style.display='none'"/>
+      </span>
+      <span class="brand-text">
+        <span class="b-inst">POLITEKNIK ATMI SURAKARTA</span>
+        <span class="b-title">MILLING INTRODUCTION</span>
+        <span class="b-sub">Media Pembelajaran Interaktif – Praktik Frais Dasar</span>
+      </span>
+    </a>
+    <div class="brand-actions">
+      <button class="ibtn" data-action="search-open" title="Cari materi (tekan /)" aria-label="Cari materi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M16.6 16.6 21 21"/></svg>
+      </button>
+      <button class="ibtn" data-action="theme" title="Ganti mode terang / gelap" aria-label="Ganti tema">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4-1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="ibtn menu-btn" data-action="menu" title="Menu" aria-label="Buka menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mainnav" id="mainNav" aria-label="Navigasi utama">
+    <button class="nav-arrow" data-action="nav-scroll" data-dir="-1" aria-label="Geser navigasi ke kiri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6 8.5 12l6 6"/></svg></button>
+    <div class="nav-scroll" id="navScroll"></div>
+    <button class="nav-arrow" data-action="nav-scroll" data-dir="1" aria-label="Geser navigasi ke kanan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 6l6 6-6 6"/></svg></button>
+    <div class="nav-progress" aria-hidden="true"><div class="nav-progress-fill" id="progFill"></div></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
+</header>
+
+<main id="app"></main>
+
+<section class="instructors" id="instructors">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">SECTION MILLING — POLITEKNIK ATMI SURAKARTA</span>
+      <h2>INSTRUKTUR PRAKTIK FRAIS DASAR</h2>
+      <p>Instruktur yang mendampingi kegiatan Praktik Frais Dasar</p>
+    </div>
+    <div class="instr-grid">
+      <article class="instr-card">
+        <div class="instr-photo">
+          <img src="assets/images/Dedi_Kristanto.png" alt="Foto Dedi Kristanto" onerror="var p=this.closest('.instr-photo');if(p)p.classList.add('noimg');this.remove();"/>
+          <span class="instr-mono" aria-hidden="true"><b>DK</b><i>DEDI KRISTANTO</i></span>
+        </div>
+        <h3>Dedi Kristanto</h3>
+        <p>Instruktur Praktik Frais Dasar</p>
+        <span class="instr-badge">Section Milling</span>
+      </article>
+      <article class="instr-card">
+        <div class="instr-photo">
+          <img src="assets/images/Aditya_Wahyu.png" alt="Foto Aditya Wahyu Handoko" onerror="var p=this.closest('.instr-photo');if(p)p.classList.add('noimg');this.remove();"/>
+          <span class="instr-mono" aria-hidden="true"><b>AWH</b><i>ADITYA WAHYU HANDOKO</i></span>
+        </div>
+        <h3>Aditya Wahyu Handoko</h3>
+        <p>Instruktur Praktik Frais Dasar</p>
+        <span class="instr-badge">Section Milling</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer id="siteFooter">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <span class="logo-wrap small">
+        <img src="assets/images/Logo_ATMI.png" alt="Logo Politeknik ATMI Surakarta" onerror="this.style.display='none'"/>
+      </span>
+      <div>
+        <strong>POLITEKNIK ATMI SURAKARTA</strong>
+        <span>MILLING INTRODUCTION</span>
+        <span>Media Pembelajaran Interaktif Praktik Frais Dasar</span>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>MATERI</h4>
+      <a href="#/materi">Dasar Milling</a><a href="#/mesin">Mesin Milling</a>
+      <a href="#/cutting-condition">Cutting Condition</a><a href="#/cutting-tools">Cutting Tools</a>
+      <a href="#/aksesori">Aksesori Mesin</a>
+    </div>
+    <div class="foot-col">
+      <h4>PRAKTIK</h4>
+      <a href="#/praktik">Practice Milling</a><a href="#/work-preparation">Work Preparation</a>
+      <a href="#/alat-ukur">Alat Ukur</a><a href="#/penilaian">Penilaian</a>
+      <a href="#/target">Target Praktik</a>
+    </div>
+    <div class="foot-col">
+      <h4>KEHADIRAN</h4>
+      <a href="#/k3">K3 &amp; 5R</a><a href="#/aturan">Aturan Section</a>
+      <a href="#/evaluasi">Evaluasi</a><a href="#/bookmark">Bookmark</a>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Politeknik ATMI Surakarta</span>
+    <span>Media Pembelajaran Teknik Manufaktur – Section Milling</span>
+  </div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="search-panel">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.6 16.6 21 21"/></svg>
+      <input id="searchInput" type="text" autocomplete="off" spellcheck="false" placeholder="Cari materi… contoh: spindle, cutter, K3, cutting speed, caliper, practice"/>
+      <kbd>ESC</kbd>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toastRoot" aria-live="polite"></div>
+
+<script>
+'use strict';
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var store={get:function(k,d){try{var v=JSON.parse(localStorage.getItem('mi:'+k));return v===null||v===undefined?d:v}catch(e){return d}},set:function(k,v){try{localStorage.setItem('mi:'+k,JSON.stringify(v))}catch(e){}}};
+var fmt=function(x){return (Math.round(x*100)/100).toLocaleString('id-ID')};
+var state={theme:store.get('theme',(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark'),progress:store.get('progress',[]),bookmarks:store.get('bookmarks',[]),k3:store.get('k3',false),k3Date:store.get('k3Date',null),target:store.get('target',{}),quizBest:store.get('quizBest',null)};
+var ic=function(p){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p+'</svg>'};
+
+var IC={search:ic('<circle cx="11" cy="11" r="7"/><path d="M16.6 16.6 21 21"/>'),check:ic('<path d="M5 12.5l4.5 4.5L19 7"/>'),chevD:ic('<path d="M6 9l6 6 6-6"/>'),arrowR:ic('<path d="M4 12h15M13 6l6 6-6 6"/>'),bmark:ic('<path d="M6.5 3.5h11V21l-5.5-4-5.5 4z"/>'),book:ic('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5V5.5M20 18v3H6.5"/>'),calc:ic('<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/>'),ext:ic('<path d="M14 4h6v6M20 4 11 13"/><path d="M19 14v5a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 4 19V7a1.5 1.5 0 0 1 1.5-1.5H10"/>'),warn:ic('<path d="M12 3 2.5 20h19z"/><path d="M12 9.5v4.5M12 17.2h.01"/>'),shield:ic('<path d="M12 3l7.5 3v5.5c0 4.6-3.2 7.7-7.5 9.5-4.3-1.8-7.5-4.9-7.5-9.5V6z"/><path d="M9 12l2 2 4-4"/>'),target:ic('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>'),clock:ic('<circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/>'),play:ic('<path d="M7 5l12 7-12 7z"/>'),pause:ic('<path d="M8 5v14M16 5v14"/>'),refresh:ic('<path d="M20 12a8 8 0 1 1-2.3-5.7M20 3v4h-4"/>')};
+
+var NAV=[{id:'home',label:'HOME'},{id:'materi',label:'MATERI'},{id:'mesin',label:'MESIN MILLING'},{id:'cutting-condition',label:'CUTTING CONDITION'},{id:'cutting-tools',label:'CUTTING TOOLS'},{id:'aksesori',label:'AKSESORI'},{id:'praktik',label:'PRAKTIK'},{id:'work-preparation',label:'WORK PREPARATION'},{id:'alat-ukur',label:'ALAT UKUR'},{id:'penilaian',label:'PENILAIAN'},{id:'k3',label:'K3 & 5R'},{id:'aturan',label:'ATURAN SECTION'},{id:'target',label:'TARGET'},{id:'evaluasi',label:'EVALUASI'},{id:'bookmark',label:'BOOKMARK'}];
+var MODULS=['materi','mesin','cutting-condition','cutting-tools','aksesori','praktik','work-preparation','alat-ukur','penilaian','k3','aturan','target'];
+var LINKS={modul:['Modul Milling (Google Drive)','https://drive.google.com/file/d/14VpN7h3-cH28SPo2kxh-avnkUzqJX7In/view?usp=sharing'],pelumasan:['Video Pelumasan & Warming Up','https://drive.google.com/file/d/1oYSGfiSt-DEuU3tJwCrApf100EPmNGWD/view?usp=sharing'],k3video:['Materi K3 (Google Drive)','https://drive.google.com/file/d/1qfiQFMVSUIzKY5cLVBZ1AaA2YsE5FE1b/view?usp=sharing'],k3l:['Materi K3L (Google Drive)','https://drive.google.com/file/d/1TPisqCCWUDP0oRyzoqPfp-s3v3mSJLnB/view?usp=sharing'],praktik:['Gambar Practice (Google Drive)','https://drive.google.com/drive/folders/1pTV0YoAJTLylPHysYvsMADGvgcy0vACz?usp=sharing'],wp:['Contoh WP & Penjelasan','https://drive.google.com/file/d/1DhWK6NfYpLjfbOaCAcEg5tlgVzk1BEu6/view?usp=sharing'],pen1:['Dokumen Penilaian 1','https://drive.google.com/file/d/1_BV132b3pFn3Qitz7XnPtMzTq8dO1Xx_/view?usp=sharing'],pen2:['Dokumen Penilaian 2','https://drive.google.com/file/d/1LC1ZJDbOGlHcevZaMVlKz-ZdZY284gyh/view?usp=sharing'],video:['Video Pengenalan Section Mill (1–7)','https://drive.google.com/drive/folders/1M9eD7198CxSAxysf7xr2-jwbW3ri_oo9?usp=sharing'],climbref:['Referensi Climb vs Conventional','https://www.machining-custom.com/blog/climb-milling-vs-conventional-milling.html']};
+
+function arrow(x1,y1,x2,y2,cls){var a=Math.atan2(y2-y1,x2-x1),L=8,W=4;var p1x=x2-L*Math.cos(a)+W*Math.sin(a),p1y=y2-L*Math.sin(a)-W*Math.cos(a);var p2x=x2-L*Math.cos(a)-W*Math.sin(a),p2y=y2-L*Math.sin(a)+W*Math.cos(a);return '<line class="'+(cls||'ar')+'" x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"/><polygon class="'+(cls==='dim'?'dim-l':'arh')+'" points="'+x2+','+y2+' '+p1x+','+p1y+' '+p2x+','+p2y+'"/>'}
+
+function heroMachineSVG(){return '<svg id="heroMill" viewBox="0 0 560 460" role="img" aria-label="Ilustrasi teknis mesin milling vertikal"><defs><clipPath id="cutClip"><rect x="336" y="212" width="48" height="44" rx="3"/></clipPath></defs><rect class="bp-f" x="70" y="400" width="420" height="30"/><rect class="bp-f" x="398" y="64" width="92" height="336"/><rect class="bp-f" x="322" y="64" width="168" height="56"/><rect class="bp-f" x="322" y="120" width="64" height="46"/><rect class="bp-f" x="196" y="330" width="180" height="70"/><g class="tableGroup"><rect class="bp-f" x="96" y="306" width="380" height="24"/><line class="bp" x1="150" y1="317" x2="440" y2="317" stroke-dasharray="10 6"/><rect class="bp-w" x="128" y="252" width="150" height="54"/><line x1="132" y1="258" x2="274" y2="258" style="stroke:var(--accent);stroke-width:3;stroke-linecap:round"/></g><rect class="bp-f" x="350" y="166" width="24" height="48"/><rect class="bp-f" x="346" y="206" width="32" height="12"/><rect class="bp-w" x="336" y="212" width="48" height="44" rx="3"/><g clip-path="url(#cutClip)"><g class="helix"><line x1="286" y1="266" x2="312" y2="206"/><line x1="308" y1="266" x2="334" y2="206"/><line x1="330" y1="266" x2="356" y2="206"/><line x1="352" y1="266" x2="378" y2="206"/><line x1="374" y1="266" x2="400" y2="206"/><line x1="396" y1="266" x2="422" y2="206"/><line x1="418" y1="266" x2="444" y2="206"/><line x1="440" y1="266" x2="466" y2="206"/></g></g><g class="chip-fly"><line class="chipf" x1="322" y1="242" x2="306" y2="230"/><line class="chipf" x1="326" y1="252" x2="308" y2="248"/><line class="chipf" x1="330" y1="234" x2="318" y2="220"/></g>'+arrow(150,236,196,236,'ar')+'<text class="feed-lbl" x="150" y="228">s (feed)</text><line class="callout-l" x1="490" y1="92" x2="524" y2="78"/><text class="callout" x="500" y="72">HEAD</text><line class="callout-l" x1="374" y1="180" x2="300" y2="168"/><text class="callout" x="228" y="166">SPINDLE</text><line class="callout-l" x1="336" y1="234" x2="266" y2="196"/><text class="callout" x="180" y="192">CUTTER &#8709;</text><line class="callout-l" x1="128" y1="278" x2="76" y2="262"/><text class="callout" x="20" y="258">WORKPIECE</text><line class="callout-l" x1="96" y1="318" x2="60" y2="336"/><text class="callout" x="14" y="350">TABLE</text><line class="callout-l" x1="196" y1="366" x2="140" y2="380"/><text class="callout" x="96" y="392">KNEE</text><line class="callout-l" x1="490" y1="240" x2="524" y2="228"/><text class="callout" x="498" y="222">COLUMN</text><line class="callout-l" x1="490" y1="415" x2="524" y2="430"/><text class="callout" x="498" y="440">BASE</text><line class="dim-l" x1="312" y1="256" x2="312" y2="252"/><text class="dim-lbl" x="212" y="210">a = depth of cut</text></svg>'}
+
+function accSVG(t){var S={arbor:'<rect class="f" x="20" y="38" width="86" height="16"/><circle class="s" cx="106" cy="46" r="12"/><path class="s" d="M20 38l-10 8 10 8"/><line class="h" x1="34" y1="38" x2="34" y2="54"/><line class="h" x1="44" y1="38" x2="44" y2="54"/>',chuck:'<path class="f" d="M30 30h60v20H30z"/><path class="f" d="M55 50l-8 30h26l-8-30z"/><line class="s" x1="30" y1="38" x2="90" y2="38"/><path class="s" d="M30 30l8-12h44l8 12"/>',sleeve:'<rect class="f" x="24" y="36" width="24" height="20"/><path class="f" d="M48 32l20 14-20 14z"/><line class="h" x1="30" y1="36" x2="30" y2="56"/><line class="h" x1="40" y1="36" x2="40" y2="56"/>',collet:'<path class="f" d="M28 32h24v28H28z"/><path class="f" d="M52 30l30 16-30 16z"/><path class="s" d="M56 36l22 10M56 46l22 10M56 56l22 10"/>',stub:'<rect class="f" x="22" y="40" width="30" height="14"/><rect class="f" x="52" y="36" width="56" height="22"/><circle class="s" cx="80" cy="47" r="6"/>',short:'<rect class="f" x="18" y="40" width="26" height="14"/><rect class="f" x="44" y="36" width="42" height="22"/><circle class="s" cx="65" cy="47" r="6"/><rect class="f" x="86" y="34" width="10" height="26"/>',long:'<rect class="f" x="12" y="40" width="24" height="14"/><rect class="f" x="36" y="36" width="70" height="22"/><circle class="s" cx="60" cy="47" r="6"/><circle class="s" cx="92" cy="47" r="6"/><rect class="f" x="106" y="34" width="10" height="26"/>',sidelock:'<rect class="f" x="24" y="36" width="70" height="22"/><circle class="s" cx="100" cy="47" r="10"/><rect class="f" x="56" y="28" width="12" height="10"/><line class="h" x1="62" y1="38" x2="62" y2="56"/>',boring:'<rect class="f" x="26" y="34" width="40" height="26"/><rect class="f" x="66" y="40" width="44" height="14"/><path class="f" d="M110 40v-16h10v30h-10z"/><line class="s" x1="34" y1="44" x2="58" y2="44"/>',clamp:'<path class="f" d="M30 34h44v18H30z"/><path class="f" d="M74 40h24l-8 26H62z"/><circle class="s" cx="40" cy="26" r="7"/><line class="s" x1="40" y1="33" x2="40" y2="52"/>',angle:'<path class="f" d="M36 22v58h58z"/><line class="h" x1="36" y1="34" x2="76" y2="80"/><line class="h" x1="44" y1="30" x2="44" y2="72"/>',vblock:'<path class="f" d="M30 26v50h60V26L60 58z"/><line class="h" x1="30" y1="34" x2="90" y2="34"/><line class="h" x1="30" y1="68" x2="90" y2="68"/>',vice:'<rect class="f" x="24" y="40" width="72" height="26"/><path class="f" d="M24 34h20v-10h-20z"/><path class="f" d="M76 34h20v-10h-20z"/><line class="h" x1="44" y1="46" x2="76" y2="46"/><line class="h" x1="44" y1="58" x2="76" y2="58"/>',rotary:'<circle class="f" cx="66" cy="46" r="32"/><circle class="s" cx="66" cy="46" r="22"/><circle class="s" cx="66" cy="46" r="4"/><line class="h" x1="66" y1="20" x2="66" y2="32"/><line class="h" x1="66" y1="60" x2="66" y2="72"/><line class="h" x1="40" y1="46" x2="52" y2="46"/><line class="h" x1="80" y1="46" x2="92" y2="46"/>',dividing:'<circle class="f" cx="60" cy="46" r="30"/><circle class="s" cx="60" cy="46" r="8"/><g class="s"><path d="M60 16v-8M60 76v8M30 46h-8M90 46h8M39 25l-6-6M81 25l6-6M39 67l-6 6M81 67l6 6"/></g><rect class="f" x="90" y="38" width="30" height="16"/><line class="h" x1="96" y1="38" x2="96" y2="54"/>'};return '<svg class="tool-svg" viewBox="0 0 132 92" aria-hidden="true">'+(S[t]||S.arbor)+'</svg>'}
+
+function diagFaceSide(){return '<div class="diag-pair"><figure class="diag"><svg viewBox="0 0 200 120"><rect class="dw" x="20" y="72" width="160" height="28"/><rect class="dc" x="50" y="40" width="100" height="18"/><line class="dash" x1="20" y1="72" x2="180" y2="72"/>'+arrow(52,66,92,66,'ar')+'<text class="feed-lbl" x="98" y="62">feeding</text><text class="dim-lbl" x="150" y="34">FACE CUTTER</text></svg><figcaption><b>Face Cutting</b> — pemotongan dengan sisi potong bagian depan (face) dari cutter, menghasilkan permukaan rata.</figcaption></figure><figure class="diag"><svg viewBox="0 0 200 120"><rect class="dw" x="20" y="72" width="160" height="28"/><rect class="dc" x="24" y="46" width="18" height="54"/><line class="dash" x1="38" y1="72" x2="180" y2="72"/>'+arrow(60,110,100,110,'ar')+'<text class="feed-lbl" x="106" y="114">feeding</text><text class="dim-lbl" x="46" y="40">SIDE CUTTER</text></svg><figcaption><b>Side Cutting</b> — pemotongan dengan sisi potong bagian samping (side) dari cutter.</figcaption></figure></div>'}
+function diagClimbConv(kind){var climb=kind==='climb';var rotArc=climb?'<path class="ar" d="M138 34a30 30 0 0 0-24-14"/>'+arrow(114,20,106,22,'ar'):'<path class="ar" d="M84 20a30 30 0 0 0-24 14"/>'+arrow(60,34,54,40,'ar');var wedge=climb?'<polygon points="130,78 156,78 130,62" style="fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.6"/>':'<polygon points="130,78 156,78 156,62" style="fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.6"/>';return '<figure class="diag"><svg viewBox="0 0 200 130"><rect class="dw" x="14" y="78" width="172" height="30"/><circle class="dc" cx="118" cy="56" r="30"/>'+wedge+rotArc+arrow(24,120,66,120,'ar')+'<text class="feed-lbl" x="72" y="124">arah feeding benda kerja</text><text class="dim-lbl" x="128" y="24">'+(climb?'rotasi cutter (CCW)':'rotasi cutter (CW)')+'</text></svg><figcaption><b>'+(climb?'Climbing Milling':'Conventional Milling')+'</b> — '+(climb?'arah putaran cutter <b>searah</b> dengan arah gerakan pemakanan benda kerja (feeding); pemotongan dimulai dari bagian <b>tebal (maksimum)</b> ke bagian <b>tipis (minimum)</b>.':'arah putaran cutter <b>berlawanan arah</b> dengan arah gerakan pemakanan benda kerja (feeding); pemotongan dimulai dari bagian <b>tipis (minimum)</b> ke bagian <b>tebal (maksimum)</b>.')+'</figcaption></figure>'}
+
+function toolImg(filename, alt) {
+    if (!filename) return '<div style="font-family:var(--mono);font-size:11px;color:var(--muted);height:85px;display:flex;align-items:center;justify-content:center;">'+alt+'</div>';
+    return '<img src="assets/images/'+filename+'" alt="'+alt+'" style="max-height:85px;width:auto;margin:0 auto;display:block;" onerror="this.onerror=null;this.src=\'https://placehold.co/200x120/1a2431/c3cedb?text='+encodeURIComponent('Gambar Belum Ada')+'\'"/>';
+}
+
+var frac=function(a,b){return '<span class="frac"><span>'+a+'</span><span>'+b+'</span></span>'};
+function pageShell(id,num,kicker,title,desc,body,extraClass){var isModul=MODULS.indexOf(id)>-1;var done=state.progress.indexOf(id)>-1;var marked=state.bookmarks.indexOf(id)>-1;return '<div class="page '+(extraClass||'')+'"><div class="wrap"><div class="page-head corner"><div class="ph-inner"><div class="ph-meta"><span class="ph-num">MODUL '+num+' — '+kicker+'</span><h1>'+title+'</h1><p class="desc">'+desc+'</p></div><div class="ph-actions">'+(isModul?'<button class="btn ghost '+(done?'on':'')+'" data-action="progress-toggle" data-page="'+id+'">'+IC.check+' '+(done?'Sudah Dipelajari':'Tandai Selesai')+'</button>':'')+'<button class="btn ghost '+(marked?'onb':'')+'" data-action="bookmark-toggle" data-page="'+id+'" title="Simpan ke bookmark">'+IC.bmark+' '+(marked?'Tersimpan':'Bookmark')+'</button></div></div></div>'+body+'</div></div>'}
+function secHead(eyebrow,title,sub){return '<div class="sec-head"><span class="eyebrow">'+eyebrow+'</span><h2>'+title+'</h2>'+(sub?'<p>'+sub+'</p>':'')+'</div>'}
+function linkBtn(l){return '<a href="'+l[1]+'" target="_blank" rel="noopener">'+IC.ext+' '+l[0]+'</a>'}
+
+var TOOLS=[
+{id:'end-mill',n:'End Mill Cutter',g:'Face Cutting',img:'End_Mill_Finishing.png',f:'Cutter dengan sisi potong pada ujung muka dan pada sisi spiralnya.',k:['Diameter buatan 0,5 – 50 mm','Tipe tangkai bermacam-macam: bertangkai lurus dan bertangkai konus'],u:'Pengerjaan permukaan, step, slot, dan profil.'},
+{id:'shell-end-mill',n:'Shell End Mill Cutter',g:'Face Cutting',img:'Shell_End_Mill_Finishing.png',f:'Cutter dengan lubang berpasak pada bagian tengah untuk pemasangan pada arbor.',k:['Diameter buatan 30 – 200 mm','Sisi potong pada ujung muka dan pada sisi spiralnya','Dipasang pada stub/short/long arbor'],u:'Pengefraisan permukaan (face cutting) dengan pemakanan yang lebih lebar.'},
+{id:'plain-mill',n:'Plain Mill Cutter',g:'Side Cutting',img:'Plain_Mill.png',f:'Cutter untuk pengefraisan horisontal dari permukaan yang datar.',k:['Bentuk hampir sama dengan SEMC, tetapi hanya memiliki sisi potong spiral pada bagian kelilingnya','Memiliki lubang berpasak untuk pemasangan pada arbor'],u:'Pengefraisan permukaan datar pada mesin milling horisontal.'},
+{id:'disk-cutter',n:'Disk Cutter',g:'Side Cutting',img:'Disc_Cutter.png',f:'Cutter berbentuk pipih untuk pembuatan slot maupun slitting.',k:['Sisi potong ada yang rata dan ada yang zig-zag','Bentuk pipih (disk)'],u:'Pembuatan alur (slot) dan pemotongan (slitting) benda kerja.'},
+{id:'dove-tail',n:'Dove Tail Cutter',g:'Cutter Profil',img:'Dove_Tail.png',f:'Cutter untuk menghasilkan profil dove tail (ekor burung) pada benda kerja.',k:['Sisi potong berbentuk sudut 45°, 60°, atau 90°'],u:'Pembuatan alur ekor burung, misalnya pada jig, fixture, dan meja mesin.'},
+{id:'t-slot',n:'T-Slot Cutter',g:'Cutter Profil',img:'T_Slot_Mill.png',f:'Cutter untuk membuat alur berbentuk T.',k:['Sisi potong di bagian yang melingkar','Sudut helix saling berlawanan','2 jenis: T-slot dengan shank rata dan T-slot dengan shank berulir'],u:'Pembuatan alur T pada meja mesin dan clamping device.'},
+{id:'prisma',n:'Prisma Cutter',g:'Cutter Profil',img:'Prisma_Cutter.png',f:'Cutter untuk menghasilkan profil V pada benda kerja.',k:['Sudut potong 45°, 60°, dan 90°'],u:'Pembuatan alur V dan bidang miring.'},
+{id:'hobbing',n:'Hobbing Cutter',g:'Cutter Profil',img:'Hobbing_Cutter.png',f:'Cutter yang digunakan pada mesin milling hobbing untuk menghasilkan profil berbentuk roda gigi (gear).',k:['Membentuk profil roda gigi (evolvente) dengan ukuran presisi'],u:'Pembuatan roda gigi pada mesin milling hobbing.'},
+{id:'modul',n:'Modul Cutter',g:'Cutter Profil',img:'Modul_Cutter.png',f:'Cutter untuk membuat roda gigi dengan modul tertentu.',k:['Bentuknya hampir sama dengan hobbing cutter tetapi pipih'],u:'Pembuatan roda gigi pada mesin milling konvensional.'},
+{id:'roughing',n:'Roughing Cutter',g:'Berdasarkan Fungsi',img:'Cutter_Roughing.png',f:'Cutter untuk proses roughing dengan depth of cut yang besar.',k:['Pemakanan kasar dengan DOC besar'],u:'Pengurangan material secara kasar sebelum proses finishing.'},
+{id:'finishing',n:'Finishing Cutter',g:'Berdasarkan Fungsi',img:'Cutter_Finishing.png',f:'Cutter untuk proses finishing dengan depth of cut lebih sedikit dibandingkan roughing.',k:['Biasanya menghasilkan permukaan yang lebih halus'],u:'Pengerjaan akhir untuk mencapai ukuran dan kehalusan permukaan.'},
+{id:'type-n',n:'Cutter Type N (Normal)',g:'Material Benda Kerja',img:'',f:'Cutter untuk material normal sampai 70 kg/mm².',k:['Sudut potong (β) tidak begitu besar ± 73°','Sudut spiral (γ) tidak begitu besar ± 30°','Kisarnya tidak begitu besar — jumlah gigi tidak banyak','Pemakanan tiap gigi tidak begitu besar'],u:'Pengefraisan material normal (kekuatan s.d. 70 kg/mm²).'},
+{id:'type-h',n:'Cutter Type H (Keras)',g:'Material Benda Kerja',img:'',f:'Cutter untuk material ulet dan keras (baja panduan, baja tuang, Spk) sampai 100 kg/mm².',k:['Sudut potong (β) besar ± 81°','Sudut spiral (γ) kecil ± 25°','Kisarnya kecil — jumlah gigi banyak','Pemakanan tiap gigi kecil'],u:'Pengefraisan material ulet dan keras s.d. 100 kg/mm².'},
+{id:'type-w',n:'Cutter Type W (Lunak)',g:'Material Benda Kerja',img:'',f:'Cutter untuk material lunak.',k:['Sudut potong (β) kecil ± 57°','Sudut spiral (γ) besar ± 35°','Kisarnya besar — jumlah gigi sedikit','Pemakanan tiap gigi besar'],u:'Pengefraisan material lunak dengan pemakanan besar.'},
+{id:'twist-drill',n:'Twist Drill',g:'Alat Potong Selain Cutter',img:'Twist_Drill.png',f:'Alat potong untuk membuat lubang pada benda kerja.',k:['Tangkainya ada yang silindris dan ada yang konus'],u:'Pelubangan benda kerja pada mesin milling (praktik 2 & 3).'},
+{id:'reamer',n:'Reamer',g:'Alat Potong Selain Cutter',img:'Reamer.png',f:'Alat potong untuk memperbesar sebuah lubang secara presisi (ISO).',k:['Hasil lubang presisi (ISO)'],u:'Pembesaran lubang menuju ukuran presisi — digunakan pada Stepping with ISO (Practice 3).'},
+{id:'tap-sney',n:'Tap / Sney',g:'Alat Potong Selain Cutter',img:'Tap_Sney.png',f:'Alat potong untuk membuat ulir dalam / luar pada benda kerja.',k:['Ukurannya ada yang metric (mm) dan ada yang Whitworth (inchi)'],u:'Pembuatan ulir dalam (tapping) pada Practice 2.'},
+{id:'boring-tool',n:'Boring Tool',g:'Alat Potong Selain Cutter',img:'Boring_Tool.png',f:'Alat potong untuk memperbesar lubang secara khusus.',k:['Dipasang pada boring head dengan skala yang teliti'],u:'Drilling with Boring Head pada Practice 3 — lubang berukuran presisi.'}];
+
+var ACC_FUNGSI=[
+{n:'Drill Chuck Arbor',d:'<img src="assets/images/Drill_Chuck.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Dipakai untuk mencekam mata bor, tool lain yang berdiameter kecil dan memiliki bentuk tangkai silindris.'},
+{n:'Sleeve Arbor for Cutter',d:'<img src="assets/images/Sleeve_Arbor.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Digunakan untuk mencekam End Mill Cutter yang memiliki bentuk tangkai taper atau konus.'},
+{n:'Sleeve Arbor for Twist Drill',d:'<img src="assets/images/Sleeve_TD.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Digunakan untuk mencekam Twist Drill yang memiliki bentuk tangkai taper (konus).'},
+{n:'Collet Arbor',d:'<img src="assets/images/Collet_Arbor.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Digunakan untuk mencekam alat dengan tangkai silindris; didesain untuk mengambil sebuah diameter yang spesifik. Karena itu standard collet (1 set) dilangkahkan dengan penambahan 0,5 mm.'},
+{n:'Stub Arbor',d:'<img src="assets/images/Stub_Arbor.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Biasanya digunakan untuk mencekam Shell End Mill Cutter dan beberapa tools lain yang memiliki lubang silindris di tengah, tanpa perlu menambahkan ring untuk membantu pencekaman.'},
+{n:'Short Arbor',d:'<img src="assets/images/Short_Arbor.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Digunakan untuk mencekam Shell End Mill Cutter dan beberapa tools lain yang memiliki lubang silindris di tengah; biasanya perlu ditambahkan ring untuk membantu proses pencekaman.'},
+{n:'Long Arbor',d:'<img src="assets/images/Long_Arbor.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Digunakan untuk mencekam Shell End Mill Cutter dan alat potong lain yang memiliki lubang silindris di tengah. Biasanya digunakan untuk mesin horisontal, dan juga ditambahkan ring untuk membantu pencekaman.'},
+{n:'Side Lock Arbor',d:'<img src="assets/images/Side_Lock.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Digunakan untuk mencekam cutter dengan tangkai silindris. Prinsip pencekamannya cukup sederhana: mengencangkan screw pada arbor sehingga menekan cutter dan mengikatnya — perlu ada bidang rata pada sisi tangkai cutter agar tercekam dengan baik.'},
+{n:'Boring Head Arbor',d:'<img src="assets/images/Boring_Head.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Digunakan untuk mencekam boring tools; dalam boring head biasanya disertai skala yang cukup teliti untuk pembuatan lubang yang memiliki ukuran presisi.'}];
+var ACC_DEVICE=[
+{n:'Clamp',d:'<img src="assets/images/Clamp.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Alat pencekam sederhana untuk mencekam material di meja milling; clamp digunakan sebagai pencekam sedangkan T-slot bolt sebagai pengencangnya.'},
+{n:'Angle Plate',d:'<img src="assets/images/Angle_Plate.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Ketika permukaan benda kerja yang akan di-milling memiliki atau ingin dibuat sudut tertentu, dapat dibuat dengan angle plate. Benda kerja biasanya dicekam dengan clamp.'},
+{n:'V-Blocks',d:'<img src="assets/images/V_Block.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Sangat baik untuk pencekaman batang poros yang akan diproses milling. Poros pendek pada satu V-block; poros panjang pada dua V-block atau lebih dengan jarak sesuai panjang poros. Dicekam dengan clamp.'},
+{n:'Fixed Vice',d:'<img src="assets/images/Fix_Vice.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Alat yang paling sering digunakan dalam pengerjaan di milling. Fixed vice tidak dapat diubah sudutnya, sehingga posisinya selalu tetap.'},
+{n:'Swivel Vice',d:'<img src="assets/images/Swivel_Vice.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Memiliki kemampuan diubah sudutnya pada satu sudut putar, sehingga mampu digunakan untuk pembuatan sudut pada proses pengerjaan di milling.'},
+{n:'Compound Vice',d:'<img src="assets/images/Compound_Vice.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Sama dengan swivel vice tetapi memiliki lebih dari satu sudut putar, sehingga bisa digunakan untuk pembuatan sudut / profil yang lebih rumit.'},
+{n:'Rotary Table',d:'<img src="assets/images/Rotary_Table.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Biasa digunakan untuk membuat radius luar pada mesin milling; pada saat proses pengerjaan biasanya ditambahkan clamp + center pin untuk mencekam benda kerja.'},
+{n:'Dividing Head',d:'<img src="assets/images/Deviding_Head.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Biasa digunakan untuk membuat segi tertentu (misal segi 3, 4, 5, dst). Bisa juga digunakan untuk membuat roda gigi ataupun spiral pada mesin milling.'}];
+var ARBOR_TABLE=[['30','31,75','17,4','50','70','1,6','50'],['40','44,45','25,3','67','95','1,6','63'],['45','57,15','32,4','86','110','3,2','80'],['50','69,85','39,6','105','130','3,2','100'],['55','88,9','50,4','130','168','3,2','130'],['60','107,95','60,2','165','210','3,2','160']];
+
+var MESIN_PARTS=[
+{n:'Spindle Utama',d:'Bagian terpenting dari mesin milling — tempat untuk mencekam alat potong.',s:['Vertical spindle','Horizontal spindle','Universal spindle']},
+{n:'Meja / Table',d:'Tempat untuk clamping device atau benda kerja.',s:['Fixed table','Swivel table','Compound table']},
+{n:'Motor Drive',d:'Menggerakkan bagian-bagian mesin yang lain seperti spindle utama, meja (feeding), dan pendingin (cooling). Pada mesin milling sedikitnya terdapat 3 buah motor.',s:['Motor spindle utama','Motor gerakan pemakanan (feeding)','Motor pendingin (cooling)']},
+{n:'Transmisi',d:'Menghubungkan motor penggerak dengan bagian yang digerakkan.',s:['Berdasarkan bagian: transmisi spindle utama & transmisi feeding','Berdasarkan sistem: transmisi gear box & transmisi v-belt']},
+{n:'Knee',d:'Bagian mesin untuk menopang / menahan meja mesin. Pada bagian ini terdapat transmisi gerakan pemakanan (feeding).',s:[]},
+{n:'Column / Tiang',d:'Badan dari mesin — tempat menempelnya bagian-bagian mesin yang lain.',s:[]},
+{n:'Base / Dasar',d:'Bagian bawah dari mesin milling yang menopang badan / tiang. Tempat cairan pendingin.',s:[]},
+{n:'Control',d:'Pengatur dari bagian-bagian mesin yang bergerak. Ada 2 sistem kontrol: mekanik dan electric; dibagi menjadi kontrol sederhana dan komplek (CNC).',s:['Sistem mekanik','Sistem electric — sederhana hingga komplek (CNC)']}];
+var MESIN_POS=[
+{n:'Mesin Milling Vertikal',d:'Spindle utama berposisi tegak lurus (vertikal) — jenis yang digunakan pada praktik frais dasar.'},
+{n:'Mesin Milling Horisontal',d:'Spindle utama berposisi mendatar (horisontal), umum digunakan untuk pengefraisan permukaan dengan plain mill / shell end mill cutter.'},
+{n:'Mesin Milling Universal',d:'Spindle utamanya dapat diatur pada berbagai posisi/sudut, sehingga bidang miring dan pengerjaan yang lebih kompleks dapat dilakukan.'}];
+var MESIN_FUNC=[
+{n:'Mesin Milling Copy',d:'Digunakan untuk mengerjakan bentukan yang rumit. Dibuat master / mal yang dipakai sebagai referensi untuk membuat bentukan yang sama. Dilengkapi 2 head mesin: head pertama berfungsi mengikuti bentukan masternya, head kedua memotong benda kerja sesuai bentukan master. Keduanya dihubungkan dengan sistem hidrolik.',s:['Sistem referensi menuju satu arah: tekanan guide pada head pertama ke arah master adalah 1 arah','Sistem referensi menuju 1 titik: tekanan guide tertuju pada satu titik dari master']},
+{n:'Mesin Milling Hobbing',d:'Digunakan untuk membuat roda gigi / gear dan sejenisnya (sprocket dll). Alat potong yang digunakan spesifik: membentuk profil roda gigi (evolvente) dengan ukuran yang presisi.',s:[]},
+{n:'Mesin Milling Gravier',d:'Digunakan untuk membuat gambar atau tulisan dengan ukuran yang dapat diatur sesuai keinginan dengan skala tertentu.',s:[]},
+{n:'Mesin Milling Planer',d:'Digunakan untuk memotong permukaan (face cutting) dengan benda kerja yang besar dan berat.',s:[]},
+{n:'Mesin Milling CNC',d:'Digunakan untuk mengerjakan benda kerja dengan bentukan-bentukan yang lebih komplek. Merupakan pengganti mesin milling copy dan gravier. Semua control menggunakan sistem electronic yang komplek; dibutuhkan operator yang ahli, dan harga mesin CNC sangat mahal.',s:[]}];
+
+var PRACTICE=[
+{id:'p1',tag:'PRACTICE 1',t:'Blocking',target:['Perpendicular (kesikuan)','Parallelism (kesejajaran)'],proses:['Blocking'],sum:'Proses pembuatan blocking dengan target kesikuan (perpendicular) dan kesejajaran (paralelism) — dasar dari seluruh pengerjaan frais: blok bersisi rata, siku, dan sejajar.',alur:['Cekam benda kerja pada ragum sesuai urutan Work Preparation','Sayat bidang referensi bertahap (bid 1 – bid 3)','Masukkan ukuran tebal, lebar, dan panjang (bid 4 – bid 6)','Kontrol kesikuan dengan Square Line, kontrol ukuran dengan caliper / micrometer']},
+{id:'p2',tag:'PRACTICE 2',t:'Stepping, Chamfering, Drilling & Tapping',target:['Stepping akurat','Chamfer merata','Lubang sesuai ukuran','Ulir dalam sesuai ukuran'],proses:['Stepping','Chamfering','Drilling','Tapping'],sum:'Proses pembuatan Stepping, Chamfering, Drilling, & Tapping pada benda kerja blocking.',alur:['Buat step (bertingkat) dengan end mill cutter','Buat chamfer pada tepi/step','Buat lubang dengan twist drill','Buat ulir dalam dengan tap/sney']},
+{id:'p3',tag:'PRACTICE 3',t:'Stepping with ISO, Slotting & Boring',target:['Lubang presisi ISO','Slot sesuai ukuran','Step akurat'],proses:['Stepping with ISO','Slotting','Drilling with Boring Head'],sum:'Proses pembuatan Stepping with ISO, Slotting, Drilling with Boring Head.',alur:['Buat step dengan pengerjaan ukuran presisi (ISO) — gunakan reamer untuk lubang presisi','Buat alur (slot) dengan end mill / disk cutter','Perbesar lubang dengan boring head untuk ukuran presisi']},
+{id:'p4',tag:'PRACTICE 4',t:'Hexagon Profile',target:['Profil segi enam presisi'],proses:['Hexagon Profile','Dividing Head'],sum:'Proses pembuatan Hexagon Profile dengan Deviding Head — memanfaatkan dividing head untuk membagi segi (6 sisi) secara presisi.',alur:['Hitung pembagian segi pada dividing head','Cekam benda kerja (dapat dibantu center pin / clamp)','Sayat tiap sisi profil segi enam secara bergantian sesuai pembagian','Kontrol ukuran antar bidang (across flats)']},
+{id:'p5',tag:'PRACTICE TMK · TPM · PM · TRMK · TRII',t:'Blocking + Profil Dasar',target:['Perpendicular (kesikuan)','Parallelism (kesejajaran)','Profil dasar presisi'],proses:['Blocking','Chamfering','Stepping','Slotting','Drilling'],sum:'Proses pembuatan blocking dengan target kesikuan (perpendicular) dan kesejajaran (paralelism) serta profil dasar (Chamfering, Stepping, Slotting, Drilling).',alur:['Kerjakan blocking hingga siku dan sejajar','Lanjutkan profil dasar: chamfering, stepping, slotting, dan drilling','Kontrol seluruh ukuran dengan alat ukur']}];
+
+var WP_STEPS=[
+{t:'Referensi Tebal — Bid 1',d:'Cekam bid 2 di FJ dan bid 5 di MJ, sayat bid 1 just clean dan rata.',r:'Mengerjakan bid 1 sebagai referensi bid tebal.'},
+{t:'Referensi Lebar — Bid 2',d:'Cekam bid 1 di FJ dan bid 4 di MJ, sayat bid 2 just clean, rata & siku.',r:'Mengerjakan bid 2 sebagai referensi bid lebar.'},
+{t:'Referensi Panjang — Bid 3',d:'Cekam bid 1 di FJ dan bid 4 di MJ, sayat bid 3 just clean, rata & siku.',r:'Mengerjakan bid 3 sebagai referensi bid panjang.'},
+{t:'Memasukkan Ukuran Tebal — Bid 4',d:'Cekam bid 2 di FJ dan bid 5 di MJ, sayat bid 4 masukkan ukuran tebal, rata, siku & sejajar.',r:'Mengerjakan bid 4 — memasukkan ukuran tebal.'},
+{t:'Memasukkan Ukuran Lebar — Bid 5',d:'Cekam bid 1 di FJ dan bid 4 di MJ, sayat bid 5 masukkan ukuran lebar, rata, siku & sejajar.',r:'Mengerjakan bid 5 — memasukkan ukuran lebar.'},
+{t:'Memasukkan Ukuran Panjang — Bid 6',d:'Cekam bid 1 di FJ dan bid 4 di MJ, sayat bid 6 masukkan ukuran panjang, rata, siku & sejajar.',r:'Mengerjakan bid 6 — memasukkan ukuran panjang.'}];
+
+var MEAS=[
+{n:'Square Line',d:'<img src="assets/images/Square_Line.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Alat ukur kesikuan — memeriksa dan mentransfer sudut 90° antar bidang benda kerja.'},
+{n:'Dial Caliper',d:'<img src="assets/images/Dial_Caliper.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Caliper dengan pembacaan dial untuk pengukuran panjang, luar, dalam, dan kedalaman.'},
+{n:'Vernier Caliper',d:'<img src="assets/images/Vernier_Caliper.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Jangka sorong dengan skala nonius untuk pengukuran luar, dalam, dan kedalaman.'},
+{n:'Bevel Protractor',d:'<img src="assets/images/Bevel_Protractor.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Pengukur sudut dengan skala busur untuk mengetahui besar sudut bidang kerja.'},
+{n:'Bevel Transfer',d:'<img src="assets/images/Bevel_Transfer.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Alat bantu ukur untuk memindahkan (mentransfer) sudut dari benda kerja ke alat lain atau sebaliknya.'},
+{n:'Outside Micrometer',d:'<img src="assets/images/Outside_Micro.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Mikrometer luar untuk pengukuran presisi dimensi luar benda kerja (ketelitian 0,01 mm).'},
+{n:'Rugo Test',d:'<img src="assets/images/Rugo_Test.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Alat ukur tingkat kekasaran permukaan benda kerja.'},
+{n:'Plug Thread Gauge',d:'<img src="assets/images/PTG.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Seplat ulir (plug) untuk memeriksa kesesuaian ulir dalam pada benda kerja.'},
+{n:'Block Gauge',d:'<img src="assets/images/Block_Gauge.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Blok ukur standar (block gauge) sebagai pembanding / referensi pengukuran presisi.'},
+{n:'Angle Gauge',d:'<img src="assets/images/Angle_Gauge.png" style="max-width:100%;height:auto;margin-bottom:8px;display:block;" onerror="this.remove();"><br>Pengukur / pembanding sudut dengan blok sudut standar.'}];
+
+var K3_RUPA=['Pakaian praktik wajib bersih dan rapi.','Rambut dan kuku wajib pendek — bagi yang melanggar akan diminta potong (interupsi).','Tidak menggunakan aksesori saat praktik (jam tangan, perhiasan, gelang tali).'];
+var K3_PERILAKU=['Jangan meninggalkan kunci spindle di atas head machine.','Tidak disarankan mengecek kehalusan benda kerja saat proses.','Berhati-hati saat memasang alat potong.','Pengencangan alat apapun hanya dengan tangan saja.','Segera bersihkan coolant yang tercecer di lantai.','Jangan bercanda / mengobrol di area mesin.','Segera lapor instruktur jika masih belum jelas.','Mintalah bantuan instruktur apabila terjadi masalah.'];
+var R5=[{r:'Ringkas',d:'Pisahkan yang perlu dan yang tidak perlu. Singkirkan majun bekas, chip, dan barang tidak terpakai dari sekitar mesin.'},{r:'Rapi',d:'Tata peralatan dan toolbox sesuai tempatnya; benda kerja dirapikan ke rak sesuai nomor punch.'},{r:'Resik',d:'Bersihkan meja, mesin, dan lantai dari chip serta coolant — pastikan area kerja menerapkan K3 & 5R setelah bekerja.'},{r:'Rawat',d:'Lakukan pelumasan mesin dan warming up secara rutin agar mesin selalu aman dan siap digunakan.'},{r:'Rajin',d:'Terapkan disiplin dan budaya kerja positif: tepat waktu mengikuti briefing, mengisi logbook, dan menjaga 4R lainnya.'}];
+var KOMPENSASI=[['Kunci spindle tertinggal di spindle','10 jam',10],['Kunci spindle tertinggal di spindle dan terputar','25 jam',25],['Kunci spindle tertinggal, terputar dan terlempar (Pelanggaran P2)','50 jam',50],['Majun tertinggal di area Section Milling setelah cleaning pulang (cleaning tidak bersih)','10 jam (1 shift)',10],['Barang tertinggal di area Section Milling setelah cleaning pulang','10 jam',10],['Tidak menggunakan kacamata pada saat proses penyayatan (Pelanggaran P2)','20 jam',20],['Menyentuh benda kerja / cek tingkat kekasaran pada saat proses penyayatan belum selesai','10 jam',10],['Tidak menekan tombol emergency pada saat istirahat','5 jam',5],['Tidak mematikan lampu penerangan pada saat istirahat','10 jam (1 shift)',10],['Mesin / toolbox dalam kondisi kotor','10 jam',10],['Menggunakan HP tanpa izin','5 jam',5],['Botol PET (AMDK) berada di area Mill','5 jam',5]];
+
+var TARGETS={ns:[{prodi:'TMI / RTM',items:[['Latihan',3],['Kompetensi',5],['Ujian Komprehensif',1],['Produksi',3]],sched:[['Minggu 1','P1 · Pr1 · P2 · C1'],['Minggu 2','P3 · C2 · C3'],['Minggu 3','C4 · C5 · UK'],['Minggu 4','Pr2 · Pr3']]},{prodi:'TPM / PM',items:[['Latihan',3],['Kompetensi',3],['Produksi',2]],sched:[['Minggu 1','P1 · Pr1 · P2 · C1'],['Minggu 2','P3 · C2 · C3 · Pr2']]},{prodi:'TMK / TRMK',items:[['Latihan',1],['Kompetensi',1]],sched:[]}],s:[{prodi:'TMI / RTM',items:[['Latihan',3],['Kompetensi',3],['Ujian Komprehensif',1],['Produksi',1]],sched:[]},{prodi:'TPM / PM',items:[['Latihan',3],['Kompetensi',1],['Produksi',1]],sched:[]}]};
+
+var QUIZ=[
+{q:'Proses milling (frais) adalah…',o:['Proses pengelasan dua logam dengan bantuan bahan tambah','Proses pemesanan di mana alat potong yang berputar (cutter) mengikis dan mengurangi material dari benda kerja','Proses pengecoran logam ke dalam cetakan','Proses pembentukan logam dengan tekanan (press)'],a:1,w:'Milling adalah proses pemotongan konvensional dengan mesin milling: cutter berputar mengikis material benda kerja, menghasilkan permukaan rata/bentuk spesifik dan menyisakan chip.'},
+{q:'Gerakan utama pada mesin milling adalah…',o:['Gerakan benda kerja menuju alat potong','Gerakan naik-turun meja mesin','Gerakan berputarnya alat potong pada spindle utama (satuan rpm, simbol n)','Gerakan mendekatkan benda kerja ke alat potong'],a:2,w:'Gerakan utama = putaran alat potong pada spindle utama; satuannya rpm dan simbolnya n.'},
+{q:'Satuan yang digunakan pada gerakan pemakanan (feeding) adalah…',o:['mm (millimeter)','rpm (rotasi per menit)','m/menit','mm/menit'],a:3,w:'Feeding adalah gerakan benda kerja pada waktu proses pemotongan; satuannya mm/menit dan simbolnya s.'},
+{q:'Gerakan setting atau depth of cut disimbolkan dengan…',o:['a / t, satuannya mm','s / f, satuannya mm/menit','n, satuannya rpm','z, satuannya buah'],a:0,w:'Depth of cut = gerakan mendekatkan benda kerja pada alat potong; satuannya mm dan simbolnya a / t.'},
+{q:'Pada pemotongan climbing, arah putaran alat potong (cutter)…',o:['Berlawanan arah dengan arah gerakan pemakanan benda kerja','Searah dengan arah gerakan pemakanan benda kerja (feeding)','Tegak lurus terhadap arah feeding','Selalu searah jarum jam'],a:1,w:'Climbing: arah putaran cutter searah dengan arah gerakan pemakanan benda kerja (feeding).'},
+{q:'Pada pemotongan conventional dengan Plain Cutter, gaya yang dihasilkan adalah…',o:['Gaya tekan ke bawah','Gaya tarik ke atas','Gaya mendatar ke kanan','Tidak menghasilkan gaya'],a:1,w:'Conventional menghasilkan gaya tekan ke atas (Plain Cutter); climbing menghasilkan gaya tekan ke bawah.'},
+{q:'Pemotongan yang dimulai dari bagian tebal (maksimum) sampai ke bagian tipis (minimum) terjadi pada…',o:['Conventional milling','Climbing milling','Face cutting','Side cutting'],a:1,w:'Climbing: tebal (maksimum) → tipis (minimum). Conventional: tipis (minimum) → tebal (maksimum).'},
+{q:'Bagian terpenting mesin milling yang berfungsi untuk mencekam alat potong adalah…',o:['Meja (table)','Knee','Spindle utama','Column'],a:2,w:'Spindle utama adalah bagian terpenting mesin milling — tempat mencekam alat potong (vertical, horizontal, universal).'},
+{q:'Bagian mesin yang menopang meja dan memuat transmisi gerakan pemakanan (feeding) adalah…',o:['Base','Knee','Column','Motor drive'],a:1,w:'Knee menopang / menahan meja mesin; pada bagian ini terdapat transmisi gerakan pemakanan (feeding).'},
+{q:'Jumlah minimal motor pada sebuah mesin milling adalah…',o:['1 buah','2 buah','3 buah','5 buah'],a:2,w:'Minimal terdapat 3 motor: motor spindle utama, motor gerakan pemakanan (feeding), dan motor pendingin (cooling).'},
+{q:'Rumus untuk mencari putaran spindle utama (n) adalah…',o:['n = Cs × d / 1000','n = 1000 × Cs / (π × d)','n = π × d × Cs / 1000','n = s / (z × sz)'],a:1,w:'n = (1000 × Cs) / (π × d), satuannya rpm; dengan d = diameter alat potong (mm) dan Cs = kecepatan potong (m/menit).'},
+{q:'Diketahui Cs = 32 m/menit, alat potong HSS jenis End Mill Cutter Roughing, d = ∅20 mm. Berdasarkan tabel, nilai n dan s adalah…',o:['n = 500 rpm dan s = 56 mm/menit','n = 320 rpm dan s = 32 mm/menit','n = 1000 rpm dan s = 100 mm/menit','n = 50 rpm dan s = 5 mm/menit'],a:0,w:'Contoh pada materi: dengan data tersebut diperoleh n = 500 rpm dan s = 56 mm/menit.'},
+{q:'Rumus feed per minute (s) adalah…',o:['s = sz × z × n','s = z / sz','s = n / z','s = L × i / Th'],a:0,w:'s = sz × z × n (mm/menit), dengan z = jumlah mata potong dan sz = feed per tooth (mm/tooth).'},
+{q:'Rumus waktu potong efektif (Th) adalah…',o:['Th = s / (L × i)','Th = (L × i) / s','Th = L × s × i','Th = (s × i) / L'],a:1,w:'Th = (L × i) / s, satuannya menit; L = panjang langkah, i = jumlah langkah, s = feed per minute.'},
+{q:'End Mill Cutter dibuat dengan rentang diameter…',o:['0,5 – 50 mm','30 – 200 mm','10 – 100 mm','1 – 500 mm'],a:0,w:'End Mill dibuat dari diameter 0,5 – 50 mm, dengan tipe tangkai lurus maupun konus. (30 – 200 mm adalah Shell End Mill.)'},
+{q:'Cutter yang memiliki lubang berpasak pada bagian tengah dan dibuat diameter 30 – 200 mm adalah…',o:['Plain Mill Cutter','End Mill Cutter','Shell End Mill Cutter','T-Slot Cutter'],a:2,w:'Shell End Mill Cutter memiliki lubang berpasak untuk pemasangan pada arbor; dibuat Ø 30 – 200 mm.'},
+{q:'Cutter yang digunakan untuk membuat alur berbentuk T adalah…',o:['Dove Tail Cutter','Prisma Cutter','Modul Cutter','T-Slot Cutter'],a:3,w:'T-Slot Cutter membuat alur berbentuk T; sisi potongnya di bagian melingkar dengan sudut helix saling berlawanan.'},
+{q:'Cutter type H digunakan untuk material…',o:['Lunak','Normal sampai 70 kg/mm²','Ulet dan keras (baja panduan, baja tuang, Spk) sampai 100 kg/mm²','Non-logam'],a:2,w:'Type H (keras): material ulet & keras s.d. 100 kg/mm²; sudut potong ±81°, sudut spiral ±25°, gigi banyak, pemakanan tiap gigi kecil.'},
+{q:'Standard collet satu set dilangkahkan dengan penambahan…',o:['0,1 mm','0,5 mm','1 mm','5 mm'],a:1,w:'Collet arbor didesain untuk diameter spesifik, sehingga satu set collet dilangkahkan dengan penambahan 0,5 mm.'},
+{q:'Kompensasi untuk kunci spindle yang tertinggal di spindle adalah…',o:['5 jam','10 jam','25 jam','50 jam'],a:1,w:'Kunci spindle tertinggal = 10 jam; tertinggal & terputar = 25 jam; tertinggal, terputar dan terlempar (P2) = 50 jam.'}];
+
+function renderHome(){var p=state.progress.length,total=MODULS.length,pct=Math.round(p/total*100);
+var mods=[['materi','Dasar Milling','Pengertian, prinsip kerja, gerakan pemotongan, climbing vs conventional.'],['mesin','Mesin Milling','Bagian-bagian utama mesin dan jenis-jenis mesin frais.'],['cutting-condition','Cutting Condition','Cutting speed, putaran spindle, feeding, kalkulator & time calculation.'],['cutting-tools','Cutting Tools','18 alat potong: cutter, twist drill, reamer, tap, boring tool.'],['praktik','Praktik','Practice 1–4 dan praktik TMK/TPM/PM/TRMK/TRII.'],['k3','K3 & 5R','Kesehatan, keselamatan kerja & lingkungan, 5R, dan tabel kompensasi.'],['work-preparation','Work Preparation','Urutan pengerjaan bidang referensi hingga ukuran akhir.'],['alat-ukur','Alat Ukur','10 alat ukur & alat bantu ukur beserta spesifikasinya.'],['penilaian','Penilaian','Komponen penilaian, toleransi, dan contoh rekap nilai.'],['evaluasi','Evaluasi','Quiz 20 soal dari seluruh materi — uji pemahamanmu.']];
+return '<div class="page"><div class="wrap"><div class="hero corner"><div class="hero-in"><div><span class="eyebrow">POLITEKNIK ATMI SURAKARTA — SECTION MILLING</span><h1>MILLING<br/>INTRO<span>DUCTION</span></h1><p class="sub">Belajar Praktik Frais Dasar Secara Interaktif</p><p class="desc">Modul pembelajaran teknik manufaktur untuk mahasiswa: dasar frais, cutting condition & kalkulator, cutting tools, aksesori mesin, praktik langkah demi langkah, K3 & 5R, hingga evaluasi — semuanya dari materi resmi Section Milling Politeknik ATMI Surakarta.</p><div class="hero-cta"><a class="btn" href="#/materi">'+IC.play+' MULAI BELAJAR</a><button class="btn ghost" data-action="goto" data-page="home" data-anchor="modul-grid">'+IC.book+' LIHAT MATERI</button></div><div class="hero-prog"><div class="bar"><i style="width:'+pct+'%"></i></div><span><b>'+p+'/'+total+'</b> modul selesai · '+pct+'%</span></div></div><div class="hero-machine">'+heroMachineSVG()+'<div class="hm-ctrl"><label for="heroRpm">PUTARAN<br/>SPINDLE</label><input type="range" id="heroRpm" min="60" max="3000" step="20" value="500" aria-label="Atur putaran spindle (rpm)"/><span class="hm-rpm"><span id="rpmVal">500</span> <small>rpm</small></span><button class="ibtn" data-action="feed-toggle" id="feedToggle" title="Jeda / jalankan gerak meja">'+IC.pause+'</button></div></div></div></div><div class="stats"><div class="stat"><b>12</b><span>Modul Materi</span></div><div class="stat"><b>18</b><span>Cutting Tools</span></div><div class="stat"><b>10</b><span>Alat Ukur</span></div><div class="stat"><b>20</b><span>Soal Evaluasi</span></div><div class="stat"><b>12</b><span>Aturan Kompensasi</span></div></div><div id="modul-grid">'+secHead('KURIKULUM PRAKTIK FRAIS DASAR','Modul Pembelajaran','Klik kartu untuk membuka modul. Tandai "Selesai" pada setiap modul untuk memantau progres belajarmu.')+'</div><div class="grid">'+mods.map(function(m,i){return '<div class="card corner mod-card" data-action="goto" data-page="'+m[0]+'"><div class="top"><span class="num-tag">MODUL '+('0'+(i+1)).slice(-2)+'</span>'+(state.progress.indexOf(m[0])>-1?'<span class="badge ok">'+IC.check+' Selesai</span>':'<span class="badge">Belum</span>')+'</div><h4>'+m[1]+'</h4><p>'+m[2]+'</p><span class="go">Buka Modul '+IC.arrowR+'</span></div>'}).join('')+'</div><div class="quick"><a href="#/cutting-condition">'+IC.calc+' Kalkulator Cutting Condition</a><a href="#/evaluasi">'+IC.target+' Evaluasi 20 Soal</a><a href="#/k3">'+IC.shield+' Pahami K3 Dulu</a><a href="#/praktik">Lihat Practice 1–4</a><a href="#/aturan">Aturan Section Milling</a></div></div></div>'}
+
+function renderMateri(){var gerak=[['01','Gerakan Utama','Gerakan berputarnya alat potong pada spindle utama.','Satuan: rpm — simbol: n'],['02','Gerakan Pemakanan (Feeding)','Gerakan benda kerja pada waktu proses pemotongan.','Satuan: mm/menit — simbol: s'],['03','Gerakan Setting (Depth of Cut)','Gerakan mendekatkan benda kerja pada alat potong.','Satuan: mm — simbol: a / t']];
+var contoh=['Flat / Rata','Step / Bertingkat','Slot / Alur','Profil','Radius'];
+return pageShell('materi','01','MATERI','Dasar Milling (Frais)','Pengertian, prinsip kerja, gerakan-gerakan, dan prinsip pemotongan pada mesin milling — BAB 1 diktat Teknik Manufaktur Milling.',
+secHead('BAB 1 · PENGERTIAN DASAR','Pengertian & Prinsip Kerja')+'<div class="split"><div class="panel corner"><h4>Definisi Milling (Frais)</h4><p>Proses <b>cutting conventional</b> dengan menggunakan mesin milling, dihasilkan suatu permukaan yang rata atau bentuk-bentuk lain yang spesifik (profil, radius, silindris, dan lain-lain) dengan ukuran dan kualitas tertentu dan <b>menyisakan chip</b>.</p><p class="quote">Milling adalah proses pemesinan di mana <b>alat potong yang berputar (cutter)</b> mengikis dan mengurangi material dari benda kerja.</p></div><div class="panel corner"><h4>Prinsip Dasar Kerja Milling</h4><ol class="clean"><li>Alat potong atau pisau frais berputar pada poros utama <b>(spindle)</b>.</li><li>Benda kerja dicekam kuat pada meja mesin dengan alat bantu cekam.</li><li>Terjadi proses penyayatan / pengikisan material saat benda kerja (yang diam pada meja yang bergerak) menyentuh alat potong yang berputar.</li></ol><div class="note"><b>Tujuan:</b> menghasilkan benda kerja dengan permukaan yang rata atau bentuk-bentuk lain yang spesifik (profil, radius, silindris, dll) dengan ukuran dan kualitas tertentu.</div></div></div>'+secHead('CONTOH PENGERJAAN','Hasil Proses Milling')+'<div class="chips">'+contoh.map(function(c){return '<span class="chip">'+c+'</span>'}).join('')+'</div><div class="band dots">'+secHead('TIGA GERAKAN PADA MESIN MILLING','Gerakan-Gerakan Dasar','Terdapat 3 gerakan pada proses milling (frais):')+'<div class="grid">'+gerak.map(function(g){return '<div class="card corner"><span class="num-tag">'+g[0]+'</span><h4>'+g[1]+'</h4><p>'+g[2]+'</p><span class="badge">'+g[3]+'</span></div>'}).join('')+'</div></div>'+secHead('PRINSIP PEMOTONGAN','Face Cutting & Side Cutting')+diagFaceSide()+'<div class="band hatch">'+secHead('ARAH PEMOTONGAN','Climbing vs Conventional','Pada side cutting, pemotongan dibedakan menjadi climbing dan conventional berdasarkan arah putaran cutter terhadap feeding.')+'<div class="diag-pair">'+diagClimbConv('climb')+diagClimbConv('conv')+'</div><div class="table-wrap" style="margin-top:16px"><table class="tb"><thead><tr><th>Aspek</th><th>Climbing</th><th>Conventional</th></tr></thead><tbody><tr><td class="strong">Gaya (Plain Cutter)</td><td>Gaya tekan ke <b>bawah</b></td><td>Gaya tekan ke <b>atas</b></td></tr><tr><td class="strong">Arah pemotongan chip</td><td>Dari bagian <b>tebal (maksimum)</b> ke <b>tipis (minimum)</b></td><td>Dari bagian <b>tipis (minimum)</b> ke <b>tebal (maksimum)</b></td></tr><tr><td class="strong">Kondisi mesin</td><td>Mesin dengan kekocakan (spelleng) kecil pada spindle penggerak pemakanan</td><td>Mesin dengan kekocakan (spelleng) cukup besar pada spindle penggerak pemakanan</td></tr><tr><td class="strong">Jenis mesin</td><td>Digunakan pada mesin <b>CNC</b></td><td>Digunakan pada mesin <b>konventional</b></td></tr></tbody></table></div><div class="links" style="margin-top:14px">'+linkBtn(LINKS.climbref)+'</div></div>')}
+
+function renderMesin(){return pageShell('mesin','02','MATERI','Mesin Milling (Frais)','Bagian-bagian utama mesin milling dan jenis-jenis mesin berdasarkan posisi spindle serta fungsi penggunaannya — BAB 2 diktat.',
+secHead('BAB 2 · MESIN MILLING','Bagian-Bagian Utama Mesin','Delapan bagian utama mesin milling (frais):')+'<div class="grid">'+MESIN_PARTS.map(function(m,i){return '<div class="card corner"><div class="top"><span class="num-tag">'+('0'+(i+1)).slice(-2)+'</span></div><h4>'+m.n+'</h4><p>'+m.d+'</p>'+(m.s.length?'<ul class="clean">'+m.s.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>':'')+'</div>'}).join('')+'</div><div class="band dots">'+secHead('BERDASARKAN POSISI SPINDLE UTAMA','3 Jenis Posisi Spindle')+'<div class="grid">'+MESIN_POS.map(function(m,i){return '<div class="card corner"><span class="num-tag">TIPE '+('0'+(i+1)).slice(-2)+'</span><h4>'+m.n+'</h4><p>'+m.d+'</p></div>'}).join('')+'</div></div>'+secHead('BERDASARKAN FUNGSI PENGGUNAANNYA','5 Jenis Fungsi Khusus')+'<div class="grid">'+MESIN_FUNC.map(function(m,i){return '<div class="card corner"><div class="top"><span class="num-tag">'+('0'+(i+1)).slice(-2)+'</span></div><h4>'+m.n+'</h4><p>'+m.d+'</p>'+(m.s.length?'<div class="note"><b>Sistem referensi:</b><ul class="clean" style="margin-top:6px">'+m.s.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>':'')+'</div>'}).join('')+'</div>')}
+
+function renderCutting(){
+var calc=secHead('TOOLS INTERAKTIF','Kalkulator Cutting Condition','Masukkan nilai, hasil dihitung otomatis dengan rumus dari materi. Contoh dari materi: Cs = 32 m/menit, d = ∅20 mm → n ≈ 500 rpm, s = 56 mm/menit.')+'<div class="split"><div class="panel corner calc" data-calc><h4>① Putaran Spindle Utama (n)</h4><div class="calc-grid"><label>Ø Cutter — d (mm)<input type="number" id="cnD" value="20" min="0.5" step="0.1"></label><label>Cutting Speed — Cs (m/menit)<input type="number" id="cnCs" value="32" min="1" step="0.1"></label></div><div class="calc-res"><span class="calc-val" id="cnOut">–</span><span class="calc-unit">rpm</span></div><div class="calc-detail" id="cnDet"></div></div><div class="panel corner calc" data-calc><h4>② Feed per Minute (s)</h4><div class="calc-grid"><label>Jumlah mata potong — z<input type="number" id="cfZ" value="4" min="1" step="1"></label><label>Feed per tooth — sz (mm)<input type="number" id="cfSz" value="0.028" min="0.001" step="0.001"></label><label>Putaran — n (rpm)<input type="number" id="cfN" value="500" min="1" step="1"></label></div><div class="calc-res"><span class="calc-val" id="cfOut">–</span><span class="calc-unit">mm/menit</span></div><div class="calc-detail" id="cfDet"></div></div></div><div class="panel corner calc" data-calc style="margin-top:16px"><h4>③ Time Calculation — Waktu Potong Efektif (Th)</h4><div class="calc-grid"><label>Panjang langkah — L (mm)<input type="number" id="ctL" value="250" min="1" step="1"></label><label>Jumlah langkah — i<input type="number" id="ctI" value="2" min="1" step="1"></label><label>Feed per minute — s (mm/menit)<input type="number" id="ctS" value="56" min="0.1" step="0.1"></label></div><div class="calc-res"><span class="calc-val" id="ctOut">–</span><span class="calc-unit">menit</span></div><div class="calc-detail" id="ctDet"></div></div>';
+return pageShell('cutting-condition','03','MATERI','Cutting Condition','Cutting speed, putaran spindle, feeding, pencarian n & s dengan tabel, dan perhitungan waktu potong — BAB 3 diktat, dilengkapi kalkulator interaktif.',
+secHead('BAB 3 · CUTTING CONDITION','A. Cutting Speed (Cs)','Jarak yang ditempuh oleh salah satu mata potong (gigi) dalam meter per menit.')+'<div class="split"><div class="panel corner"><h4>Penentu & Faktor Cs</h4><p>Cutting speed ditentukan berdasarkan <b>tabel</b> dan <b>perhitungan</b>. Hal-hal yang mempengaruhi cutting speed:</p><ul class="clean"><li>Material benda kerja</li><li>Material alat potong</li><li>Pendinginan (cooling)</li></ul><div class="note">Kondisi mesin menentukan besarnya <b>putaran utama (n)</b>, bukan Cs.</div></div><div class="panel corner"><h4>Referensi Tabel (Standart DIN)</h4><ul class="clean"><li><b>Steel Comparison Table</b> — komparasi material ke standart DIN (Jerman Barat).</li><li>Tabel <b>"Materialgruppen" Bossard</b> — cari material yang sama/mendekati, lalu baca besar v (kecepatan potong) pada baris paling atas kolom tersebut. Nilai v itulah Cs material yang dicari.</li></ul></div></div><div class="formula" style="margin-top:16px"><span class="lbl">Rumus Cutting Speed & Putaran Spindle</span>Cs = '+frac('π × d × n','1000')+' <span class="sym">m/menit</span>&nbsp;&nbsp;&nbsp;⟺&nbsp;&nbsp;&nbsp; n = '+frac('1000 × Cs','π × d')+' <span class="sym">rpm</span><div style="margin-top:10px;font-size:12.5px;color:var(--muted)">d = diameter alat potong (mm) · n = putaran spindle utama / alat potong (rpm) · Cs = kecepatan potong (m/menit)</div></div><div class="note warn" style="margin-top:14px"><b>Perhatian:</b> jika kecepatan potong terlalu tinggi, cutter akan lekas tumpul; jika terlalu rendah, kemampuan potongnya rendah. Faktor yang mempengaruhi n: besarnya Cs, besarnya diameter alat potong (d), dan kondisi mesin.</div><div class="band dots">'+secHead('C. FEEDING (s)','Tiga Tipe Feeding','Feeding untuk proses milling dibedakan menjadi tiga tipe:')+'<div class="grid"><div class="card corner"><span class="num-tag">TYPE 1</span><h4>Feed per Minute</h4><p>Pergerakan meja dalam mm pada waktu 1 menit. Satuan <b>mm/menit</b>, simbol <b>s / f</b>.</p><div class="formula" style="padding:10px 14px">s = sz × z × n</div></div><div class="card corner"><span class="num-tag">TYPE 2</span><h4>Feed per Cutter Revolution</h4><p>Pergerakan meja dalam mm pada 1 kali putaran milling cutter. Satuan <b>mm/revolution</b>, simbol <b>fo / so</b>.</p><div class="formula" style="padding:10px 14px">so = z × sz</div></div><div class="card corner"><span class="num-tag">TYPE 3</span><h4>Feed per Tooth</h4><p>Pergerakan meja dalam mm selama cutter berputar dari satu mata potong ke mata potong berikutnya. Satuan <b>mm/tooth</b>, simbol <b>fz / sz</b>.</p><div class="formula" style="padding:10px 14px">sz = '+frac('s','z × n')+'</div></div></div><div style="margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted)">z = jumlah mata potong · n = putaran spindle utama (rpm) · sz = feed per tooth (mm/tooth) · s = feed per minute (mm/menit)</div></div>'+secHead('D. MENCARI n DAN s DENGAN TABEL','Tata Cara Pencarian','Hal yang harus diketahui lebih dahulu: ① kecepatan potong (Cs), ② jenis material alat potong, ③ jenis alat potong, ④ diameter alat potong (d).')+'<div class="split"><div class="panel corner"><h4>Langkah Pencarian</h4><ol class="clean"><li>Pilih tabel yang sesuai — contoh: tabel berdasarkan standart Jerman dengan material alat potong <b>HSS</b>.</li><li>Cari berdasarkan <b>jenis alat potongnya</b>, misalnya End Mill Cutter Roughing.</li><li>Cari kolom yang sesuai berdasarkan <b>Cs</b> yang telah didapat, lalu cari <b>diameter alat potong</b> sesuai data.</li><li>Dari kolom Cs tarik ke bawah, dari diameter alat potong tarik ke kanan — akan ketemu besarnya <b>n</b> dan <b>s</b>.</li></ol></div><div class="panel corner"><h4>Contoh (dari materi)</h4><div class="formula" style="padding:12px 16px;font-size:13.5px">Diketahui:<br/>Cs = 32 m/menit<br/>Material alat potong = HSS<br/>Jenis = End Mill Cutter Roughing<br/>d = ∅ 20 mm</div><div class="note ok" style="margin-top:10px"><b>Jawab:</b> n = 500 rpm dan s = 56 mm/menit. Feed per minute (s) dapat juga dicari dengan tabel.</div></div></div><div class="band hatch">'+calc+'</div>'+secHead('E. TIME CALCULATION (Th)','Waktu Potong Efektif','Waktu proses meliputi persiapan, proses, dan waktu tak terpakai — yang dihitung di sini adalah waktu potong efektif saja. Faktor: panjang langkah L (mm), jumlah langkah i, dan feeding per minute s (mm/menit).')+'<div class="split"><div class="panel corner"><div class="formula"><span class="lbl">Waktu Potong & Panjang Langkah</span>Th = '+frac('L × i','s')+' <span class="sym">menit</span>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp; L = l + l<sub>a</sub> + l<sub>u</sub> <span class="sym">mm</span></div><p style="margin-top:10px">l = panjang benda kerja · l<sub>a</sub> = panjang langkah awal · l<sub>u</sub> = panjang langkah akhir. Besarnya l<sub>a</sub> dan l<sub>u</sub> membedakan face cutting dan side cutting.</p></div><div class="panel corner"><h4>Aturan Face Cutting</h4><ul class="clean"><li>Center alat potong <b>di dalam</b> benda kerja → l<sub>a</sub> / l<sub>u</sub> = ½ diameter alat potong, sehingga l<sub>a</sub> + l<sub>u</sub> = d. Untuk langkah aman: <b>l<sub>a</sub> + l<sub>u</sub> = d + 3 mm</b>.</li><li>Center alat potong <b>di luar</b> benda kerja → l<sub>a</sub> = √(d·b) − b, dengan b = pemakanan ke arah radial (mm). Untuk langkah aman: <b>l<sub>a</sub> + l<sub>u</sub> + 3 mm</b>.</li></ul></div><div class="panel corner"><h4>Aturan Side Cutting</h4><ul class="clean"><li>l<sub>a</sub> = √(d·a<sub>p</sub>) − a<sub>p</sub>, dengan a<sub>p</sub> = depth of cut (mm).</li><li>l<sub>u</sub> diambil <b>5 mm</b>.</li><li>Jumlah langkah: jika B &lt; d → i = 1; jika B ≥ d → i &gt; 1, dengan <b>i = B / b</b> (B = lebar benda kerja, b = pemakanan radial).</li></ul></div></div>'+secHead('F. SOAL-SOAL','Latihan dari Diktat')+'<div class="panel corner"><ol class="clean"><li>Tentukanlah Cs untuk material-material di bawah ini: <b>MS · St 60 · EMS 45 · STAVAX · XW 41</b>.</li><li>Dari nomor 1, tentukan n dan s jika alat potong yang dipakai: <b>EMCR ∅20 · EMCF ∅20 · SEMCR ∅50 · SEMCF ∅50 · EMCFMT2 ∅4 · DC ∅100</b>.</li><li>Hitunglah Th jika block <b>22 × 35 × 180</b> dibuat menjadi <b>18 × 31 × 178</b> dengan menggunakan <b>EMCR dan F ∅20</b> serta <b>SEMCR dan F ∅50</b>. Setiap sisinya dikerjakan dengan 1 kali pemakanan.</li></ol><div class="links">'+linkBtn(LINKS.modul)+'</div></div>')}
+
+function renderTools(){var groups=['Semua','Face Cutting','Side Cutting','Cutter Profil','Berdasarkan Fungsi','Material Benda Kerja','Alat Potong Selain Cutter'];
+return pageShell('cutting-tools','04','MATERI','Cutting Tools','Alat potong cutter (berdasarkan fungsi, bentuk, arah putaran, dan material benda kerja) serta alat potong selain cutter — BAB 4 diktat.',
+secHead('BAB 4 · CUTTING TOOLS','18 Alat Potong','Klik kartu untuk melihat fungsi, karakteristik, dan penggunaan setiap alat potong.')+'<div class="filters" id="toolFilters">'+groups.map(function(g,i){return '<button data-action="filter-tools" data-f="'+g+'" class="'+(i===0?'on':'')+'">'+g+'</button>'}).join('')+'</div><div class="grid" id="toolGrid">'+TOOLS.map(toolCard).join('')+'</div><div class="band dots">'+secHead('KLASIFIKASI TAMBAHAN','Arah Putaran Cutter','Berdasarkan arah putarannya, cutter dibedakan menjadi:')+'<div class="split"><div class="panel corner"><h4>Cutter Putaran Kiri</h4><p>Apabila putaran cutter <b>berlawanan arah</b> dengan arah putaran jarum jam.</p></div><div class="panel corner"><h4>Cutter Putaran Kanan</h4><p>Apabila putaran cutter <b>searah</b> dengan arah putaran jarum jam.</p></div></div></div>')}
+
+function toolCard(t){
+  // Removed the IC.arrowR from the detail span as requested by the user
+  return '<div class="card corner tool-card" id="tool-'+t.id+'" data-action="tool-open" data-id="'+t.id+'" data-g="'+t.g+'"><div class="tool-fig" style="padding:10px;text-align:center;min-height:90px;display:flex;align-items:center;justify-content:center;">'+toolImg(t.img, t.n)+'</div><div class="top"><h4>'+t.n+'</h4></div><span class="badge">'+t.g+'</span><p>'+t.f+'</p><span class="open-hint" style="margin-top:auto">Detail</span></div>';
+}
+function toolModal(id){var t=null;TOOLS.forEach(function(x){if(x.id===id)t=x});if(!t)return '';
+return '<button class="modal-x" data-action="modal-close">'+ic('<path d="M6 6l12 12M18 6 6 18"/>')+'</button><span class="badge">'+t.g+'</span><h3>'+t.n+'</h3><div class="tool-fig" style="max-width:260px;margin:14px auto;text-align:center;">'+toolImg(t.img, t.n)+'</div><p class="m-desc">'+t.f+'</p><h5>FUNGSI</h5><p style="font-size:14.5px;color:var(--text-2)">'+t.f+'</p><h5>KARAKTERISTIK</h5><ul class="clean">'+t.k.map(function(k){return '<li>'+k+'</li>'}).join('')+'</ul><h5>PENGGUNAAN</h5><p style="font-size:14.5px;color:var(--text-2)">'+t.u+'</p>'}
+
+function renderAksesoris(){return pageShell('aksesori','05','MATERI','Aksesori Mesin Milling','Clamping tools (arbor) dan clamping device (ragum, clamp, rotary table, dividing head) — BAB 5 diktat.',
+secHead('BAB 5 · AKSESORIS','A. Clamping Tools — Berdasarkan Tangkainya','Arbor ISO dengan standart tangkai berikut:')+'<div class="chips">'+['ISO 30','ISO 40','ISO 45','ISO 50','ISO 55','ISO 60'].map(function(a){return '<span class="chip">Arbor '+a+'</span>'}).join('')+'</div><div class="table-wrap" style="margin-top:16px"><table class="tb"><thead><tr><th>Nr.</th><th>D1 (mm)</th><th>d1 (mm)</th><th>L1 (mm)</th><th>L2 (mm)</th><th>y (mm)</th><th>D2 (mm)</th></tr></thead><tbody>'+ARBOR_TABLE.map(function(r){return '<tr><td class="strong">'+r[0]+'</td><td class="num">'+r[1]+'</td><td class="num">'+r[2]+'</td><td class="num">'+r[3]+'</td><td class="num">'+r[4]+'</td><td class="num">'+r[5]+'</td><td class="num">'+r[6]+'</td></tr>'}).join('')+'</tbody></table></div>'+secHead('BERDASARKAN FUNGSINYA','9 Jenis Arbor & Clamping Tools','Alat cekam alat potong berdasarkan fungsinya:')+'<div class="grid">'+ACC_FUNGSI.map(function(a,i){return '<div class="card corner"><div class="tool-fig">'+accSVG(a.svg)+'</div><div class="top"><h4>'+a.n+'</h4><span class="num-tag">'+('0'+(i+1)).slice(-2)+'</span></div><p>'+a.d+'</p></div>'}).join('')+'</div><div class="band dots">'+secHead('B. CLAMPING DEVICE','Pencekam Benda Kerja','Alat bantu untuk mencekam benda kerja pada meja mesin:')+'<div class="grid">'+ACC_DEVICE.map(function(a,i){return '<div class="card corner"><div class="tool-fig">'+accSVG(a.svg)+'</div><div class="top"><h4>'+a.n+'</h4><span class="num-tag">'+('0'+(i+1)).slice(-2)+'</span></div><p>'+a.d+'</p></div>'}).join('')+'</div></div>')}
+
+function renderPraktik(){return pageShell('praktik','06','PRACTICE','Practice Milling','Empat tahap praktik frais dasar ditambah praktik TMK/TPM/PM/TRMK/TRII — klik kartu untuk detail tiap practice.',
+secHead('PRACTICE MILLING SECTION','Tahapan Praktik','Setiap practice dibuka sebagai langkah pengerjaan dengan target kompetensinya.')+'<div class="practice-grid">'+PRACTICE.map(function(p,i){return '<div class="card corner practice-card" data-action="practice-open" data-id="'+p.id+'"><div class="p-head"><span class="badge">'+p.tag+'</span><span class="num-tag">'+('0'+(i+1)).slice(-2)+'</span></div><h4>'+p.t+'</h4><p>'+p.sum+'</p><ul>'+p.proses.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><span class="open-hint">Buka Detail '+IC.arrowR+'</span></div>'}).join('')+'</div><div class="band hatch"><div class="panel corner"><h4>Referensi Gambar Practice</h4><p>Gambar kerja seluruh practice tersedia pada folder Google Drive berikut dari Section Milling.</p><div class="links">'+linkBtn(LINKS.praktik)+'</div></div></div>')}
+function practiceModal(id){var p=null;PRACTICE.forEach(function(x){if(x.id===id)p=x});if(!p)return '';
+return '<button class="modal-x" data-action="modal-close">'+ic('<path d="M6 6l12 12M18 6 6 18"/>')+'</button><span class="badge">'+p.tag+'</span><h3>'+p.t+'</h3><p class="m-desc">'+p.sum+'</p><h5>TARGET</h5><ul class="clean">'+p.target.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul><h5>PROSES PEMBUATAN (dari materi)</h5><div class="chips">'+p.proses.map(function(x){return '<span class="chip">'+x+'</span>'}).join('')+'</div><h5>ALUR PENGERJAAN (ringkasan materi)</h5><ol class="clean">'+p.alur.map(function(a){return '<li>'+a+'</li>'}).join('')+'</ol><div class="links" style="margin-top:14px">'+linkBtn(LINKS.praktik)+'</div>'}
+
+function renderWP(){var body=secHead('WORK PREPARATION','Urutan Proses 6 Langkah','Tata cara pengerjaan bidang (bid 1 – bid 6) sesuai materi. Klik langkah untuk membuka / menutup detailnya.')+'<div class="tl">'+WP_STEPS.map(function(s,i){return '<div class="tl-item'+(i===0?' open':'')+'"><div class="tl-num">'+(i+1)+'</div><div class="tl-card" data-action="wp-toggle" data-idx="'+i+'"><div class="tl-head"><h4>'+s.t+'</h4><span class="num-tag">BID '+(i+1)+'</span></div><div class="tl-body"><div><div class="tl-body-in"><p><b>Cekaman & penyayatan:</b> '+s.d+'</p><p class="res">'+IC.check.replace('<svg','<svg style="width:15px;height:15px;vertical-align:-2px"')+' '+s.r+'</p></div></div></div></div></div>'}).join('')+'</div><div class="note" style="margin-top:20px"><b>Istilah:</b> FJ = Fixed Jaw (rahang tetap ragum) · MJ = Movable Jaw (rahang gerak ragum) · <i>just clean</i> = disayat bersih tipis sebagai pembersihan bidang.</div><div class="panel corner" style="margin-top:16px"><h4>Contoh WP & Penjelasan</h4><p>Contoh Work Preparation beserta penjelasannya tersedia pada tautan berikut.</p><div class="links">'+linkBtn(LINKS.wp)+'</div></div>';
+return pageShell('work-preparation','07','PRAKTIK','Work Preparation','Urutan pengerjaan bidang benda kerja: dari bidang referensi hingga memasukkan ukuran akhir — klik setiap langkah untuk membuka detailnya.',body)}
+
+function renderAlatUkur(){return pageShell('alat-ukur','08','PRAKTIK','Alat Ukur & Alat Bantu Ukur','Sepuluh alat ukur dan alat bantu ukur yang digunakan pada Section Milling, beserta spesifikasi ukuran dan tingkat kekasaran dari materi.',
+secHead('ALAT UKUR','10 Alat Ukur & Alat Bantu Ukur','Alat kontrol ukuran yang wajib dikuasai mahasiswa praktik frais dasar (caliper wajib dibawa setiap praktik).')+'<div class="grid">'+MEAS.map(function(m,i){return '<div class="card corner"><div class="top"><h4>'+m.n+'</h4><span class="num-tag">'+('0'+(i+1)).slice(-2)+'</span></div><p>'+m.d+'</p></div>'}).join('')+'</div><div class="band dots">'+secHead('SPESIFIKASI DARI MATERI','Ukuran & Tingkat Kekasaran','Pembagian kategori ukuran dan tingkat kekasaran sesuai materi Section Milling:')+'<div class="table-wrap"><table class="tb"><thead><tr><th>Kategori</th><th>Ukuran</th><th>Tingkat Kekasaran</th></tr></thead><tbody><tr><td class="strong">UMUM</td><td>10 – 4 – 1 &nbsp;/&nbsp; 10 – 5 – 1</td><td>10 – 5 – 1</td></tr><tr><td class="strong">KHUSUS</td><td>10 – 1</td><td>10 – 5 – 1</td></tr><tr><td class="strong">ISO</td><td>10 – 0</td><td>10 – 1</td></tr></tbody></table></div><div class="chips" style="margin-top:14px"><span class="chip">PERFORMANCE : 2 · 4 · 6 · 8 · 10</span></div></div>')}
+
+function renderPenilaian(){var nilaiContoh=['10','1','10','4','10','10','1','10','7','7,00','10','5','10','5','10','10','7,5','7,5','10','8,33','8','5,83','2,4','8,23','2,47','4,9','7,37','0,17','7,20','8','6,48','0,8','7,28'];
+return pageShell('penilaian','09','PRAKTIK','Penilaian','Komponen penilaian praktik frais dasar: latihan, kompetensi, ujian komprehensif, dan produksi — dengan contoh rekap penilaian dari materi.',
+secHead('PENILAIAN','Komponen Nilai Praktik','Nilai praktik berasal dari komponen berikut (sesuai target masing-masing program studi):')+'<div class="grid"><div class="card corner"><span class="num-tag">01</span><h4>Latihan (P)</h4><p>Nilai practice/latihan pengerjaan dasar frais sesuai jadwal mingguan program studi.</p></div><div class="card corner"><span class="num-tag">02</span><h4>Kompetensi (C)</h4><p>Ujian kompetensi pada setiap unit kerja: kesikuan, kesejajaran, step, slot, lubang, profil, hingga UK.</p></div><div class="card corner"><span class="num-tag">03</span><h4>Ujian Komprehensif (UK)</h4><p>Ujian menyeluruh yang menggabungkan seluruh kompetensi (TMI/RTM).</p></div><div class="card corner"><span class="num-tag">04</span><h4>Produksi (Pr)</h4><p>Nilai produksi benda kerja nyata sesuai target jumlah produksi tiap program studi.</p></div></div>'+secHead('RUMUS NILAI AKHIR','Bobot Penilaian','Sesuai contoh pada materi, nilai akhir dihitung dengan:')+'<div class="formula"><span class="lbl">Nilai Akhir</span>Nilai Akhir = 0,9 × CP + 0,1 × PP</div><div class="band dots">'+secHead('CONTOH DARI MATERI','Contoh Rekap Penilaian (7/8/25)','Contoh lembar penilaian dengan pengukuran toleransi dan sudut — data sesuai materi:')+'<div class="table-wrap"><table class="tb"><thead><tr><th>Aspek</th><th>Data Contoh</th></tr></thead><tbody><tr><td class="strong">Tanggal</td><td>7/8/25</td></tr><tr><td class="strong">Waktu kerja</td><td>09.00 – 13.30</td></tr><tr><td class="strong">Toleransi sudut</td><td>3°.30′ &nbsp;/&nbsp; 3°.30′</td></tr><tr><td class="strong">Nilai pengukuran (contoh)</td><td>'+nilaiContoh.map(function(n){return '<span class="chip" style="padding:2px 8px">'+n+'</span>'}).join(' ')+'</td></tr><tr><td class="strong">Status</td><td><b>OK</b></td></tr><tr><td class="strong">Nilai akhir</td><td><b>0,9 CP + 0,1 PP</b></td></tr></tbody></table></div><div class="links" style="margin-top:14px">'+linkBtn(LINKS.pen1)+' '+linkBtn(LINKS.pen2)+'</div></div>')}
+
+function renderK3(){var ack=state.k3;
+return pageShell('k3','10','KEHADIRAN','K3L — Kesehatan, Keselamatan Kerja & Lingkungan','Aturan keselamatan kerja di area Section Milling, penerapan 5R, serta tabel kompensasi K3 & 5R. Pahami sebelum mulai praktik!',
+'<div class="k3-banner"><div class="k3-banner-in"><div><span class="badge warn">'+IC.shield.replace('<svg','<svg style="width:13px;height:13px"')+' KESELAMATAN PRIORITAS</span><h3>KESEHATAN, KESELAMATAN KERJA & LINGKUNGAN</h3><p style="color:var(--muted);font-size:14px;max-width:640px">Area milling adalah area kerja mesin. Pelajari materi K3L dan pastikan seluruh aturan dipahami sebelum mengoperasikan mesin. Setiap hari minimal 2 mahasiswa mengisi link barcode kesiapan K3 di masing-masing shift.</p></div><div class="links">'+linkBtn(LINKS.k3l)+' '+linkBtn(LINKS.k3video)+'</div></div></div>'+secHead('ATURAN K3','Penampilan & Perilaku di Area Mesin')+'<div class="rule-grid">'+K3_RUPA.map(function(r,i){return '<div class="rule-card"><span class="no">R'+(i+1)+'</span><p><b>Penampilan.</b> '+r+'</p></div>'}).join('')+K3_PERILAKU.map(function(r,i){return '<div class="rule-card"><span class="no">S'+(i+1)+'</span><p><b>Keselamatan.</b> '+r+'</p></div>'}).join('')+'</div><div class="band dots">'+secHead('5R AREA MILLING','Terapkan 5R di Sekitar Mesin','Klik setiap R untuk membaca penerapannya di area milling:')+'<div class="r5-grid">'+R5.map(function(r,i){return '<div class="card corner r5-card" data-action="r5-toggle"><span class="num-tag">R'+(i+1)+'</span><span class="big">'+r.r+'</span><div class="tl-body"><div><div class="tl-body-in" style="margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--border)"><p style="font-size:13.5px">'+r.d+'</p></div></div></div></div>'}).join('')+'</div></div>'+secHead('KOMPENSASI K3 & 5R','Tabel Kompensasi Pelanggaran','Angka kompensasi sesuai materi — panjang bar menunjukkan besaran jam:')+'<div class="komp-list">'+KOMPENSASI.map(function(k,i){return '<div class="komp-row"><span class="no">'+('0'+(i+1)).slice(-2)+'</span><span class="txt">'+k[0]+'</span><span class="komp-bar" title="'+k[1]+'"><i style="width:'+(k[2]/50*100)+'%"></i></span><span class="jam">'+k[1]+'</span></div>'}).join('')+'</div><div class="band hazard"><div class="k3-ack corner"><div class="left"><h4>'+IC.shield.replace('<svg','<svg style="width:22px;height:22px;color:var(--warn);vertical-align:-4px"')+' Konfirmasi Pemahaman K3</h4><p>Saya telah membaca dan memahami seluruh aturan Kesehatan, Keselamatan Kerja & Lingkungan serta konsekuensi kompensasinya di atas.</p><span class="status'+(ack?' on':'')+'" id="k3Status">'+(ack?'✓ Sudah dipahami — '+state.k3Date:'Belum dikonfirmasi')+'</span></div><button class="btn'+(ack?' ghost on':'')+'" data-action="k3-ack" style="'+(ack?'':'background:var(--warn);border-color:var(--warn)')+'">'+IC.check+' '+(ack?'SUDAH DIPAHAMI':'SAYA SUDAH MEMAHAMI K3')+'</button></div></div>')}
+
+function renderAturan(){var rows=[
+['BRIEFING','Briefing dimulai <b>5 menit sebelum bel masuk berbunyi</b> (Shift 1: 07.55; Shift 2: 14.25). Briefing dimulai dengan <b>doa singkat dari mahasiswa</b> dan dilanjut pengarahan dari instruktur. Keterlambatan mengikuti briefing dikenakan <b>minus 0,5 jam</b>.',null],
+['PELUMASAN & WARMING UP','Lakukan pelumasan mesin dan warming up sebelum bekerja. Lihat video tata cara pada tautan berikut.','pelumasan'],
+['CLEANING','Bersihkan area sekitar mesin & meja kerja. Pastikan area kerja menerapkan <b>K3 & 5R</b>, dan pastikan semua peralatan kerja aman dan siap digunakan.',null],
+['LOGBOOK','Pengumpulan logbook di hari terakhir section. Pengisian logbook <b>harus sesuai dengan contoh yang benar</b> (lihat contoh pada logbook). Keterlambatan pengumpulan maksimal 1 bulan setelah jadwal reguler selesai — lebih dari itu dikenai kompensasi <b>−30 jam per halaman</b>.',null],
+['BENDA KERJA','Benda kerja diletakkan pada <b>rak yang sudah disediakan sesuai nomor punch</b>.',null],
+['PERALATAN','Peralatan yang wajib dibawa: <b>Kacamata*</b>, <b>Caliper*</b>, <b>Alat tulis*</b>, Kalkulator, dan Tabel Elemen Mesin. <i>Nb: * wajib dibawa.</i>',null],
+['LEMBUR','Lembur dijadwalkan setiap <b>Sabtu</b>, serta saat <b>Senin dilakukan overlapping</b>. Jika berhalangan, segera menghubungi instruktur section. <i>Nb: mahasiswa wajib mendaftar & menulis pada daftar lembur.</i>',null],
+['START PEKERJAAN','Mahasiswa <b>wajib meminta waktu start</b> kepada instruktur sebelum mulai bekerja. Urutan: <b>Dial tanggem → Pasang benda kerja → Pasang alat potong → Lapor waktu start</b>. Tidak minta start = kompensasi <b>5 jam</b>.',null],
+['STOP PEKERJAAN','Mahasiswa <b>wajib meminta stop / finish</b> kepada instruktur setelah pekerjaan selesai. Tidak minta stop = kompensasi <b>5 jam</b>. Apabila tidak lapor stop, waktu akan di-stop saat mahasiswa meminta waktu start hari berikutnya.',null],
+['PENGGUNAAN HP','Dilarang charge HP pada jam reguler — hanya boleh saat jam istirahat dengan izin instruktur (pelanggaran: penyitaan HP, diambil saat pulang). Minimalisir penggunaan HP; <b>gambar wajib sketch di kertas / di WP</b>. Menggunakan HP tanpa izin = <b>5 jam</b>.',null],
+['BAHASA KOMUNIKASI','Wajib menggunakan <b>Bahasa Indonesia yang benar</b> saat berbicara dengan instruktur & teman 1 section (all prodi). Pelanggaran dikenai kompensasi <b>10 jam</b>.',null],
+['WORK PREPARATION (WP)','WP dibuat di rumah <b>3 gambar sekaligus</b> — tidak ada waktu membuat WP di bengkel. Pelanggaran dikenai kompensasi <b>5 jam</b> dan waktu membuat WP dianggap sudah start.',null],
+['BOTOL AMDK / TUMBLER','Tidak diperkenankan membawa botol AMDK (PET) dalam area Section Mill — silakan bawa <b>tumbler</b>. Botol PET di area Mill = <b>5 jam</b>.',null],
+['VIDEO PENGENALAN','Pelajari & pahami video pengenalan dasar Section Mill (Video 1–7) pada link berikut sebelum praktik.','video']];
+return pageShell('aturan','11','KEHADIRAN','Aturan Section Milling','Seluruh aturan pelaksanaan praktik di Section Milling: briefing, pelumasan, cleaning, logbook, start/stop pekerjaan, hingga tata tertib harian.',
+secHead('TATA TERTIB SECTION MILL','Apa yang Dilakukan di Practical Session?','"WHAT TO DO in PRACTICAL SESSION?" — seluruh aturan berikut bersumber dari materi Section Milling.')+'<div class="omnia">'+rows.map(function(r,i){return '<div class="rule-row corner"><div class="idx">'+('0'+(i+1)).slice(-2)+'<small>ATURAN</small></div><div class="body"><h4>'+r[0]+'</h4><p>'+r[1]+'</p>'+(r[2]?'<div class="links">'+linkBtn(LINKS[r[2]])+'</div>':'')+'</div></div>'}).join('')+'</div><div class="band hazard">'+secHead('KOMPENSASI START & STOP PEKERJAAN','Kompensasi Waktu Kerja')+'<div class="komp-list"><div class="komp-row"><span class="no">S1</span><span class="txt">Tidak minta start ke instruktur</span><span class="komp-bar"><i style="width:10%"></i></span><span class="jam">5 jam</span></div><div class="komp-row"><span class="no">S2</span><span class="txt">Tidak minta stop / finish ke instruktur</span><span class="komp-bar"><i style="width:10%"></i></span><span class="jam">5 jam</span></div></div><div class="note warn" style="margin-top:14px"><b>Note:</b> apabila tidak lapor stop, maka waktu akan di-stop saat mahasiswa meminta waktu start hari berikutnya. Contoh: Shift 1 hari Selasa tidak stop — maka saat Rabu minta start jam 09.00, instruktur memberikan waktu stop Selasa jam 08.55 & start Rabu jam 09.00 (waktu pengerjaan Selasa start 09.00, stop hari Rabu jam 08.55).</div></div>')}
+
+function renderTarget(){var mode=targetMode,programs=TARGETS[mode];
+var html=secHead('TARGET PRAKTIK','Dashboard Target Praktik','Pilih program (Non-Seamless / Seamless), lalu centang setiap target yang telah kamu capai — progres tersimpan otomatis di perangkat ini.')+'<div class="mode-tabs"><button class="'+(mode==='ns'?'on':'')+'" data-action="target-mode" data-m="ns">NON SEAMLESS</button><button class="'+(mode==='s'?'on':'')+'" data-action="target-mode" data-m="s">SEAMLESS</button></div><div class="target-grid">';
+programs.forEach(function(p){var key=mode+'|'+p.prodi,total=0,checked=0,checks=[];
+p.items.forEach(function(it,ii){for(var k=0;k<it[1];k++){total++;var id=key+'|'+ii+'|'+k;var on=!!state.target[id];if(on)checked++;checks.push('<label class="tcheck"><input type="checkbox" class="tcheck-in" data-tkey="'+id+'" '+(on?'checked':'')+'><span>'+it[0]+(it[1]>1?(k+1):'')+'</span></label>')}});
+var pct=total?Math.round(checked/total*100):0,off=2*Math.PI*26;
+html+='<div class="card corner target-card"><div class="tp-head"><div class="ring"><svg viewBox="0 0 64 64"><circle class="bgc" cx="32" cy="32" r="26"/><circle class="fgc" cx="32" cy="32" r="26" stroke-dasharray="'+off+'" stroke-dashoffset="'+off*(1-pct/100)+'"/></svg><b>'+pct+'%</b></div><div><span class="badge">'+(mode==='ns'?'NON SEAMLESS':'SEAMLESS')+'</span><h4 style="margin-top:6px">'+p.prodi+'</h4></div></div><div class="tcheck-grid">'+checks.join('')+'</div>'+(p.sched.length?'<div class="tp-sched">'+p.sched.map(function(s){return '<div class="wk"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('')+'</div>':'')+'</div>'});
+html+='</div><div class="note" style="margin-top:18px"><b>Keterangan jadwal:</b> P = Latihan (Practice) · C = Kompetensi · Pr = Produksi · UK = Ujian Komprehensif. Target TMI/RTM Non-Seamless: 3 latihan, 5 kompetensi, 1 ujian komprehensif & 3 nilai produksi. TPM/PM: 3 latihan, 3 kompetensi & 2 nilai produksi. TMK/TRMK: 1 latihan, 1 kompetensi. Seamless TMI/RTM: 3 latihan, 3 kompetensi, 1 ujian komprehensif & 1 produksi. TPM/PM Seamless: 3 latihan, 1 kompetensi & 1 produksi.</div>';
+return pageShell('target','12','PRAKTIK','Target Praktik','Dashboard target latihan, kompetensi, ujian komprehensif, dan produksi untuk setiap program studi — Non-Seamless dan Seamless.',html)}
+
+function renderEvaluasi(){var best=state.quizBest;
+return pageShell('evaluasi','13','EVALUASI','Evaluasi Pembelajaran','Uji pemahamanmu dengan 20 soal pilihan ganda dari seluruh materi: dasar milling, mesin, cutting condition, cutting tools, aksesori, hingga aturan K3.',
+'<div class="quiz-box corner" id="quizBox"><div class="quiz-start"><span class="badge">'+IC.target.replace('<svg','<svg style="width:13px;height:13px"')+' EVALUASI</span><h3 style="margin-top:10px">Quiz 20 Soal — Praktik Frais Dasar</h3><p>Soal mencakup BAB 1–5 diktat Milling dan aturan Section Milling. Pembahasan muncul setelah kamu memilih.'+(best!==null?'<br/><br/>Skor terbaikmu: <b style="color:var(--accent)">'+best+' / '+QUIZ.length+'</b>':'')+'</p><button class="btn" data-action="quiz-start">'+IC.play+' MULAI QUIZ</button></div></div>')}
+
+function renderBookmark(){var items=state.bookmarks.filter(function(b){return PAGES[b]}),body;
+if(!items.length){body='<div class="bm-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h11V21l-5.5-4-5.5 4z"/></svg><h4 style="font-family:var(--disp);color:var(--text)">Belum ada bookmark</h4><p>Buka halaman materi apa pun, lalu tekan tombol <b>Bookmark</b> di kanan atas halaman untuk menyimpannya di sini.</p><a class="btn ghost" href="#/materi" style="margin-top:14px">JELAJAHI MATERI</a></div>'}
+else{body='<div class="grid">'+items.map(function(id){var p=PAGES[id];return '<div class="card corner mod-card" data-action="goto" data-page="'+id+'"><span class="num-tag">MODUL '+p.num+'</span><h4>'+p.title+'</h4><p>'+(p.descShort||p.desc||'')+'</p><div style="display:flex;gap:8px;margin-top:auto"><span class="go">Buka '+IC.arrowR+'</span><button class="btn ghost" style="padding:6px 12px;font-size:11px" data-action="bookmark-toggle" data-page="'+id+'">Hapus</button></div></div>'}).join('')+'</div>'}
+return '<div class="page"><div class="wrap"><div class="page-head corner"><div class="ph-inner"><div class="ph-meta"><span class="ph-num">KOLEKSI PRIBADI</span><h1>Bookmark</h1><p class="desc">Materi favorit yang kamu simpan — tersimpan di perangkat ini (localStorage) dan tetap ada saat website dibuka kembali.</p></div></div></div>'+body+'</div></div>'}
+
+var PAGES={home:{num:'00',title:'Home',render:renderHome},materi:{num:'01',title:'Dasar Milling',descShort:'Pengertian, prinsip kerja, gerakan, dan prinsip pemotongan milling.',render:renderMateri},mesin:{num:'02',title:'Mesin Milling',descShort:'Bagian utama mesin dan jenis-jenis mesin frais.',render:renderMesin},'cutting-condition':{num:'03',title:'Cutting Condition',descShort:'Cs, n, feeding, time calculation + kalkulator interaktif.',render:renderCutting},'cutting-tools':{num:'04',title:'Cutting Tools',descShort:'18 alat potong cutter dan alat potong selain cutter.',render:renderTools},aksesori:{num:'05',title:'Aksesori Mesin Milling',descShort:'Clamping tools (arbor) dan clamping device.',render:renderAksesoris},praktik:{num:'06',title:'Practice Milling',descShort:'Practice 1–4 dan praktik TMK/TPM/PM/TRMK/TRII.',render:renderPraktik},'work-preparation':{num:'07',title:'Work Preparation',descShort:'Urutan 6 langkah pengerjaan bidang benda kerja.',render:renderWP},'alat-ukur':{num:'08',title:'Alat Ukur',descShort:'10 alat ukur & alat bantu ukur + spesifikasi.',render:renderAlatUkur},penilaian:{num:'09',title:'Penilaian',descShort:'Komponen nilai, rumus akhir, contoh rekap.',render:renderPenilaian},k3:{num:'10',title:'K3 & 5R',descShort:'Aturan keselamatan, 5R, dan tabel kompensasi.',render:renderK3},aturan:{num:'11',title:'Aturan Section Milling',descShort:'Briefing hingga tata tertib harian section.',render:renderAturan},target:{num:'12',title:'Target Praktik',descShort:'Dashboard target semua program studi.',render:renderTarget},evaluasi:{num:'13',title:'Evaluasi',descShort:'Quiz 20 soal seluruh materi.',render:renderEvaluasi},bookmark:{num:'★',title:'Bookmark',render:renderBookmark}};
+
+var current='home',pendingAnchor=null,targetMode=store.get('targetMode','ns'),qz=null;
+function route(){var h=(location.hash||'').replace(/^#\/?/,'').split('?')[0];var p=PAGES[h]?h:'home';renderPage(p)}
+function renderPage(p){current=p;$('#app').innerHTML=PAGES[p].render();updateNav(p);updateProgressUI();
+if(pendingAnchor){var a=pendingAnchor;pendingAnchor=null;setTimeout(function(){scrollToAnchor(a)},90)}else{window.scrollTo({top:0,behavior:'auto'})}
+if(p==='cutting-condition')recalcCalc();if(p==='evaluasi')qz=null}
+function scrollToAnchor(id){var el=document.getElementById(id);if(!el)return;el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')}
+
+function buildNav(){$('#navScroll').innerHTML=NAV.map(function(n){return '<button class="nav-link" data-action="nav" data-page="'+n.id+'">'+n.label+'<span class="dot"></span></button>'}).join('');
+ $('#mobileMenu').innerHTML='<div class="mm-grid">'+NAV.map(function(n){return '<button class="mm-link" data-action="nav" data-page="'+n.id+'">'+n.label+'<span class="dot"></span></button>'}).join('')+'</div><div class="mm-prog"><span id="mmProgTxt">0/12 modul</span><div class="bar"><i id="mmProgFill"></i></div></div>'}
+function updateNav(p){$$('.nav-link,.mm-link').forEach(function(a){var on=a.dataset.page===p;a.classList.toggle('active',on);a.classList.toggle('done',MODULS.indexOf(a.dataset.page)>-1&&state.progress.indexOf(a.dataset.page)>-1)});
+var act=$('.nav-link.active');if(act){var sc=$('#navScroll');requestAnimationFrame(function(){sc.scrollTo({left:act.offsetLeft-sc.clientWidth/2+act.clientWidth/2,behavior:'smooth'})})}
+closeMenu()}
+function updateProgressUI(){var pct=Math.round(state.progress.length/MODULS.length*100);$('#progFill').style.width=pct+'%';
+var mmf=$('#mmProgFill'),mmt=$('#mmProgTxt');if(mmf){mmf.style.width=pct+'%';mmt.textContent=state.progress.length+'/'+MODULS.length+' modul — '+pct+'%'}
+var btn=$('[data-action="progress-toggle"]');if(btn){var done=state.progress.indexOf(btn.dataset.page)>-1;btn.classList.toggle('on',done);btn.innerHTML=IC.check+' '+(done?'Sudah Dipelajari':'Tandai Selesai')}
+var bb=$('[data-action="bookmark-toggle"]');if(bb){var on=state.bookmarks.indexOf(bb.dataset.page)>-1;bb.classList.toggle('onb',on);bb.innerHTML=IC.bmark+' '+(on?'Tersimpan':'Bookmark')}}
+
+function applyTheme(t){state.theme=t;document.documentElement.dataset.theme=t;store.set('theme',t)}
+function toast(msg,type){var r=document.createElement('div');r.className='toast'+(type==='ok'?' ok':'');r.innerHTML=IC.check+'<span>'+msg+'</span>';$('#toastRoot').appendChild(r);setTimeout(function(){r.classList.add('out');setTimeout(function(){r.remove()},320)},2600)}
+function openModal(html){var r=$('#modalRoot');r.innerHTML='<div class="modal-backdrop"><div class="modal-panel">'+html+'</div></div>';r.classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){$('#modalRoot').classList.remove('open');$('#modalRoot').innerHTML='';document.body.style.overflow=''}
+
+var SEARCH_INDEX=[];
+function addSearch(page,title,text,anchor){SEARCH_INDEX.push({page:page,title:title,text:text.replace(/<[^>]+>/g,''),anchor:anchor||null})}
+function buildSearchIndex(){
+addSearch('materi','Dasar Milling — Pengertian & Prinsip Kerja','Definisi milling frais proses cutting conventional cutter berputar mengikis material benda kerja permukaan rata profil radius silindris chip');
+addSearch('materi','Tiga Gerakan Mesin Milling','gerakan utama spindle rpm n feeding pemakanan mm per menit s depth of cut setting a t');
+addSearch('materi','Face Cutting & Side Cutting','prinsip pemotongan sisi depan face samping side alat potong cutter');
+addSearch('materi','Climbing vs Conventional','climbing searah feeding conventional berlawanan gaya tekan ke atas ke bawah tebal tipis maksimum minimum spelleng mesin CNC');
+MESIN_PARTS.forEach(function(m){addSearch('mesin','Mesin: '+m.n,m.d+' '+m.s.join(' '))});
+MESIN_POS.forEach(function(m){addSearch('mesin','Jenis: '+m.n,'posisi spindle vertikal horisontal universal '+m.d)});
+MESIN_FUNC.forEach(function(m){addSearch('mesin','Jenis: '+m.n,m.d+' master mal hidrolik roda gigi gear evolvente gambar tulisan planer cnc')});
+addSearch('cutting-condition','Cutting Speed (Cs)','kecepatan potong cutting speed material benda kerja alat potong pendinginan cooling tabel DIN bossard materialgruppen steel comparison');
+addSearch('cutting-condition','Putaran Spindle Utama (n)','rumus putaran spindle rpm diameter alat potong n = 1000 cs / pi d cutter tumpul');
+addSearch('cutting-condition','Feeding (s)','feed per minute feed per tooth feed per cutter revolution mm per menit sz so z jumlah mata potong');
+addSearch('cutting-condition','Kalkulator Cutting Condition','kalkulator hitung rpm putaran spindle feed time calculation waktu potong contoh 500 rpm 56 mm per menit');
+addSearch('cutting-condition','Time Calculation (Th)','waktu potong efektif panjang langkah jumlah langkah la lu face side cutting i B b rumus');
+TOOLS.forEach(function(t){addSearch('cutting-tools',t.n,t.f+' '+t.k.join(' ')+' '+t.u,'tool-'+t.id)});
+ACC_FUNGSI.forEach(function(a){addSearch('aksesori','Aksesori: '+a.n,a.d+' arbor collet sleeve stub short long side lock boring head')});
+ACC_DEVICE.forEach(function(a){addSearch('aksesori','Aksesori: '+a.n,a.d+' clamp vise ragum rotary table dividing head v block angle plate')});
+addSearch('aksesori','Tabel Dimensi Arbor ISO','arbor iso 30 40 45 50 55 60 D1 d1 L1 L2 y D2 dimensi mm tabel');
+addSearch('praktik','Practice 1 — Blocking','blocking perpendicular kesikuan parallelism kesejajaran praktik frais dasar');
+addSearch('praktik','Practice 2 — Stepping, Chamfering, Drilling & Tapping','stepping chamfering drilling tapping ulir tap sney twist drill');
+addSearch('praktik','Practice 3 — Stepping with ISO, Slotting, Boring','stepping with iso slotting drilling with boring head reamer lubang presisi');
+addSearch('praktik','Practice 4 — Hexagon Profile','hexagon profile dividing head deviding head segi enam');
+addSearch('praktik','Practice TMK TPM PM TRMK TRII','blocking chamfering stepping slotting drilling profil dasar');
+addSearch('work-preparation','Work Preparation — 6 Langkah','cekam bid FJ MJ fixed jaw movable jaw sayat referensi tebal lebar panjang just clean rata siku sejajar wp');
+MEAS.forEach(function(m,i){addSearch('alat-ukur','Alat Ukur: '+m.n,m.d+' ukur presisi kekasaran')});
+addSearch('alat-ukur','Spesifikasi Ukuran & Kekasaran','umum khusus iso 10-4-1 10-1 10-0 10-5-1 performance 2 4 6 8 10');
+addSearch('penilaian','Penilaian','latihan kompetensi ujian komprehensif produksi nilai akhir 0.9 cp 0.1 pp toleransi rekap');
+addSearch('k3','K3L — Kesehatan Keselamatan Kerja & Lingkungan','pakaian praktik rapi rambut kuku pendek aksesori kunci spindle kacamata coolant bercanda laporkan instruktur emergency');
+addSearch('k3','5R Area Milling','ringkas rapi resik rawat rajin 5r area milling cleaning');
+addSearch('k3','Tabel Kompensasi K3 & 5R','kompensasi kunci spindle tertinggal 10 25 50 jam kacamata 20 jam emergency lampu toolbox kotor hp botol pet amdk 5 jam');
+addSearch('aturan','Briefing','briefing doa pengarahan instruktur shift 1 07.55 shift 2 14.25 terlambat minus 0.5 jam');
+addSearch('aturan','Logbook','logbook pengumpulan terlambat 1 bulan kompensasi 30 jam per halaman contoh benar');
+addSearch('aturan','Start & Stop Pekerjaan','dial tanggem pasang benda kerja alat potong lapor waktu start stop finish tidak minta 5 jam');
+addSearch('aturan','Peralatan Wajib','kacamata caliper alat tulis kalkulator tabel elemen mesin wajib dibawa');
+addSearch('aturan','Lembur','lembur sabtu senin overlapping daftar lembur instruktur');
+addSearch('aturan','WP, HP & Bahasa','wp di rumah 3 gambar sketch bahasa indonesia benar kompensasi charge hp penyitaan botol amdk tumbler');
+addSearch('target','Target Praktik','target non seamless seamless tmi rtm tpm pm tmk trmk latihan kompetensi ujian komprehensif produksi minggu');
+addSearch('evaluasi','Evaluasi — Quiz 20 Soal','quiz soal evaluasi uji pemahaman skor');
+addSearch('bookmark','Bookmark','materi favorit tersimpan localStorage')}
+function norm(s){return s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'')}
+function searchQuery(q){var words=norm(q).split(/\s+/).filter(Boolean);if(!words.length)return[];
+return SEARCH_INDEX.map(function(e){var t=norm(e.title),x=norm(e.text),score=0,ok=true;
+words.forEach(function(w){if(t.indexOf(w)>-1)score+=10;if(x.indexOf(w)>-1)score+=3;if(t.indexOf(w)===-1&&x.indexOf(w)===-1)ok=false});
+return ok?Object.assign({score:score},e):null}).filter(Boolean).sort(function(a,b){return b.score-a.score}).slice(0,12)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(m){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[m]})}
+function renderSearchResults(q){var box=$('#searchResults');
+if(!q){box.innerHTML='<div class="sr-hint">POPULER: '+['spindle','cutter','K3','cutting speed','caliper','practice','work preparation','kompensasi','dividing head','climbing'].map(function(w){return '<button data-action="search-quick" data-q="'+w+'">'+w+'</button>'}).join('')+'</div>';return}
+var res=searchQuery(q);
+if(!res.length){box.innerHTML='<div class="sr-empty">Tidak ada materi yang cocok untuk "'+esc(q)+'".<br/>Coba kata kunci lain: spindle, cutter, arbor, feeding, ragum…</div>';return}
+var rx=new RegExp('('+q.trim().split(/\s+/).map(function(w){return w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}).join('|')+')','ig');
+box.innerHTML=res.map(function(r){return '<button class="sr-item" data-action="goto" data-page="'+r.page+'" data-anchor="'+(r.anchor||'')+'"><span class="t"><span class="pg">'+PAGES[r.page].title+'</span>'+esc(r.title).replace(rx,'<mark>$1</mark>')+'</span><span class="x">'+esc(r.text).replace(rx,'<mark>$1</mark>')+'</span></button>'}).join('')}
+function openSearch(){$('#searchOverlay').classList.add('open');document.body.style.overflow='hidden';var i=$('#searchInput');i.value='';renderSearchResults('');setTimeout(function(){i.focus()},50)}
+function closeSearch(){$('#searchOverlay').classList.remove('open');document.body.style.overflow=''}
+function closeMenu(){$('#mobileMenu').classList.remove('open')}
+
+function recalcCalc(){var g=function(id){var e=$('#'+id);return e?parseFloat(e.value):NaN};
+var cn=$('#cnOut');if(cn){var d=g('cnD'),cs=g('cnCs');
+if(d>0&&cs>=0){var n=1000*cs/(Math.PI*d);cn.textContent=fmt(n);
+var extra=(Math.abs(cs-32)<1e-9&&Math.abs(d-20)<1e-9)?' — dibulatkan ke putaran mesin ≈ <b>500 rpm</b> (contoh dari materi)':' — bulatkan ke putaran mesin yang tersedia';
+ $('#cnDet').innerHTML='n = (1000 × '+fmt(cs)+') / (π × '+fmt(d)+') = <b>'+fmt(n)+' rpm</b>'+extra}
+else{cn.textContent='–';$('#cnDet').textContent='Masukkan diameter dan cutting speed yang valid.'}}
+var cf=$('#cfOut');if(cf){var z=g('cfZ'),sz=g('cfSz'),n2=g('cfN');
+if(z>0&&sz>0&&n2>0){var s=sz*z*n2,so=z*sz;cf.textContent=fmt(s);
+ $('#cfDet').innerHTML='s = sz × z × n = '+fmt(sz)+' × '+fmt(z)+' × '+fmt(n2)+' = <b>'+fmt(s)+' mm/menit</b><br/>so = z × sz = <b>'+fmt(so)+' mm/rev</b>'}
+else{cf.textContent='–';$('#cfDet').textContent='Masukkan z, sz, dan n yang valid.'}}
+var ct=$('#ctOut');if(ct){var L=g('ctL'),i=g('ctI'),s2=g('ctS');
+if(L>0&&i>0&&s2>0){var th=L*i/s2;ct.textContent=fmt(th);
+ $('#ctDet').innerHTML='Th = (L × i) / s = ('+fmt(L)+' × '+fmt(i)+') / '+fmt(s2)+' = <b>'+fmt(th)+' menit</b>'}
+else{ct.textContent='–';$('#ctDet').textContent='Masukkan L, i, dan s yang valid.'}}}
+
+function renderQuiz(){var box=$('#quizBox');if(!box)return;
+if(!qz||qz.i===-1){var best=state.quizBest;
+box.innerHTML='<div class="quiz-start"><span class="badge">EVALUASI</span><h3 style="margin-top:10px">Quiz 20 Soal — Praktik Frais Dasar</h3><p>Soal mencakup BAB 1–5 diktat Milling dan aturan Section Milling. Pembahasan muncul setelah kamu memilih.'+(best!==null?'<br/><br/>Skor terbaikmu: <b style="color:var(--accent)">'+best+' / '+QUIZ.length+'</b>':'')+'</p><button class="btn" data-action="quiz-start">MULAI QUIZ</button></div>';return}
+if(qz.done){var score=0;qz.ans.forEach(function(x,i){if(x===QUIZ[i].a)score++});
+var pct=Math.round(score/QUIZ.length*100),off=2*Math.PI*48;
+var cls=pct>=80?'var(--ok)':(pct>=60?'var(--accent)':'var(--danger)');
+box.innerHTML='<div class="quiz-start"><div class="quiz-score"><div class="ring"><svg viewBox="0 0 110 110"><circle class="bgc" cx="55" cy="55" r="48" style="stroke-width:9"/><circle class="fgc" cx="55" cy="55" r="48" stroke-dasharray="'+off+'" stroke-dashoffset="'+off*(1-pct/100)+'" style="stroke:'+cls+';stroke-width:9"/></svg><b>'+score+'/'+QUIZ.length+'</b></div></div><h3>'+(pct>=80?'Luar biasa — pemahamanmu sangat baik!':(pct>=60?'Bagus — terus perdalam materi yang belum dikuasai.':'Ayo pelajari kembali materinya, lalu coba lagi.'))+'</h3><p style="margin:6px auto 4px">'+pct+'% jawaban benar</p><div class="qreview">'+QUIZ.map(function(q,i){var ok=qz.ans[i]===q.a;return '<div>'+(ok?'<span class="ok-ic">'+IC.check+'</span>':'<span class="no-ic">'+ic('<path d="M6 6l12 12M18 6 6 18"/>')+'</span>')+'<span>'+q.q+'</span></div>'}).join('')+'</div><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn" data-action="quiz-restart">'+IC.refresh+' ULANGI QUIZ</button><a class="btn ghost" href="#/materi">BUKA MATERI</a></div></div>';return}
+var q=QUIZ[qz.i],answered=qz.ans[qz.i]!=null;
+box.innerHTML='<div class="quiz-top"><span>SOAL '+(qz.i+1)+' / '+QUIZ.length+'</span><div class="quiz-bar"><i style="width:'+(qz.i/QUIZ.length*100)+'%"></i></div><span>'+(answered?'':'Pilih jawaban')+'</span></div><h3 class="quiz-q">'+q.q+'</h3><div class="quiz-opts'+(answered?' answered':'')+'">'+q.o.map(function(o,i){return '<button class="quiz-opt" data-action="quiz-answer" data-i="'+i+'" data-correct="'+(i===q.a?1:0)+'" data-picked="'+(qz.ans[qz.i]===i?1:0)+'" '+(answered?'disabled':'')+'><span class="qo-letter">'+'ABCD'[i]+'</span><span>'+o+'</span></button>'}).join('')+'</div>'+(answered?'<div class="quiz-why"><b>'+(qz.ans[qz.i]===q.a?'Benar!':'Kurang tepat — jawaban: '+'ABCD'[q.a])+':</b> '+q.w+'</div><div class="quiz-foot"><button class="btn" data-action="quiz-next">'+(qz.i+1<QUIZ.length?'SOAL BERIKUTNYA':'LIHAT HASIL')+'</button></div>':'')}
+
+document.addEventListener('click',function(e){
+if(e.target.classList&&e.target.classList.contains('modal-backdrop')){closeModal();return}
+var t=e.target.closest?e.target.closest('[data-action]'):null;if(!t)return;
+var a=t.dataset.action;
+if(a==='theme'){applyTheme(state.theme==='dark'?'light':'dark');return}
+if(a==='search-open'){openSearch();return}
+if(a==='search-quick'){$('#searchInput').value=t.dataset.q;renderSearchResults(t.dataset.q);$('#searchInput').focus();return}
+if(a==='menu'){$('#mobileMenu').classList.toggle('open');return}
+if(a==='nav'){if(t.dataset.page===current){window.scrollTo({top:0,behavior:'smooth'});closeMenu()}else{location.hash='#/'+t.dataset.page}return}
+if(a==='nav-scroll'){$('#navScroll').scrollBy({left:220*(+t.dataset.dir),behavior:'smooth'});return}
+if(a==='goto'){e.preventDefault();closeSearch();closeMenu();var pg=t.dataset.page,an=t.dataset.anchor;
+if(pg===current){if(an)scrollToAnchor(an);else window.scrollTo({top:0,behavior:'smooth'})}
+else{pendingAnchor=an||null;location.hash='#/'+pg}return}
+if(a==='modal-close'){closeModal();return}
+if(a==='tool-open'){openModal(toolModal(t.dataset.id));return}
+if(a==='practice-open'){openModal(practiceModal(t.dataset.id));return}
+if(a==='wp-toggle'){var item=t.closest('.tl-item'),wasOpen=item.classList.contains('open');$$('.tl-item').forEach(function(x){x.classList.remove('open')});if(!wasOpen)item.classList.add('open');return}
+if(a==='r5-toggle'){t.closest('.r5-card').classList.toggle('open');return}
+if(a==='filter-tools'){var f=t.dataset.f;$$('#toolFilters button').forEach(function(b){b.classList.toggle('on',b===t)});
+ $$('#toolGrid .tool-card').forEach(function(c){c.style.display=(f==='Semua'||c.dataset.g===f)?'':'none'});return}
+if(a==='progress-toggle'){var p=t.dataset.page,i=state.progress.indexOf(p);
+if(i>-1){state.progress.splice(i,1);store.set('progress',state.progress);toast('Modul ditandai belum selesai.')}
+else{state.progress.push(p);store.set('progress',state.progress);toast('Modul selesai dipelajari ✓','ok')}
+updateProgressUI();updateNav(current);
+var card=t.closest('.page-head');if(card){var badge=card.querySelector('.badge.ok');}
+return}
+if(a==='bookmark-toggle'){var p2=t.dataset.page,i2=state.bookmarks.indexOf(p2);
+if(i2>-1){state.bookmarks.splice(i2,1);store.set('bookmarks',state.bookmarks);toast('Bookmark dihapus.');if(current==='bookmark')renderPage('bookmark')}
+else{state.bookmarks.push(p2);store.set('bookmarks',state.bookmarks);toast('Materi disimpan ke bookmark ✓','ok')}
+updateProgressUI();return}
+if(a==='k3-ack'){state.k3=!state.k3;
+state.k3Date=state.k3?new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}):null;
+store.set('k3',state.k3);store.set('k3Date',state.k3Date);
+toast(state.k3?'K3 dikonfirmasi — selamat praktik dengan aman! ✓':'Konfirmasi K3 dibatalkan.',state.k3?'ok':'');
+renderPage('k3');return}
+if(a==='target-mode'){targetMode=t.dataset.m;store.set('targetMode',targetMode);renderPage('target');return}
+if(a==='quiz-start'){qz={i:0,ans:[],done:false};renderQuiz();return}
+if(a==='quiz-answer'){if(qz&&qz.ans[qz.i]==null){qz.ans[qz.i]=+t.dataset.i;renderQuiz()}return}
+if(a==='quiz-next'){if(qz.i<QUIZ.length-1){qz.i++;renderQuiz()}
+else{qz.done=true;var score=0;qz.ans.forEach(function(x,i){if(x===QUIZ[i].a)score++});
+if(state.quizBest===null||score>state.quizBest){state.quizBest=score;store.set('quizBest',score)}
+renderQuiz()}return}
+if(a==='quiz-restart'){qz={i:0,ans:[],done:false};renderQuiz();return}
+if(a==='feed-toggle'){var svg=$('#heroMill');if(!svg)return;
+svg.classList.toggle('machine-paused');var paused=svg.classList.contains('machine-paused');
+t.innerHTML=paused?IC.play:IC.pause;return}});
+
+document.addEventListener('input',function(e){
+if(e.target.closest&&e.target.closest('[data-calc]')){recalcCalc();return}
+if(e.target.id==='searchInput'){renderSearchResults(e.target.value);return}
+if(e.target.id==='heroRpm'){var rpm=+e.target.value,v=$('#rpmVal');if(v)v.textContent=rpm;
+var svg=$('#heroMill');if(svg){var dur=Math.max(0.08,Math.min(1.4,60/rpm));svg.style.setProperty('--spinDur',dur+'s')}return}});
+
+document.addEventListener('change',function(e){
+if(e.target.classList&&e.target.classList.contains('tcheck-in')){
+state.target[e.target.dataset.tkey]=e.target.checked;store.set('target',state.target);
+var card=e.target.closest('.target-card');if(card){var inputs=$$('.tcheck-in',card);
+var checked=inputs.filter(function(i){return i.checked}).length;
+var pct=Math.round(checked/inputs.length*100);
+var ring=$('.ring b',card);if(ring)ring.textContent=pct+'%';
+var fgc=$('.fgc',card);if(fgc){var off=2*Math.PI*26;fgc.setAttribute('stroke-dashoffset',off*(1-pct/100))}}}});
+
+document.addEventListener('keydown',function(e){
+if(e.key==='Escape'){closeSearch();closeModal();closeMenu()}
+if(e.key==='/'&&!e.target.matches('input,textarea')){e.preventDefault();openSearch()}
+if(e.key==='Enter'&&$('#searchOverlay').classList.contains('open')){var first=$('#searchResults .sr-item');if(first)first.click()}});
+
+(function init(){applyTheme(state.theme);buildNav();buildSearchIndex();
+window.addEventListener('hashchange',route);route();
+setTimeout(function(){var r=$('#heroRpm');if(r)r.dispatchEvent(new Event('input'))},50)})();
+</script>
+</body>
+</html>
